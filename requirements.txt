@@ -1,0 +1,8 @@
+# CPU environment validated with Python 3.11. Install SUMO 1.20.0 separately.
+numpy==2.2.6
+pandas==2.2.3
+PyYAML==6.0.3
+torch==2.6.0
+pyarrow==23.0.1
+traci==1.26.0
+sumolib==1.26.0

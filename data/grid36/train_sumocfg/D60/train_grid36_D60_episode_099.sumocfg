@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='utf-8'?>
+<configuration>
+  <input>
+    <net-file value="../../truck_sensitive_grid36.net.xml" />
+    <route-files value="../../train_rou_xml/D60/train_grid36_D60_episode_099.rou.xml" />
+    <additional-files value="../../truck_sensitive_grid36.add.xml" />
+  </input>
+  <time>
+    <begin value="0" />
+    <end value="4200" />
+  </time>
+  <processing>
+    <time-to-teleport value="-1" />
+  </processing>
+</configuration>

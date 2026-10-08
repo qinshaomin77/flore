@@ -1,0 +1,33 @@
+{
+  "schema_version": 4,
+  "network_id": "kunshan_actuated",
+  "baseline_emission_mode": "actual",
+  "baseline_vehicle_dynamics": "actual_mixed_fleet",
+  "observation_scope": "E2_last_500m",
+  "NOx_max": 84.3018339999997,
+  "NOx_max_by_type": {},
+  "lane_type_map": {},
+  "type_positive_sample_count": {},
+  "type_threshold_source": {},
+  "calibration_meta": {
+    "aggregation": "pooled_positive_lane_step_samples",
+    "quantile": 0.8,
+    "warmup_seconds": 300.0,
+    "exclude_zero": true,
+    "zero_eps": 1e-09,
+    "observation_scope": "E2_last_500m",
+    "detector_target_length_m": 500.0,
+    "detector_length_policy": "actual_extent_including_clipped_short_lanes",
+    "decision_interval": 10,
+    "episode_count": 20,
+    "input_file_count": 20,
+    "sample_count_raw": 2289600,
+    "sample_count_finite": 2289600,
+    "sample_count_post_warmup": 2105160,
+    "sample_count_positive": 972016,
+    "positive_ratio": 0.4617302247810143,
+    "rounding": "none",
+    "source_run_dir": "F:\\qsm\\mgmq\\results_calibration\\kunshan_spatialscale\\kunshan_actuated_w500",
+    "generated_at": "2026-08-17T11:59:27.452542+00:00"
+  }
+}

@@ -1,0 +1,355 @@
+<?xml version='1.0' encoding='utf-8'?>
+<additional>
+    <tlLogic id="nt00" type="actuated" programID="actuated" offset="0">
+        <phase duration="30" state="gGrgrrgGrgrr" name="sn_straight" minDur="5" maxDur="90" />
+        <phase duration="2" state="gyrgrrgyrgrr" name="sn_straight_yellow" />
+        <phase duration="30" state="grGgrrgrGgrr" name="sn_left" minDur="5" maxDur="90" />
+        <phase duration="2" state="grygrrgrygrr" name="sn_left_yellow" />
+        <phase duration="30" state="grrgGrgrrgGr" name="ew_straight" minDur="5" maxDur="90" />
+        <phase duration="2" state="grrgyrgrrgyr" name="ew_straight_yellow" />
+        <phase duration="30" state="grrgrGgrrgrG" name="ew_left" minDur="5" maxDur="90" />
+        <phase duration="2" state="grrgrygrrgry" name="ew_left_yellow" />
+    </tlLogic>
+    <tlLogic id="nt01" type="actuated" programID="actuated" offset="10">
+        <phase duration="30" state="gGrgrrgGrgrr" name="sn_straight" minDur="5" maxDur="90" />
+        <phase duration="2" state="gyrgrrgyrgrr" name="sn_straight_yellow" />
+        <phase duration="30" state="grGgrrgrGgrr" name="sn_left" minDur="5" maxDur="90" />
+        <phase duration="2" state="grygrrgrygrr" name="sn_left_yellow" />
+        <phase duration="30" state="grrgGrgrrgGr" name="ew_straight" minDur="5" maxDur="90" />
+        <phase duration="2" state="grrgyrgrrgyr" name="ew_straight_yellow" />
+        <phase duration="30" state="grrgrGgrrgrG" name="ew_left" minDur="5" maxDur="90" />
+        <phase duration="2" state="grrgrygrrgry" name="ew_left_yellow" />
+    </tlLogic>
+    <tlLogic id="nt02" type="actuated" programID="actuated" offset="20">
+        <phase duration="30" state="gGrgrrgGrgrr" name="sn_straight" minDur="5" maxDur="90" />
+        <phase duration="2" state="gyrgrrgyrgrr" name="sn_straight_yellow" />
+        <phase duration="30" state="grGgrrgrGgrr" name="sn_left" minDur="5" maxDur="90" />
+        <phase duration="2" state="grygrrgrygrr" name="sn_left_yellow" />
+        <phase duration="30" state="grrgGrgrrgGr" name="ew_straight" minDur="5" maxDur="90" />
+        <phase duration="2" state="grrgyrgrrgyr" name="ew_straight_yellow" />
+        <phase duration="30" state="grrgrGgrrgrG" name="ew_left" minDur="5" maxDur="90" />
+        <phase duration="2" state="grrgrygrrgry" name="ew_left_yellow" />
+    </tlLogic>
+    <tlLogic id="nt03" type="actuated" programID="actuated" offset="30">
+        <phase duration="30" state="gGrgrrgGrgrr" name="sn_straight" minDur="5" maxDur="90" />
+        <phase duration="2" state="gyrgrrgyrgrr" name="sn_straight_yellow" />
+        <phase duration="30" state="grGgrrgrGgrr" name="sn_left" minDur="5" maxDur="90" />
+        <phase duration="2" state="grygrrgrygrr" name="sn_left_yellow" />
+        <phase duration="30" state="grrgGrgrrgGr" name="ew_straight" minDur="5" maxDur="90" />
+        <phase duration="2" state="grrgyrgrrgyr" name="ew_straight_yellow" />
+        <phase duration="30" state="grrgrGgrrgrG" name="ew_left" minDur="5" maxDur="90" />
+        <phase duration="2" state="grrgrygrrgry" name="ew_left_yellow" />
+    </tlLogic>
+    <tlLogic id="nt04" type="actuated" programID="actuated" offset="40">
+        <phase duration="30" state="gGrgrrgGrgrr" name="sn_straight" minDur="5" maxDur="90" />
+        <phase duration="2" state="gyrgrrgyrgrr" name="sn_straight_yellow" />
+        <phase duration="30" state="grGgrrgrGgrr" name="sn_left" minDur="5" maxDur="90" />
+        <phase duration="2" state="grygrrgrygrr" name="sn_left_yellow" />
+        <phase duration="30" state="grrgGrgrrgGr" name="ew_straight" minDur="5" maxDur="90" />
+        <phase duration="2" state="grrgyrgrrgyr" name="ew_straight_yellow" />
+        <phase duration="30" state="grrgrGgrrgrG" name="ew_left" minDur="5" maxDur="90" />
+        <phase duration="2" state="grrgrygrrgry" name="ew_left_yellow" />
+    </tlLogic>
+    <tlLogic id="nt05" type="actuated" programID="actuated" offset="50">
+        <phase duration="30" state="gGrgrrgGrgrr" name="sn_straight" minDur="5" maxDur="90" />
+        <phase duration="2" state="gyrgrrgyrgrr" name="sn_straight_yellow" />
+        <phase duration="30" state="grGgrrgrGgrr" name="sn_left" minDur="5" maxDur="90" />
+        <phase duration="2" state="grygrrgrygrr" name="sn_left_yellow" />
+        <phase duration="30" state="grrgGrgrrgGr" name="ew_straight" minDur="5" maxDur="90" />
+        <phase duration="2" state="grrgyrgrrgyr" name="ew_straight_yellow" />
+        <phase duration="30" state="grrgrGgrrgrG" name="ew_left" minDur="5" maxDur="90" />
+        <phase duration="2" state="grrgrygrrgry" name="ew_left_yellow" />
+    </tlLogic>
+    <tlLogic id="nt10" type="actuated" programID="actuated" offset="10">
+        <phase duration="30" state="gGrgrrgGrgrr" name="sn_straight" minDur="5" maxDur="90" />
+        <phase duration="2" state="gyrgrrgyrgrr" name="sn_straight_yellow" />
+        <phase duration="30" state="grGgrrgrGgrr" name="sn_left" minDur="5" maxDur="90" />
+        <phase duration="2" state="grygrrgrygrr" name="sn_left_yellow" />
+        <phase duration="30" state="grrgGrgrrgGr" name="ew_straight" minDur="5" maxDur="90" />
+        <phase duration="2" state="grrgyrgrrgyr" name="ew_straight_yellow" />
+        <phase duration="30" state="grrgrGgrrgrG" name="ew_left" minDur="5" maxDur="90" />
+        <phase duration="2" state="grrgrygrrgry" name="ew_left_yellow" />
+    </tlLogic>
+    <tlLogic id="nt11" type="actuated" programID="actuated" offset="20">
+        <phase duration="30" state="grrgGGggrrgGGg" name="ew_straight_left" minDur="5" maxDur="90" />
+        <phase duration="2" state="grrgyyygrrgyyy" name="ew_straight_left_yellow" />
+        <phase duration="30" state="gGrgrrrgGrgrrr" name="sn_straight" minDur="5" maxDur="90" />
+        <phase duration="2" state="gyrgrrrgyrgrrr" name="sn_straight_yellow" />
+        <phase duration="30" state="grGgrrrgrGgrrr" name="sn_left" minDur="5" maxDur="90" />
+        <phase duration="2" state="grygrrrgrygrrr" name="sn_left_yellow" />
+    </tlLogic>
+    <tlLogic id="nt12" type="actuated" programID="actuated" offset="30">
+        <phase duration="30" state="gGrgrrgGrgrr" name="sn_straight" minDur="5" maxDur="90" />
+        <phase duration="2" state="gyrgrrgyrgrr" name="sn_straight_yellow" />
+        <phase duration="30" state="grGgrrgrGgrr" name="sn_left" minDur="5" maxDur="90" />
+        <phase duration="2" state="grygrrgrygrr" name="sn_left_yellow" />
+        <phase duration="30" state="grrgGrgrrgGr" name="ew_straight" minDur="5" maxDur="90" />
+        <phase duration="2" state="grrgyrgrrgyr" name="ew_straight_yellow" />
+        <phase duration="30" state="grrgrGgrrgrG" name="ew_left" minDur="5" maxDur="90" />
+        <phase duration="2" state="grrgrygrrgry" name="ew_left_yellow" />
+    </tlLogic>
+    <tlLogic id="nt13" type="actuated" programID="actuated" offset="40">
+        <phase duration="30" state="gGrgrrgGrgrr" name="sn_straight" minDur="5" maxDur="90" />
+        <phase duration="2" state="gyrgrrgyrgrr" name="sn_straight_yellow" />
+        <phase duration="30" state="grGgrrgrGgrr" name="sn_left" minDur="5" maxDur="90" />
+        <phase duration="2" state="grygrrgrygrr" name="sn_left_yellow" />
+        <phase duration="30" state="grrgGrgrrgGr" name="ew_straight" minDur="5" maxDur="90" />
+        <phase duration="2" state="grrgyrgrrgyr" name="ew_straight_yellow" />
+        <phase duration="30" state="grrgrGgrrgrG" name="ew_left" minDur="5" maxDur="90" />
+        <phase duration="2" state="grrgrygrrgry" name="ew_left_yellow" />
+    </tlLogic>
+    <tlLogic id="nt14" type="actuated" programID="actuated" offset="50">
+        <phase duration="30" state="grrgGGggrrgGGg" name="ew_straight_left" minDur="5" maxDur="90" />
+        <phase duration="2" state="grrgyyygrrgyyy" name="ew_straight_left_yellow" />
+        <phase duration="30" state="gGrgrrrgGrgrrr" name="sn_straight" minDur="5" maxDur="90" />
+        <phase duration="2" state="gyrgrrrgyrgrrr" name="sn_straight_yellow" />
+        <phase duration="30" state="grGgrrrgrGgrrr" name="sn_left" minDur="5" maxDur="90" />
+        <phase duration="2" state="grygrrrgrygrrr" name="sn_left_yellow" />
+    </tlLogic>
+    <tlLogic id="nt15" type="actuated" programID="actuated" offset="60">
+        <phase duration="30" state="gGrgrrgGrgrr" name="sn_straight" minDur="5" maxDur="90" />
+        <phase duration="2" state="gyrgrrgyrgrr" name="sn_straight_yellow" />
+        <phase duration="30" state="grGgrrgrGgrr" name="sn_left" minDur="5" maxDur="90" />
+        <phase duration="2" state="grygrrgrygrr" name="sn_left_yellow" />
+        <phase duration="30" state="grrgGrgrrgGr" name="ew_straight" minDur="5" maxDur="90" />
+        <phase duration="2" state="grrgyrgrrgyr" name="ew_straight_yellow" />
+        <phase duration="30" state="grrgrGgrrgrG" name="ew_left" minDur="5" maxDur="90" />
+        <phase duration="2" state="grrgrygrrgry" name="ew_left_yellow" />
+    </tlLogic>
+    <tlLogic id="nt20" type="actuated" programID="actuated" offset="20">
+        <phase duration="30" state="gGrgrrgGrgrr" name="sn_straight" minDur="5" maxDur="90" />
+        <phase duration="2" state="gyrgrrgyrgrr" name="sn_straight_yellow" />
+        <phase duration="30" state="grGgrrgrGgrr" name="sn_left" minDur="5" maxDur="90" />
+        <phase duration="2" state="grygrrgrygrr" name="sn_left_yellow" />
+        <phase duration="30" state="grrgGrgrrgGr" name="ew_straight" minDur="5" maxDur="90" />
+        <phase duration="2" state="grrgyrgrrgyr" name="ew_straight_yellow" />
+        <phase duration="30" state="grrgrGgrrgrG" name="ew_left" minDur="5" maxDur="90" />
+        <phase duration="2" state="grrgrygrrgry" name="ew_left_yellow" />
+    </tlLogic>
+    <tlLogic id="nt21" type="actuated" programID="actuated" offset="30">
+        <phase duration="30" state="gGrgrrgGrgrr" name="sn_straight" minDur="5" maxDur="90" />
+        <phase duration="2" state="gyrgrrgyrgrr" name="sn_straight_yellow" />
+        <phase duration="30" state="grGgrrgrGgrr" name="sn_left" minDur="5" maxDur="90" />
+        <phase duration="2" state="grygrrgrygrr" name="sn_left_yellow" />
+        <phase duration="30" state="grrgGrgrrgGr" name="ew_straight" minDur="5" maxDur="90" />
+        <phase duration="2" state="grrgyrgrrgyr" name="ew_straight_yellow" />
+        <phase duration="30" state="grrgrGgrrgrG" name="ew_left" minDur="5" maxDur="90" />
+        <phase duration="2" state="grrgrygrrgry" name="ew_left_yellow" />
+    </tlLogic>
+    <tlLogic id="nt22" type="actuated" programID="actuated" offset="40">
+        <phase duration="30" state="gGrgrrgGrgrr" name="sn_straight" minDur="5" maxDur="90" />
+        <phase duration="2" state="gyrgrrgyrgrr" name="sn_straight_yellow" />
+        <phase duration="30" state="grGgrrgrGgrr" name="sn_left" minDur="5" maxDur="90" />
+        <phase duration="2" state="grygrrgrygrr" name="sn_left_yellow" />
+        <phase duration="30" state="grrgGrgrrgGr" name="ew_straight" minDur="5" maxDur="90" />
+        <phase duration="2" state="grrgyrgrrgyr" name="ew_straight_yellow" />
+        <phase duration="30" state="grrgrGgrrgrG" name="ew_left" minDur="5" maxDur="90" />
+        <phase duration="2" state="grrgrygrrgry" name="ew_left_yellow" />
+    </tlLogic>
+    <tlLogic id="nt23" type="actuated" programID="actuated" offset="50">
+        <phase duration="30" state="gGrgrrgGrgrr" name="sn_straight" minDur="5" maxDur="90" />
+        <phase duration="2" state="gyrgrrgyrgrr" name="sn_straight_yellow" />
+        <phase duration="30" state="grGgrrgrGgrr" name="sn_left" minDur="5" maxDur="90" />
+        <phase duration="2" state="grygrrgrygrr" name="sn_left_yellow" />
+        <phase duration="30" state="grrgGrgrrgGr" name="ew_straight" minDur="5" maxDur="90" />
+        <phase duration="2" state="grrgyrgrrgyr" name="ew_straight_yellow" />
+        <phase duration="30" state="grrgrGgrrgrG" name="ew_left" minDur="5" maxDur="90" />
+        <phase duration="2" state="grrgrygrrgry" name="ew_left_yellow" />
+    </tlLogic>
+    <tlLogic id="nt24" type="actuated" programID="actuated" offset="60">
+        <phase duration="30" state="gGrgrrgGrgrr" name="sn_straight" minDur="5" maxDur="90" />
+        <phase duration="2" state="gyrgrrgyrgrr" name="sn_straight_yellow" />
+        <phase duration="30" state="grGgrrgrGgrr" name="sn_left" minDur="5" maxDur="90" />
+        <phase duration="2" state="grygrrgrygrr" name="sn_left_yellow" />
+        <phase duration="30" state="grrgGrgrrgGr" name="ew_straight" minDur="5" maxDur="90" />
+        <phase duration="2" state="grrgyrgrrgyr" name="ew_straight_yellow" />
+        <phase duration="30" state="grrgrGgrrgrG" name="ew_left" minDur="5" maxDur="90" />
+        <phase duration="2" state="grrgrygrrgry" name="ew_left_yellow" />
+    </tlLogic>
+    <tlLogic id="nt25" type="actuated" programID="actuated" offset="70">
+        <phase duration="30" state="gGrgrrgGrgrr" name="sn_straight" minDur="5" maxDur="90" />
+        <phase duration="2" state="gyrgrrgyrgrr" name="sn_straight_yellow" />
+        <phase duration="30" state="grGgrrgrGgrr" name="sn_left" minDur="5" maxDur="90" />
+        <phase duration="2" state="grygrrgrygrr" name="sn_left_yellow" />
+        <phase duration="30" state="grrgGrgrrgGr" name="ew_straight" minDur="5" maxDur="90" />
+        <phase duration="2" state="grrgyrgrrgyr" name="ew_straight_yellow" />
+        <phase duration="30" state="grrgrGgrrgrG" name="ew_left" minDur="5" maxDur="90" />
+        <phase duration="2" state="grrgrygrrgry" name="ew_left_yellow" />
+    </tlLogic>
+    <tlLogic id="nt30" type="actuated" programID="actuated" offset="30">
+        <phase duration="30" state="gGrgrrgGrgrr" name="sn_straight" minDur="5" maxDur="90" />
+        <phase duration="2" state="gyrgrrgyrgrr" name="sn_straight_yellow" />
+        <phase duration="30" state="grGgrrgrGgrr" name="sn_left" minDur="5" maxDur="90" />
+        <phase duration="2" state="grygrrgrygrr" name="sn_left_yellow" />
+        <phase duration="30" state="grrgGrgrrgGr" name="ew_straight" minDur="5" maxDur="90" />
+        <phase duration="2" state="grrgyrgrrgyr" name="ew_straight_yellow" />
+        <phase duration="30" state="grrgrGgrrgrG" name="ew_left" minDur="5" maxDur="90" />
+        <phase duration="2" state="grrgrygrrgry" name="ew_left_yellow" />
+    </tlLogic>
+    <tlLogic id="nt31" type="actuated" programID="actuated" offset="40">
+        <phase duration="30" state="gGrgrrgGrgrr" name="sn_straight" minDur="5" maxDur="90" />
+        <phase duration="2" state="gyrgrrgyrgrr" name="sn_straight_yellow" />
+        <phase duration="30" state="grGgrrgrGgrr" name="sn_left" minDur="5" maxDur="90" />
+        <phase duration="2" state="grygrrgrygrr" name="sn_left_yellow" />
+        <phase duration="30" state="grrgGrgrrgGr" name="ew_straight" minDur="5" maxDur="90" />
+        <phase duration="2" state="grrgyrgrrgyr" name="ew_straight_yellow" />
+        <phase duration="30" state="grrgrGgrrgrG" name="ew_left" minDur="5" maxDur="90" />
+        <phase duration="2" state="grrgrygrrgry" name="ew_left_yellow" />
+    </tlLogic>
+    <tlLogic id="nt32" type="actuated" programID="actuated" offset="50">
+        <phase duration="30" state="gGrgrrgGrgrr" name="sn_straight" minDur="5" maxDur="90" />
+        <phase duration="2" state="gyrgrrgyrgrr" name="sn_straight_yellow" />
+        <phase duration="30" state="grGgrrgrGgrr" name="sn_left" minDur="5" maxDur="90" />
+        <phase duration="2" state="grygrrgrygrr" name="sn_left_yellow" />
+        <phase duration="30" state="grrgGrgrrgGr" name="ew_straight" minDur="5" maxDur="90" />
+        <phase duration="2" state="grrgyrgrrgyr" name="ew_straight_yellow" />
+        <phase duration="30" state="grrgrGgrrgrG" name="ew_left" minDur="5" maxDur="90" />
+        <phase duration="2" state="grrgrygrrgry" name="ew_left_yellow" />
+    </tlLogic>
+    <tlLogic id="nt33" type="actuated" programID="actuated" offset="60">
+        <phase duration="30" state="gGrgrrgGrgrr" name="sn_straight" minDur="5" maxDur="90" />
+        <phase duration="2" state="gyrgrrgyrgrr" name="sn_straight_yellow" />
+        <phase duration="30" state="grGgrrgrGgrr" name="sn_left" minDur="5" maxDur="90" />
+        <phase duration="2" state="grygrrgrygrr" name="sn_left_yellow" />
+        <phase duration="30" state="grrgGrgrrgGr" name="ew_straight" minDur="5" maxDur="90" />
+        <phase duration="2" state="grrgyrgrrgyr" name="ew_straight_yellow" />
+        <phase duration="30" state="grrgrGgrrgrG" name="ew_left" minDur="5" maxDur="90" />
+        <phase duration="2" state="grrgrygrrgry" name="ew_left_yellow" />
+    </tlLogic>
+    <tlLogic id="nt34" type="actuated" programID="actuated" offset="70">
+        <phase duration="30" state="gGrgrrgGrgrr" name="sn_straight" minDur="5" maxDur="90" />
+        <phase duration="2" state="gyrgrrgyrgrr" name="sn_straight_yellow" />
+        <phase duration="30" state="grGgrrgrGgrr" name="sn_left" minDur="5" maxDur="90" />
+        <phase duration="2" state="grygrrgrygrr" name="sn_left_yellow" />
+        <phase duration="30" state="grrgGrgrrgGr" name="ew_straight" minDur="5" maxDur="90" />
+        <phase duration="2" state="grrgyrgrrgyr" name="ew_straight_yellow" />
+        <phase duration="30" state="grrgrGgrrgrG" name="ew_left" minDur="5" maxDur="90" />
+        <phase duration="2" state="grrgrygrrgry" name="ew_left_yellow" />
+    </tlLogic>
+    <tlLogic id="nt35" type="actuated" programID="actuated" offset="80">
+        <phase duration="30" state="gGrgrrgGrgrr" name="sn_straight" minDur="5" maxDur="90" />
+        <phase duration="2" state="gyrgrrgyrgrr" name="sn_straight_yellow" />
+        <phase duration="30" state="grGgrrgrGgrr" name="sn_left" minDur="5" maxDur="90" />
+        <phase duration="2" state="grygrrgrygrr" name="sn_left_yellow" />
+        <phase duration="30" state="grrgGrgrrgGr" name="ew_straight" minDur="5" maxDur="90" />
+        <phase duration="2" state="grrgyrgrrgyr" name="ew_straight_yellow" />
+        <phase duration="30" state="grrgrGgrrgrG" name="ew_left" minDur="5" maxDur="90" />
+        <phase duration="2" state="grrgrygrrgry" name="ew_left_yellow" />
+    </tlLogic>
+    <tlLogic id="nt40" type="actuated" programID="actuated" offset="40">
+        <phase duration="30" state="gGrgrrgGrgrr" name="sn_straight" minDur="5" maxDur="90" />
+        <phase duration="2" state="gyrgrrgyrgrr" name="sn_straight_yellow" />
+        <phase duration="30" state="grGgrrgrGgrr" name="sn_left" minDur="5" maxDur="90" />
+        <phase duration="2" state="grygrrgrygrr" name="sn_left_yellow" />
+        <phase duration="30" state="grrgGrgrrgGr" name="ew_straight" minDur="5" maxDur="90" />
+        <phase duration="2" state="grrgyrgrrgyr" name="ew_straight_yellow" />
+        <phase duration="30" state="grrgrGgrrgrG" name="ew_left" minDur="5" maxDur="90" />
+        <phase duration="2" state="grrgrygrrgry" name="ew_left_yellow" />
+    </tlLogic>
+    <tlLogic id="nt41" type="actuated" programID="actuated" offset="50">
+        <phase duration="30" state="grrgGGggrrgGGg" name="ew_straight_left" minDur="5" maxDur="90" />
+        <phase duration="2" state="grrgyyygrrgyyy" name="ew_straight_left_yellow" />
+        <phase duration="30" state="gGrgrrrgGrgrrr" name="sn_straight" minDur="5" maxDur="90" />
+        <phase duration="2" state="gyrgrrrgyrgrrr" name="sn_straight_yellow" />
+        <phase duration="30" state="grGgrrrgrGgrrr" name="sn_left" minDur="5" maxDur="90" />
+        <phase duration="2" state="grygrrrgrygrrr" name="sn_left_yellow" />
+    </tlLogic>
+    <tlLogic id="nt42" type="actuated" programID="actuated" offset="60">
+        <phase duration="30" state="gGrgrrgGrgrr" name="sn_straight" minDur="5" maxDur="90" />
+        <phase duration="2" state="gyrgrrgyrgrr" name="sn_straight_yellow" />
+        <phase duration="30" state="grGgrrgrGgrr" name="sn_left" minDur="5" maxDur="90" />
+        <phase duration="2" state="grygrrgrygrr" name="sn_left_yellow" />
+        <phase duration="30" state="grrgGrgrrgGr" name="ew_straight" minDur="5" maxDur="90" />
+        <phase duration="2" state="grrgyrgrrgyr" name="ew_straight_yellow" />
+        <phase duration="30" state="grrgrGgrrgrG" name="ew_left" minDur="5" maxDur="90" />
+        <phase duration="2" state="grrgrygrrgry" name="ew_left_yellow" />
+    </tlLogic>
+    <tlLogic id="nt43" type="actuated" programID="actuated" offset="70">
+        <phase duration="30" state="gGrgrrgGrgrr" name="sn_straight" minDur="5" maxDur="90" />
+        <phase duration="2" state="gyrgrrgyrgrr" name="sn_straight_yellow" />
+        <phase duration="30" state="grGgrrgrGgrr" name="sn_left" minDur="5" maxDur="90" />
+        <phase duration="2" state="grygrrgrygrr" name="sn_left_yellow" />
+        <phase duration="30" state="grrgGrgrrgGr" name="ew_straight" minDur="5" maxDur="90" />
+        <phase duration="2" state="grrgyrgrrgyr" name="ew_straight_yellow" />
+        <phase duration="30" state="grrgrGgrrgrG" name="ew_left" minDur="5" maxDur="90" />
+        <phase duration="2" state="grrgrygrrgry" name="ew_left_yellow" />
+    </tlLogic>
+    <tlLogic id="nt44" type="actuated" programID="actuated" offset="80">
+        <phase duration="30" state="grrgGGggrrgGGg" name="ew_straight_left" minDur="5" maxDur="90" />
+        <phase duration="2" state="grrgyyygrrgyyy" name="ew_straight_left_yellow" />
+        <phase duration="30" state="gGrgrrrgGrgrrr" name="sn_straight" minDur="5" maxDur="90" />
+        <phase duration="2" state="gyrgrrrgyrgrrr" name="sn_straight_yellow" />
+        <phase duration="30" state="grGgrrrgrGgrrr" name="sn_left" minDur="5" maxDur="90" />
+        <phase duration="2" state="grygrrrgrygrrr" name="sn_left_yellow" />
+    </tlLogic>
+    <tlLogic id="nt45" type="actuated" programID="actuated" offset="90">
+        <phase duration="30" state="gGrgrrgGrgrr" name="sn_straight" minDur="5" maxDur="90" />
+        <phase duration="2" state="gyrgrrgyrgrr" name="sn_straight_yellow" />
+        <phase duration="30" state="grGgrrgrGgrr" name="sn_left" minDur="5" maxDur="90" />
+        <phase duration="2" state="grygrrgrygrr" name="sn_left_yellow" />
+        <phase duration="30" state="grrgGrgrrgGr" name="ew_straight" minDur="5" maxDur="90" />
+        <phase duration="2" state="grrgyrgrrgyr" name="ew_straight_yellow" />
+        <phase duration="30" state="grrgrGgrrgrG" name="ew_left" minDur="5" maxDur="90" />
+        <phase duration="2" state="grrgrygrrgry" name="ew_left_yellow" />
+    </tlLogic>
+    <tlLogic id="nt50" type="actuated" programID="actuated" offset="50">
+        <phase duration="30" state="gGrgrrgGrgrr" name="sn_straight" minDur="5" maxDur="90" />
+        <phase duration="2" state="gyrgrrgyrgrr" name="sn_straight_yellow" />
+        <phase duration="30" state="grGgrrgrGgrr" name="sn_left" minDur="5" maxDur="90" />
+        <phase duration="2" state="grygrrgrygrr" name="sn_left_yellow" />
+        <phase duration="30" state="grrgGrgrrgGr" name="ew_straight" minDur="5" maxDur="90" />
+        <phase duration="2" state="grrgyrgrrgyr" name="ew_straight_yellow" />
+        <phase duration="30" state="grrgrGgrrgrG" name="ew_left" minDur="5" maxDur="90" />
+        <phase duration="2" state="grrgrygrrgry" name="ew_left_yellow" />
+    </tlLogic>
+    <tlLogic id="nt51" type="actuated" programID="actuated" offset="60">
+        <phase duration="30" state="gGrgrrgGrgrr" name="sn_straight" minDur="5" maxDur="90" />
+        <phase duration="2" state="gyrgrrgyrgrr" name="sn_straight_yellow" />
+        <phase duration="30" state="grGgrrgrGgrr" name="sn_left" minDur="5" maxDur="90" />
+        <phase duration="2" state="grygrrgrygrr" name="sn_left_yellow" />
+        <phase duration="30" state="grrgGrgrrgGr" name="ew_straight" minDur="5" maxDur="90" />
+        <phase duration="2" state="grrgyrgrrgyr" name="ew_straight_yellow" />
+        <phase duration="30" state="grrgrGgrrgrG" name="ew_left" minDur="5" maxDur="90" />
+        <phase duration="2" state="grrgrygrrgry" name="ew_left_yellow" />
+    </tlLogic>
+    <tlLogic id="nt52" type="actuated" programID="actuated" offset="70">
+        <phase duration="30" state="gGrgrrgGrgrr" name="sn_straight" minDur="5" maxDur="90" />
+        <phase duration="2" state="gyrgrrgyrgrr" name="sn_straight_yellow" />
+        <phase duration="30" state="grGgrrgrGgrr" name="sn_left" minDur="5" maxDur="90" />
+        <phase duration="2" state="grygrrgrygrr" name="sn_left_yellow" />
+        <phase duration="30" state="grrgGrgrrgGr" name="ew_straight" minDur="5" maxDur="90" />
+        <phase duration="2" state="grrgyrgrrgyr" name="ew_straight_yellow" />
+        <phase duration="30" state="grrgrGgrrgrG" name="ew_left" minDur="5" maxDur="90" />
+        <phase duration="2" state="grrgrygrrgry" name="ew_left_yellow" />
+    </tlLogic>
+    <tlLogic id="nt53" type="actuated" programID="actuated" offset="80">
+        <phase duration="30" state="gGrgrrgGrgrr" name="sn_straight" minDur="5" maxDur="90" />
+        <phase duration="2" state="gyrgrrgyrgrr" name="sn_straight_yellow" />
+        <phase duration="30" state="grGgrrgrGgrr" name="sn_left" minDur="5" maxDur="90" />
+        <phase duration="2" state="grygrrgrygrr" name="sn_left_yellow" />
+        <phase duration="30" state="grrgGrgrrgGr" name="ew_straight" minDur="5" maxDur="90" />
+        <phase duration="2" state="grrgyrgrrgyr" name="ew_straight_yellow" />
+        <phase duration="30" state="grrgrGgrrgrG" name="ew_left" minDur="5" maxDur="90" />
+        <phase duration="2" state="grrgrygrrgry" name="ew_left_yellow" />
+    </tlLogic>
+    <tlLogic id="nt54" type="actuated" programID="actuated" offset="90">
+        <phase duration="30" state="gGrgrrgGrgrr" name="sn_straight" minDur="5" maxDur="90" />
+        <phase duration="2" state="gyrgrrgyrgrr" name="sn_straight_yellow" />
+        <phase duration="30" state="grGgrrgrGgrr" name="sn_left" minDur="5" maxDur="90" />
+        <phase duration="2" state="grygrrgrygrr" name="sn_left_yellow" />
+        <phase duration="30" state="grrgGrgrrgGr" name="ew_straight" minDur="5" maxDur="90" />
+        <phase duration="2" state="grrgyrgrrgyr" name="ew_straight_yellow" />
+        <phase duration="30" state="grrgrGgrrgrG" name="ew_left" minDur="5" maxDur="90" />
+        <phase duration="2" state="grrgrygrrgry" name="ew_left_yellow" />
+    </tlLogic>
+    <tlLogic id="nt55" type="actuated" programID="actuated" offset="100">
+        <phase duration="30" state="gGrgrrgGrgrr" name="sn_straight" minDur="5" maxDur="90" />
+        <phase duration="2" state="gyrgrrgyrgrr" name="sn_straight_yellow" />
+        <phase duration="30" state="grGgrrgrGgrr" name="sn_left" minDur="5" maxDur="90" />
+        <phase duration="2" state="grygrrgrygrr" name="sn_left_yellow" />
+        <phase duration="30" state="grrgGrgrrgGr" name="ew_straight" minDur="5" maxDur="90" />
+        <phase duration="2" state="grrgyrgrrgyr" name="ew_straight_yellow" />
+        <phase duration="30" state="grrgrGgrrgrG" name="ew_left" minDur="5" maxDur="90" />
+        <phase duration="2" state="grrgrygrrgry" name="ew_left_yellow" />
+    </tlLogic>
+</additional>

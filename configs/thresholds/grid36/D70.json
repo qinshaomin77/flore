@@ -1,0 +1,13 @@
+{
+  "NOx_max": 46,
+  "observation_scope": "upstream_300m",
+  "observation_length": 300.0,
+  "calibration_meta": {
+    "quantile": 0.8,
+    "warmup_seconds": 300.0,
+    "zero_eps": 1e-09,
+    "sample_count": 460916,
+    "lane_step_files": 12,
+    "demand": "D70"
+  }
+}

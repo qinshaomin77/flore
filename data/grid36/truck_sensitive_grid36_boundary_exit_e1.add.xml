@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<additional>
+    <!-- E1 detectors on every peripheral outbound lane, 5 m before the network exit. -->
+
+    <!-- North boundary -->
+    <inductionLoop id="e1_exit_nt00_npN0_0" lane="nt00_npN0_0" pos="-5" period="10" file="truck_sensitive_grid36_boundary_exit_e1_output.xml" friendlyPos="true"/>
+    <inductionLoop id="e1_exit_nt00_npN0_1" lane="nt00_npN0_1" pos="-5" period="10" file="truck_sensitive_grid36_boundary_exit_e1_output.xml" friendlyPos="true"/>
+    <inductionLoop id="e1_exit_nt00_npN0_2" lane="nt00_npN0_2" pos="-5" period="10" file="truck_sensitive_grid36_boundary_exit_e1_output.xml" friendlyPos="true"/>
+    <inductionLoop id="e1_exit_nt01_npN1_0" lane="nt01_npN1_0" pos="-5" period="10" file="truck_sensitive_grid36_boundary_exit_e1_output.xml" friendlyPos="true"/>
+    <inductionLoop id="e1_exit_nt01_npN1_1" lane="nt01_npN1_1" pos="-5" period="10" file="truck_sensitive_grid36_boundary_exit_e1_output.xml" friendlyPos="true"/>
+    <inductionLoop id="e1_exit_nt01_npN1_2" lane="nt01_npN1_2" pos="-5" period="10" file="truck_sensitive_grid36_boundary_exit_e1_output.xml" friendlyPos="true"/>
+    <inductionLoop id="e1_exit_nt02_npN2_0" lane="nt02_npN2_0" pos="-5" period="10" file="truck_sensitive_grid36_boundary_exit_e1_output.xml" friendlyPos="true"/>
+    <inductionLoop id="e1_exit_nt02_npN2_1" lane="nt02_npN2_1" pos="-5" period="10" file="truck_sensitive_grid36_boundary_exit_e1_output.xml" friendlyPos="true"/>
+    <inductionLoop id="e1_exit_nt02_npN2_2" lane="nt02_npN2_2" pos="-5" period="10" file="truck_sensitive_grid36_boundary_exit_e1_output.xml" friendlyPos="true"/>
+    <inductionLoop id="e1_exit_nt03_npN3_0" lane="nt03_npN3_0" pos="-5" period="10" file="truck_sensitive_grid36_boundary_exit_e1_output.xml" friendlyPos="true"/>
+    <inductionLoop id="e1_exit_nt03_npN3_1" lane="nt03_npN3_1" pos="-5" period="10" file="truck_sensitive_grid36_boundary_exit_e1_output.xml" friendlyPos="true"/>
+    <inductionLoop id="e1_exit_nt03_npN3_2" lane="nt03_npN3_2" pos="-5" period="10" file="truck_sensitive_grid36_boundary_exit_e1_output.xml" friendlyPos="true"/>
+    <inductionLoop id="e1_exit_nt04_npN4_0" lane="nt04_npN4_0" pos="-5" period="10" file="truck_sensitive_grid36_boundary_exit_e1_output.xml" friendlyPos="true"/>
+    <inductionLoop id="e1_exit_nt04_npN4_1" lane="nt04_npN4_1" pos="-5" period="10" file="truck_sensitive_grid36_boundary_exit_e1_output.xml" friendlyPos="true"/>
+    <inductionLoop id="e1_exit_nt04_npN4_2" lane="nt04_npN4_2" pos="-5" period="10" file="truck_sensitive_grid36_boundary_exit_e1_output.xml" friendlyPos="true"/>
+    <inductionLoop id="e1_exit_nt05_npN5_0" lane="nt05_npN5_0" pos="-5" period="10" file="truck_sensitive_grid36_boundary_exit_e1_output.xml" friendlyPos="true"/>
+    <inductionLoop id="e1_exit_nt05_npN5_1" lane="nt05_npN5_1" pos="-5" period="10" file="truck_sensitive_grid36_boundary_exit_e1_output.xml" friendlyPos="true"/>
+    <inductionLoop id="e1_exit_nt05_npN5_2" lane="nt05_npN5_2" pos="-5" period="10" file="truck_sensitive_grid36_boundary_exit_e1_output.xml" friendlyPos="true"/>
+
+    <!-- East boundary -->
+    <inductionLoop id="e1_exit_nt05_npE0_0" lane="nt05_npE0_0" pos="-5" period="10" file="truck_sensitive_grid36_boundary_exit_e1_output.xml" friendlyPos="true"/>
+    <inductionLoop id="e1_exit_nt05_npE0_1" lane="nt05_npE0_1" pos="-5" period="10" file="truck_sensitive_grid36_boundary_exit_e1_output.xml" friendlyPos="true"/>
+    <inductionLoop id="e1_exit_nt05_npE0_2" lane="nt05_npE0_2" pos="-5" period="10" file="truck_sensitive_grid36_boundary_exit_e1_output.xml" friendlyPos="true"/>
+    <inductionLoop id="e1_exit_nt15_npE1_0" lane="nt15_npE1_0" pos="-5" period="10" file="truck_sensitive_grid36_boundary_exit_e1_output.xml" friendlyPos="true"/>
+    <inductionLoop id="e1_exit_nt15_npE1_1" lane="nt15_npE1_1" pos="-5" period="10" file="truck_sensitive_grid36_boundary_exit_e1_output.xml" friendlyPos="true"/>
+    <inductionLoop id="e1_exit_nt15_npE1_2" lane="nt15_npE1_2" pos="-5" period="10" file="truck_sensitive_grid36_boundary_exit_e1_output.xml" friendlyPos="true"/>
+    <inductionLoop id="e1_exit_nt25_npE2_0" lane="nt25_npE2_0" pos="-5" period="10" file="truck_sensitive_grid36_boundary_exit_e1_output.xml" friendlyPos="true"/>
+    <inductionLoop id="e1_exit_nt25_npE2_1" lane="nt25_npE2_1" pos="-5" period="10" file="truck_sensitive_grid36_boundary_exit_e1_output.xml" friendlyPos="true"/>
+    <inductionLoop id="e1_exit_nt25_npE2_2" lane="nt25_npE2_2" pos="-5" period="10" file="truck_sensitive_grid36_boundary_exit_e1_output.xml" friendlyPos="true"/>
+    <inductionLoop id="e1_exit_nt35_npE3_0" lane="nt35_npE3_0" pos="-5" period="10" file="truck_sensitive_grid36_boundary_exit_e1_output.xml" friendlyPos="true"/>
+    <inductionLoop id="e1_exit_nt35_npE3_1" lane="nt35_npE3_1" pos="-5" period="10" file="truck_sensitive_grid36_boundary_exit_e1_output.xml" friendlyPos="true"/>
+    <inductionLoop id="e1_exit_nt35_npE3_2" lane="nt35_npE3_2" pos="-5" period="10" file="truck_sensitive_grid36_boundary_exit_e1_output.xml" friendlyPos="true"/>
+    <inductionLoop id="e1_exit_nt45_npE4_0" lane="nt45_npE4_0" pos="-5" period="10" file="truck_sensitive_grid36_boundary_exit_e1_output.xml" friendlyPos="true"/>
+    <inductionLoop id="e1_exit_nt45_npE4_1" lane="nt45_npE4_1" pos="-5" period="10" file="truck_sensitive_grid36_boundary_exit_e1_output.xml" friendlyPos="true"/>
+    <inductionLoop id="e1_exit_nt45_npE4_2" lane="nt45_npE4_2" pos="-5" period="10" file="truck_sensitive_grid36_boundary_exit_e1_output.xml" friendlyPos="true"/>
+    <inductionLoop id="e1_exit_nt55_npE5_0" lane="nt55_npE5_0" pos="-5" period="10" file="truck_sensitive_grid36_boundary_exit_e1_output.xml" friendlyPos="true"/>
+    <inductionLoop id="e1_exit_nt55_npE5_1" lane="nt55_npE5_1" pos="-5" period="10" file="truck_sensitive_grid36_boundary_exit_e1_output.xml" friendlyPos="true"/>
+    <inductionLoop id="e1_exit_nt55_npE5_2" lane="nt55_npE5_2" pos="-5" period="10" file="truck_sensitive_grid36_boundary_exit_e1_output.xml" friendlyPos="true"/>
+
+    <!-- South boundary -->
+    <inductionLoop id="e1_exit_nt50_npS0_0" lane="nt50_npS0_0" pos="-5" period="10" file="truck_sensitive_grid36_boundary_exit_e1_output.xml" friendlyPos="true"/>
+    <inductionLoop id="e1_exit_nt50_npS0_1" lane="nt50_npS0_1" pos="-5" period="10" file="truck_sensitive_grid36_boundary_exit_e1_output.xml" friendlyPos="true"/>
+    <inductionLoop id="e1_exit_nt50_npS0_2" lane="nt50_npS0_2" pos="-5" period="10" file="truck_sensitive_grid36_boundary_exit_e1_output.xml" friendlyPos="true"/>
+    <inductionLoop id="e1_exit_nt51_npS1_0" lane="nt51_npS1_0" pos="-5" period="10" file="truck_sensitive_grid36_boundary_exit_e1_output.xml" friendlyPos="true"/>
+    <inductionLoop id="e1_exit_nt51_npS1_1" lane="nt51_npS1_1" pos="-5" period="10" file="truck_sensitive_grid36_boundary_exit_e1_output.xml" friendlyPos="true"/>
+    <inductionLoop id="e1_exit_nt51_npS1_2" lane="nt51_npS1_2" pos="-5" period="10" file="truck_sensitive_grid36_boundary_exit_e1_output.xml" friendlyPos="true"/>
+    <inductionLoop id="e1_exit_nt52_npS2_0" lane="nt52_npS2_0" pos="-5" period="10" file="truck_sensitive_grid36_boundary_exit_e1_output.xml" friendlyPos="true"/>
+    <inductionLoop id="e1_exit_nt52_npS2_1" lane="nt52_npS2_1" pos="-5" period="10" file="truck_sensitive_grid36_boundary_exit_e1_output.xml" friendlyPos="true"/>
+    <inductionLoop id="e1_exit_nt52_npS2_2" lane="nt52_npS2_2" pos="-5" period="10" file="truck_sensitive_grid36_boundary_exit_e1_output.xml" friendlyPos="true"/>
+    <inductionLoop id="e1_exit_nt53_npS3_0" lane="nt53_npS3_0" pos="-5" period="10" file="truck_sensitive_grid36_boundary_exit_e1_output.xml" friendlyPos="true"/>
+    <inductionLoop id="e1_exit_nt53_npS3_1" lane="nt53_npS3_1" pos="-5" period="10" file="truck_sensitive_grid36_boundary_exit_e1_output.xml" friendlyPos="true"/>
+    <inductionLoop id="e1_exit_nt53_npS3_2" lane="nt53_npS3_2" pos="-5" period="10" file="truck_sensitive_grid36_boundary_exit_e1_output.xml" friendlyPos="true"/>
+    <inductionLoop id="e1_exit_nt54_npS4_0" lane="nt54_npS4_0" pos="-5" period="10" file="truck_sensitive_grid36_boundary_exit_e1_output.xml" friendlyPos="true"/>
+    <inductionLoop id="e1_exit_nt54_npS4_1" lane="nt54_npS4_1" pos="-5" period="10" file="truck_sensitive_grid36_boundary_exit_e1_output.xml" friendlyPos="true"/>
+    <inductionLoop id="e1_exit_nt54_npS4_2" lane="nt54_npS4_2" pos="-5" period="10" file="truck_sensitive_grid36_boundary_exit_e1_output.xml" friendlyPos="true"/>
+    <inductionLoop id="e1_exit_nt55_npS5_0" lane="nt55_npS5_0" pos="-5" period="10" file="truck_sensitive_grid36_boundary_exit_e1_output.xml" friendlyPos="true"/>
+    <inductionLoop id="e1_exit_nt55_npS5_1" lane="nt55_npS5_1" pos="-5" period="10" file="truck_sensitive_grid36_boundary_exit_e1_output.xml" friendlyPos="true"/>
+    <inductionLoop id="e1_exit_nt55_npS5_2" lane="nt55_npS5_2" pos="-5" period="10" file="truck_sensitive_grid36_boundary_exit_e1_output.xml" friendlyPos="true"/>
+
+    <!-- West boundary -->
+    <inductionLoop id="e1_exit_nt00_npW0_0" lane="nt00_npW0_0" pos="-5" period="10" file="truck_sensitive_grid36_boundary_exit_e1_output.xml" friendlyPos="true"/>
+    <inductionLoop id="e1_exit_nt00_npW0_1" lane="nt00_npW0_1" pos="-5" period="10" file="truck_sensitive_grid36_boundary_exit_e1_output.xml" friendlyPos="true"/>
+    <inductionLoop id="e1_exit_nt00_npW0_2" lane="nt00_npW0_2" pos="-5" period="10" file="truck_sensitive_grid36_boundary_exit_e1_output.xml" friendlyPos="true"/>
+    <inductionLoop id="e1_exit_nt10_npW1_0" lane="nt10_npW1_0" pos="-5" period="10" file="truck_sensitive_grid36_boundary_exit_e1_output.xml" friendlyPos="true"/>
+    <inductionLoop id="e1_exit_nt10_npW1_1" lane="nt10_npW1_1" pos="-5" period="10" file="truck_sensitive_grid36_boundary_exit_e1_output.xml" friendlyPos="true"/>
+    <inductionLoop id="e1_exit_nt10_npW1_2" lane="nt10_npW1_2" pos="-5" period="10" file="truck_sensitive_grid36_boundary_exit_e1_output.xml" friendlyPos="true"/>
+    <inductionLoop id="e1_exit_nt20_npW2_0" lane="nt20_npW2_0" pos="-5" period="10" file="truck_sensitive_grid36_boundary_exit_e1_output.xml" friendlyPos="true"/>
+    <inductionLoop id="e1_exit_nt20_npW2_1" lane="nt20_npW2_1" pos="-5" period="10" file="truck_sensitive_grid36_boundary_exit_e1_output.xml" friendlyPos="true"/>
+    <inductionLoop id="e1_exit_nt20_npW2_2" lane="nt20_npW2_2" pos="-5" period="10" file="truck_sensitive_grid36_boundary_exit_e1_output.xml" friendlyPos="true"/>
+    <inductionLoop id="e1_exit_nt30_npW3_0" lane="nt30_npW3_0" pos="-5" period="10" file="truck_sensitive_grid36_boundary_exit_e1_output.xml" friendlyPos="true"/>
+    <inductionLoop id="e1_exit_nt30_npW3_1" lane="nt30_npW3_1" pos="-5" period="10" file="truck_sensitive_grid36_boundary_exit_e1_output.xml" friendlyPos="true"/>
+    <inductionLoop id="e1_exit_nt30_npW3_2" lane="nt30_npW3_2" pos="-5" period="10" file="truck_sensitive_grid36_boundary_exit_e1_output.xml" friendlyPos="true"/>
+    <inductionLoop id="e1_exit_nt40_npW4_0" lane="nt40_npW4_0" pos="-5" period="10" file="truck_sensitive_grid36_boundary_exit_e1_output.xml" friendlyPos="true"/>
+    <inductionLoop id="e1_exit_nt40_npW4_1" lane="nt40_npW4_1" pos="-5" period="10" file="truck_sensitive_grid36_boundary_exit_e1_output.xml" friendlyPos="true"/>
+    <inductionLoop id="e1_exit_nt40_npW4_2" lane="nt40_npW4_2" pos="-5" period="10" file="truck_sensitive_grid36_boundary_exit_e1_output.xml" friendlyPos="true"/>
+    <inductionLoop id="e1_exit_nt50_npW5_0" lane="nt50_npW5_0" pos="-5" period="10" file="truck_sensitive_grid36_boundary_exit_e1_output.xml" friendlyPos="true"/>
+    <inductionLoop id="e1_exit_nt50_npW5_1" lane="nt50_npW5_1" pos="-5" period="10" file="truck_sensitive_grid36_boundary_exit_e1_output.xml" friendlyPos="true"/>
+    <inductionLoop id="e1_exit_nt50_npW5_2" lane="nt50_npW5_2" pos="-5" period="10" file="truck_sensitive_grid36_boundary_exit_e1_output.xml" friendlyPos="true"/>
+</additional>

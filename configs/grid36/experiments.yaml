@@ -1,0 +1,1021 @@
+suites:
+  grid36-main:
+  - name: flore
+    args:
+    - evaluate
+    - --config
+    - configs/grid36/base.yaml
+    - --checkpoint
+    - models/grid36/multi_objective.pt
+    - --run-id
+    - flore
+  - name: traffic_only
+    args:
+    - evaluate
+    - --config
+    - configs/grid36/objective/traffic_only.yaml
+    - --checkpoint
+    - models/grid36/traffic_only.pt
+    - --run-id
+    - traffic_only
+  - name: m0
+    args:
+    - evaluate
+    - --config
+    - configs/grid36/objective/m0_traffic.yaml
+    - --checkpoint
+    - models/grid36/m0_traffic.pt
+    - --run-id
+    - m0
+  - name: actuated
+    args:
+    - baseline
+    - --controller
+    - actuated
+    - --eval-episodes
+    - '20'
+    - --workers
+    - '3'
+    - --output-root
+    - results/evaluation/baselines
+  - name: max_pressure
+    args:
+    - baseline
+    - --controller
+    - max_pressure
+    - --eval-episodes
+    - '20'
+    - --workers
+    - '3'
+    - --output-root
+    - results/evaluation/baselines
+  - name: truck_weighted_max_pressure
+    args:
+    - baseline
+    - --controller
+    - truck_weighted_max_pressure
+    - --eval-episodes
+    - '20'
+    - --workers
+    - '3'
+    - --output-root
+    - results/evaluation/baselines
+  grid36-ablation:
+  - name: no_tail
+    args:
+    - evaluate
+    - --config
+    - configs/grid36/reward/flore_no_tail.yaml
+    - --checkpoint
+    - models/grid36/no_tail.pt
+    - --run-id
+    - no_tail
+  - name: sum_only
+    args:
+    - evaluate
+    - --config
+    - configs/grid36/reward/flore_sum_only.yaml
+    - --checkpoint
+    - models/grid36/sum_only.pt
+    - --run-id
+    - sum_only
+  train-grid36-demand:
+  - name: multi_objective_d20
+    args:
+    - train
+    - --config
+    - configs/grid36/base.yaml
+    - --scenario-sumocfg-dir
+    - data/grid36/train_sumocfg/D20
+    - --thresholds-json
+    - configs/thresholds/grid36/D20.json
+    - --run-id
+    - multi_objective_d20
+    - --seed
+    - '42'
+  - name: traffic_only_d20
+    args:
+    - train
+    - --config
+    - configs/grid36/objective/traffic_only.yaml
+    - --scenario-sumocfg-dir
+    - data/grid36/train_sumocfg/D20
+    - --thresholds-json
+    - configs/thresholds/grid36/D20.json
+    - --run-id
+    - traffic_only_d20
+    - --seed
+    - '42'
+  - name: multi_objective_d40
+    args:
+    - train
+    - --config
+    - configs/grid36/base.yaml
+    - --scenario-sumocfg-dir
+    - data/grid36/train_sumocfg/D40
+    - --thresholds-json
+    - configs/thresholds/grid36/D40.json
+    - --run-id
+    - multi_objective_d40
+    - --seed
+    - '42'
+  - name: traffic_only_d40
+    args:
+    - train
+    - --config
+    - configs/grid36/objective/traffic_only.yaml
+    - --scenario-sumocfg-dir
+    - data/grid36/train_sumocfg/D40
+    - --thresholds-json
+    - configs/thresholds/grid36/D40.json
+    - --run-id
+    - traffic_only_d40
+    - --seed
+    - '42'
+  - name: multi_objective_d50
+    args:
+    - train
+    - --config
+    - configs/grid36/base.yaml
+    - --scenario-sumocfg-dir
+    - data/grid36/train_sumocfg/D50
+    - --thresholds-json
+    - configs/thresholds/grid36/D50.json
+    - --run-id
+    - multi_objective_d50
+    - --seed
+    - '42'
+  - name: traffic_only_d50
+    args:
+    - train
+    - --config
+    - configs/grid36/objective/traffic_only.yaml
+    - --scenario-sumocfg-dir
+    - data/grid36/train_sumocfg/D50
+    - --thresholds-json
+    - configs/thresholds/grid36/D50.json
+    - --run-id
+    - traffic_only_d50
+    - --seed
+    - '42'
+  - name: multi_objective_d60
+    args:
+    - train
+    - --config
+    - configs/grid36/base.yaml
+    - --scenario-sumocfg-dir
+    - data/grid36/train_sumocfg/D60
+    - --thresholds-json
+    - configs/thresholds/grid36/D60.json
+    - --run-id
+    - multi_objective_d60
+    - --seed
+    - '42'
+  - name: traffic_only_d60
+    args:
+    - train
+    - --config
+    - configs/grid36/objective/traffic_only.yaml
+    - --scenario-sumocfg-dir
+    - data/grid36/train_sumocfg/D60
+    - --thresholds-json
+    - configs/thresholds/grid36/D60.json
+    - --run-id
+    - traffic_only_d60
+    - --seed
+    - '42'
+  - name: multi_objective_d70
+    args:
+    - train
+    - --config
+    - configs/grid36/base.yaml
+    - --scenario-sumocfg-dir
+    - data/grid36/train_sumocfg/D70
+    - --thresholds-json
+    - configs/thresholds/grid36/D70.json
+    - --run-id
+    - multi_objective_d70
+    - --seed
+    - '42'
+  - name: traffic_only_d70
+    args:
+    - train
+    - --config
+    - configs/grid36/objective/traffic_only.yaml
+    - --scenario-sumocfg-dir
+    - data/grid36/train_sumocfg/D70
+    - --thresholds-json
+    - configs/thresholds/grid36/D70.json
+    - --run-id
+    - traffic_only_d70
+    - --seed
+    - '42'
+  - name: multi_objective_d80
+    args:
+    - train
+    - --config
+    - configs/grid36/base.yaml
+    - --scenario-sumocfg-dir
+    - data/grid36/train_sumocfg/D80
+    - --thresholds-json
+    - configs/thresholds/grid36/D80.json
+    - --run-id
+    - multi_objective_d80
+    - --seed
+    - '42'
+  - name: traffic_only_d80
+    args:
+    - train
+    - --config
+    - configs/grid36/objective/traffic_only.yaml
+    - --scenario-sumocfg-dir
+    - data/grid36/train_sumocfg/D80
+    - --thresholds-json
+    - configs/thresholds/grid36/D80.json
+    - --run-id
+    - traffic_only_d80
+    - --seed
+    - '42'
+  grid36-demand:
+  - name: multi_objective_d20
+    args:
+    - window
+    - --config
+    - configs/grid36/demand/multi_objective_scenarios.yaml
+    - --checkpoint
+    - models/grid36_demand/multi_objective_d20.pt
+    - --sumocfg-dir
+    - data/grid36/evaluation_sumocfg/D20
+    - --thresholds-json
+    - configs/thresholds/grid36/D20.json
+    - --case-name
+    - multi_objective_d20
+    - --reward-mode
+    - multi_objective
+    - --analysis-start
+    - '600'
+    - --analysis-end
+    - '3600'
+    - --eval-episodes
+    - '20'
+    - --workers
+    - '3'
+    - --output-root
+    - results/evaluation/demand
+    - --output-name
+    - multi_objective_d20
+  - name: traffic_only_d20
+    args:
+    - window
+    - --config
+    - configs/grid36/demand/traffic_only_scenarios.yaml
+    - --checkpoint
+    - models/grid36_demand/traffic_only_d20.pt
+    - --sumocfg-dir
+    - data/grid36/evaluation_sumocfg/D20
+    - --thresholds-json
+    - configs/thresholds/grid36/D20.json
+    - --case-name
+    - traffic_only_d20
+    - --reward-mode
+    - traffic_only
+    - --analysis-start
+    - '600'
+    - --analysis-end
+    - '3600'
+    - --eval-episodes
+    - '20'
+    - --workers
+    - '3'
+    - --output-root
+    - results/evaluation/demand
+    - --output-name
+    - traffic_only_d20
+  - name: multi_objective_d40
+    args:
+    - window
+    - --config
+    - configs/grid36/demand/multi_objective_scenarios.yaml
+    - --checkpoint
+    - models/grid36_demand/multi_objective_d40.pt
+    - --sumocfg-dir
+    - data/grid36/evaluation_sumocfg/D40
+    - --thresholds-json
+    - configs/thresholds/grid36/D40.json
+    - --case-name
+    - multi_objective_d40
+    - --reward-mode
+    - multi_objective
+    - --analysis-start
+    - '600'
+    - --analysis-end
+    - '3600'
+    - --eval-episodes
+    - '20'
+    - --workers
+    - '3'
+    - --output-root
+    - results/evaluation/demand
+    - --output-name
+    - multi_objective_d40
+  - name: traffic_only_d40
+    args:
+    - window
+    - --config
+    - configs/grid36/demand/traffic_only_scenarios.yaml
+    - --checkpoint
+    - models/grid36_demand/traffic_only_d40.pt
+    - --sumocfg-dir
+    - data/grid36/evaluation_sumocfg/D40
+    - --thresholds-json
+    - configs/thresholds/grid36/D40.json
+    - --case-name
+    - traffic_only_d40
+    - --reward-mode
+    - traffic_only
+    - --analysis-start
+    - '600'
+    - --analysis-end
+    - '3600'
+    - --eval-episodes
+    - '20'
+    - --workers
+    - '3'
+    - --output-root
+    - results/evaluation/demand
+    - --output-name
+    - traffic_only_d40
+  - name: multi_objective_d50
+    args:
+    - window
+    - --config
+    - configs/grid36/demand/multi_objective_scenarios.yaml
+    - --checkpoint
+    - models/grid36_demand/multi_objective_d50.pt
+    - --sumocfg-dir
+    - data/grid36/evaluation_sumocfg/D50
+    - --thresholds-json
+    - configs/thresholds/grid36/D50.json
+    - --case-name
+    - multi_objective_d50
+    - --reward-mode
+    - multi_objective
+    - --analysis-start
+    - '600'
+    - --analysis-end
+    - '3600'
+    - --eval-episodes
+    - '20'
+    - --workers
+    - '3'
+    - --output-root
+    - results/evaluation/demand
+    - --output-name
+    - multi_objective_d50
+  - name: traffic_only_d50
+    args:
+    - window
+    - --config
+    - configs/grid36/demand/traffic_only_scenarios.yaml
+    - --checkpoint
+    - models/grid36_demand/traffic_only_d50.pt
+    - --sumocfg-dir
+    - data/grid36/evaluation_sumocfg/D50
+    - --thresholds-json
+    - configs/thresholds/grid36/D50.json
+    - --case-name
+    - traffic_only_d50
+    - --reward-mode
+    - traffic_only
+    - --analysis-start
+    - '600'
+    - --analysis-end
+    - '3600'
+    - --eval-episodes
+    - '20'
+    - --workers
+    - '3'
+    - --output-root
+    - results/evaluation/demand
+    - --output-name
+    - traffic_only_d50
+  - name: multi_objective_d60
+    args:
+    - window
+    - --config
+    - configs/grid36/demand/multi_objective_scenarios.yaml
+    - --checkpoint
+    - models/grid36_demand/multi_objective_d60.pt
+    - --sumocfg-dir
+    - data/grid36/evaluation_sumocfg/D60
+    - --thresholds-json
+    - configs/thresholds/grid36/D60.json
+    - --case-name
+    - multi_objective_d60
+    - --reward-mode
+    - multi_objective
+    - --analysis-start
+    - '600'
+    - --analysis-end
+    - '3600'
+    - --eval-episodes
+    - '20'
+    - --workers
+    - '3'
+    - --output-root
+    - results/evaluation/demand
+    - --output-name
+    - multi_objective_d60
+  - name: traffic_only_d60
+    args:
+    - window
+    - --config
+    - configs/grid36/demand/traffic_only_scenarios.yaml
+    - --checkpoint
+    - models/grid36_demand/traffic_only_d60.pt
+    - --sumocfg-dir
+    - data/grid36/evaluation_sumocfg/D60
+    - --thresholds-json
+    - configs/thresholds/grid36/D60.json
+    - --case-name
+    - traffic_only_d60
+    - --reward-mode
+    - traffic_only
+    - --analysis-start
+    - '600'
+    - --analysis-end
+    - '3600'
+    - --eval-episodes
+    - '20'
+    - --workers
+    - '3'
+    - --output-root
+    - results/evaluation/demand
+    - --output-name
+    - traffic_only_d60
+  - name: multi_objective_d70
+    args:
+    - window
+    - --config
+    - configs/grid36/demand/multi_objective_scenarios.yaml
+    - --checkpoint
+    - models/grid36_demand/multi_objective_d70.pt
+    - --sumocfg-dir
+    - data/grid36/evaluation_sumocfg/D70
+    - --thresholds-json
+    - configs/thresholds/grid36/D70.json
+    - --case-name
+    - multi_objective_d70
+    - --reward-mode
+    - multi_objective
+    - --analysis-start
+    - '600'
+    - --analysis-end
+    - '3600'
+    - --eval-episodes
+    - '20'
+    - --workers
+    - '3'
+    - --output-root
+    - results/evaluation/demand
+    - --output-name
+    - multi_objective_d70
+  - name: traffic_only_d70
+    args:
+    - window
+    - --config
+    - configs/grid36/demand/traffic_only_scenarios.yaml
+    - --checkpoint
+    - models/grid36_demand/traffic_only_d70.pt
+    - --sumocfg-dir
+    - data/grid36/evaluation_sumocfg/D70
+    - --thresholds-json
+    - configs/thresholds/grid36/D70.json
+    - --case-name
+    - traffic_only_d70
+    - --reward-mode
+    - traffic_only
+    - --analysis-start
+    - '600'
+    - --analysis-end
+    - '3600'
+    - --eval-episodes
+    - '20'
+    - --workers
+    - '3'
+    - --output-root
+    - results/evaluation/demand
+    - --output-name
+    - traffic_only_d70
+  - name: multi_objective_d80
+    args:
+    - window
+    - --config
+    - configs/grid36/demand/multi_objective_scenarios.yaml
+    - --checkpoint
+    - models/grid36_demand/multi_objective_d80.pt
+    - --sumocfg-dir
+    - data/grid36/evaluation_sumocfg/D80
+    - --thresholds-json
+    - configs/thresholds/grid36/D80.json
+    - --case-name
+    - multi_objective_d80
+    - --reward-mode
+    - multi_objective
+    - --analysis-start
+    - '600'
+    - --analysis-end
+    - '3600'
+    - --eval-episodes
+    - '20'
+    - --workers
+    - '3'
+    - --output-root
+    - results/evaluation/demand
+    - --output-name
+    - multi_objective_d80
+  - name: traffic_only_d80
+    args:
+    - window
+    - --config
+    - configs/grid36/demand/traffic_only_scenarios.yaml
+    - --checkpoint
+    - models/grid36_demand/traffic_only_d80.pt
+    - --sumocfg-dir
+    - data/grid36/evaluation_sumocfg/D80
+    - --thresholds-json
+    - configs/thresholds/grid36/D80.json
+    - --case-name
+    - traffic_only_d80
+    - --reward-mode
+    - traffic_only
+    - --analysis-start
+    - '600'
+    - --analysis-end
+    - '3600'
+    - --eval-episodes
+    - '20'
+    - --workers
+    - '3'
+    - --output-root
+    - results/evaluation/demand
+    - --output-name
+    - traffic_only_d80
+  grid36-sensitivity:
+  - name: train_multi_objective_alpha_0p0
+    args:
+    - train
+    - --config
+    - configs/grid36/sensitivity/reward_alpha_0p0.yaml
+    - --seed
+    - '42'
+    - --run-id
+    - multi_objective_alpha_0p0
+  - name: eval_multi_objective_alpha_0p0
+    checkpoint_from: train_multi_objective_alpha_0p0
+    args:
+    - evaluate
+    - --config
+    - configs/grid36/sensitivity/reward_alpha_0p0.yaml
+    - --eval-episodes
+    - '20'
+    - --workers
+    - '3'
+    - --run-id
+    - multi_objective_alpha_0p0
+  - name: train_multi_objective_alpha_1p0
+    args:
+    - train
+    - --config
+    - configs/grid36/sensitivity/reward_alpha_1p0.yaml
+    - --seed
+    - '42'
+    - --run-id
+    - multi_objective_alpha_1p0
+  - name: eval_multi_objective_alpha_1p0
+    checkpoint_from: train_multi_objective_alpha_1p0
+    args:
+    - evaluate
+    - --config
+    - configs/grid36/sensitivity/reward_alpha_1p0.yaml
+    - --eval-episodes
+    - '20'
+    - --workers
+    - '3'
+    - --run-id
+    - multi_objective_alpha_1p0
+  - name: train_full_labmda_0p8
+    args:
+    - train
+    - --config
+    - configs/grid36/sensitivity/full_multi_lambda_0p8.yaml
+    - --seed
+    - '42'
+    - --run-id
+    - full_labmda_0p8
+  - name: eval_full_labmda_0p8
+    checkpoint_from: train_full_labmda_0p8
+    args:
+    - evaluate
+    - --config
+    - configs/grid36/sensitivity/full_multi_lambda_0p8.yaml
+    - --eval-episodes
+    - '20'
+    - --workers
+    - '3'
+    - --run-id
+    - full_labmda_0p8
+  - name: train_full_lambda_0p2
+    args:
+    - train
+    - --config
+    - configs/grid36/sensitivity/full_multi_lambda_0p2.yaml
+    - --seed
+    - '42'
+    - --run-id
+    - full_lambda_0p2
+  - name: eval_full_lambda_0p2
+    checkpoint_from: train_full_lambda_0p2
+    args:
+    - evaluate
+    - --config
+    - configs/grid36/sensitivity/full_multi_lambda_0p2.yaml
+    - --eval-episodes
+    - '20'
+    - --workers
+    - '3'
+    - --run-id
+    - full_lambda_0p2
+  - name: train_full_lambda_0p5
+    args:
+    - train
+    - --config
+    - configs/grid36/sensitivity/full_multi_lambda_0p5.yaml
+    - --seed
+    - '42'
+    - --run-id
+    - full_lambda_0p5
+  - name: eval_full_lambda_0p5
+    checkpoint_from: train_full_lambda_0p5
+    args:
+    - evaluate
+    - --config
+    - configs/grid36/sensitivity/full_multi_lambda_0p5.yaml
+    - --eval-episodes
+    - '20'
+    - --workers
+    - '3'
+    - --run-id
+    - full_lambda_0p5
+  - name: train_full_lambda_1p2
+    args:
+    - train
+    - --config
+    - configs/grid36/sensitivity/full_multi_lambda_1p2.yaml
+    - --seed
+    - '42'
+    - --run-id
+    - full_lambda_1p2
+  - name: eval_full_lambda_1p2
+    checkpoint_from: train_full_lambda_1p2
+    args:
+    - evaluate
+    - --config
+    - configs/grid36/sensitivity/full_multi_lambda_1p2.yaml
+    - --eval-episodes
+    - '20'
+    - --workers
+    - '3'
+    - --run-id
+    - full_lambda_1p2
+  - name: train_full_lambda_2p0
+    args:
+    - train
+    - --config
+    - configs/grid36/sensitivity/full_multi_lambda_2p0.yaml
+    - --seed
+    - '42'
+    - --run-id
+    - full_lambda_2p0
+  - name: eval_full_lambda_2p0
+    checkpoint_from: train_full_lambda_2p0
+    args:
+    - evaluate
+    - --config
+    - configs/grid36/sensitivity/full_multi_lambda_2p0.yaml
+    - --eval-episodes
+    - '20'
+    - --workers
+    - '3'
+    - --run-id
+    - full_lambda_2p0
+  - name: train_full_risk_base_0p0
+    args:
+    - train
+    - --config
+    - configs/grid36/sensitivity/full_multi_risk_base_0p0.yaml
+    - --seed
+    - '42'
+    - --run-id
+    - full_risk_base_0p0
+  - name: eval_full_risk_base_0p0
+    checkpoint_from: train_full_risk_base_0p0
+    args:
+    - evaluate
+    - --config
+    - configs/grid36/sensitivity/full_multi_risk_base_0p0.yaml
+    - --eval-episodes
+    - '20'
+    - --workers
+    - '3'
+    - --run-id
+    - full_risk_base_0p0
+  - name: train_full_risk_base_1p0
+    args:
+    - train
+    - --config
+    - configs/grid36/sensitivity/full_multi_risk_base_1p0.yaml
+    - --seed
+    - '42'
+    - --run-id
+    - full_risk_base_1p0
+  - name: eval_full_risk_base_1p0
+    checkpoint_from: train_full_risk_base_1p0
+    args:
+    - evaluate
+    - --config
+    - configs/grid36/sensitivity/full_multi_risk_base_1p0.yaml
+    - --eval-episodes
+    - '20'
+    - --workers
+    - '3'
+    - --run-id
+    - full_risk_base_1p0
+  grid36-multiseed:
+  - name: train_traffic_only_seed42
+    args:
+    - train
+    - --config
+    - configs/grid36/objective/traffic_only.yaml
+    - --seed
+    - '42'
+    - --run-id
+    - traffic_only_seed42
+  - name: eval_traffic_only_seed42
+    checkpoint_from: train_traffic_only_seed42
+    args:
+    - evaluate
+    - --config
+    - configs/grid36/objective/traffic_only.yaml
+    - --eval-episodes
+    - '20'
+    - --seed
+    - '19'
+    - --workers
+    - '3'
+    - --run-id
+    - traffic_only_seed42
+  - name: train_traffic_only_seed142
+    args:
+    - train
+    - --config
+    - configs/grid36/objective/traffic_only.yaml
+    - --seed
+    - '142'
+    - --run-id
+    - traffic_only_seed142
+  - name: eval_traffic_only_seed142
+    checkpoint_from: train_traffic_only_seed142
+    args:
+    - evaluate
+    - --config
+    - configs/grid36/objective/traffic_only.yaml
+    - --eval-episodes
+    - '20'
+    - --seed
+    - '19'
+    - --workers
+    - '3'
+    - --run-id
+    - traffic_only_seed142
+  - name: train_traffic_only_seed242
+    args:
+    - train
+    - --config
+    - configs/grid36/objective/traffic_only.yaml
+    - --seed
+    - '242'
+    - --run-id
+    - traffic_only_seed242
+  - name: eval_traffic_only_seed242
+    checkpoint_from: train_traffic_only_seed242
+    args:
+    - evaluate
+    - --config
+    - configs/grid36/objective/traffic_only.yaml
+    - --eval-episodes
+    - '20'
+    - --seed
+    - '19'
+    - --workers
+    - '3'
+    - --run-id
+    - traffic_only_seed242
+  - name: train_traffic_only_seed342
+    args:
+    - train
+    - --config
+    - configs/grid36/objective/traffic_only.yaml
+    - --seed
+    - '342'
+    - --run-id
+    - traffic_only_seed342
+  - name: eval_traffic_only_seed342
+    checkpoint_from: train_traffic_only_seed342
+    args:
+    - evaluate
+    - --config
+    - configs/grid36/objective/traffic_only.yaml
+    - --eval-episodes
+    - '20'
+    - --seed
+    - '19'
+    - --workers
+    - '3'
+    - --run-id
+    - traffic_only_seed342
+  - name: train_traffic_only_seed442
+    args:
+    - train
+    - --config
+    - configs/grid36/objective/traffic_only.yaml
+    - --seed
+    - '442'
+    - --run-id
+    - traffic_only_seed442
+  - name: eval_traffic_only_seed442
+    checkpoint_from: train_traffic_only_seed442
+    args:
+    - evaluate
+    - --config
+    - configs/grid36/objective/traffic_only.yaml
+    - --eval-episodes
+    - '20'
+    - --seed
+    - '19'
+    - --workers
+    - '3'
+    - --run-id
+    - traffic_only_seed442
+  - name: train_multi_objective_seed42
+    args:
+    - train
+    - --config
+    - configs/grid36/base.yaml
+    - --seed
+    - '42'
+    - --run-id
+    - multi_objective_seed42
+  - name: eval_multi_objective_seed42
+    checkpoint_from: train_multi_objective_seed42
+    args:
+    - evaluate
+    - --config
+    - configs/grid36/base.yaml
+    - --eval-episodes
+    - '20'
+    - --seed
+    - '19'
+    - --workers
+    - '3'
+    - --run-id
+    - multi_objective_seed42
+  - name: train_multi_objective_seed142
+    args:
+    - train
+    - --config
+    - configs/grid36/base.yaml
+    - --seed
+    - '142'
+    - --run-id
+    - multi_objective_seed142
+  - name: eval_multi_objective_seed142
+    checkpoint_from: train_multi_objective_seed142
+    args:
+    - evaluate
+    - --config
+    - configs/grid36/base.yaml
+    - --eval-episodes
+    - '20'
+    - --seed
+    - '19'
+    - --workers
+    - '3'
+    - --run-id
+    - multi_objective_seed142
+  - name: train_multi_objective_seed242
+    args:
+    - train
+    - --config
+    - configs/grid36/base.yaml
+    - --seed
+    - '242'
+    - --run-id
+    - multi_objective_seed242
+  - name: eval_multi_objective_seed242
+    checkpoint_from: train_multi_objective_seed242
+    args:
+    - evaluate
+    - --config
+    - configs/grid36/base.yaml
+    - --eval-episodes
+    - '20'
+    - --seed
+    - '19'
+    - --workers
+    - '3'
+    - --run-id
+    - multi_objective_seed242
+  - name: train_multi_objective_seed342
+    args:
+    - train
+    - --config
+    - configs/grid36/base.yaml
+    - --seed
+    - '342'
+    - --run-id
+    - multi_objective_seed342
+  - name: eval_multi_objective_seed342
+    checkpoint_from: train_multi_objective_seed342
+    args:
+    - evaluate
+    - --config
+    - configs/grid36/base.yaml
+    - --eval-episodes
+    - '20'
+    - --seed
+    - '19'
+    - --workers
+    - '3'
+    - --run-id
+    - multi_objective_seed342
+  - name: train_multi_objective_seed442
+    args:
+    - train
+    - --config
+    - configs/grid36/base.yaml
+    - --seed
+    - '442'
+    - --run-id
+    - multi_objective_seed442
+  - name: eval_multi_objective_seed442
+    checkpoint_from: train_multi_objective_seed442
+    args:
+    - evaluate
+    - --config
+    - configs/grid36/base.yaml
+    - --eval-episodes
+    - '20'
+    - --seed
+    - '19'
+    - --workers
+    - '3'
+    - --run-id
+    - multi_objective_seed442
+  grid36-extreme-lambda:
+  - name: lambda_10
+    args:
+    - evaluate
+    - --config
+    - configs/grid36/sensitivity/full_multi_lambda_10p0.yaml
+    - --checkpoint
+    - models/grid36_lambda_sensitive/full_lambda_10p0.pt
+    - --run-id
+    - lambda_10
+  - name: lambda_50
+    args:
+    - evaluate
+    - --config
+    - configs/grid36/sensitivity/full_multi_lambda_50p0.yaml
+    - --checkpoint
+    - models/grid36_lambda_sensitive/full_lambda_50p0.pt
+    - --run-id
+    - lambda_50
+  - name: lambda_100
+    args:
+    - evaluate
+    - --config
+    - configs/grid36/sensitivity/full_multi_lambda_100p0.yaml
+    - --checkpoint
+    - models/grid36_lambda_sensitive/full_lambda_100p0.pt
+    - --run-id
+    - lambda_100
+  - name: lambda_200
+    args:
+    - evaluate
+    - --config
+    - configs/grid36/objective/emission_dominant.yaml
+    - --checkpoint
+    - models/grid36_lambda_sensitive/full_lambda_200p0.pt
+    - --run-id
+    - lambda_200

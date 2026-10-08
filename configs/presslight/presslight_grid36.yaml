@@ -1,0 +1,28 @@
+seed: 42
+device: auto
+paths:
+  emission_thresholds_json: configs/thresholds/grid36/baseline.json
+  sumo_cfg: data/grid36/truck_sensitive_grid36.sumocfg
+  net_xml: data/grid36/truck_sensitive_grid36.net.xml
+  base_add_xml: data/grid36/truck_sensitive_grid36.add.xml
+  intersection_groups_json: data/grid36/intersection_groups.json
+  presslight_add_xml: data/grid36/presslight_e2.add.xml
+  detector_map_json: data/grid36/presslight_detector_map.json
+  output_root: results/presslight/grid36
+  train_output_dir: results/training/presslight_grid36
+grouping:
+  mode: structural
+  canonicalize_rotation: true
+  allow_reflection: false
+pressure:
+  variant: strict
+dqn:
+  algorithm: dqn
+  target_update_interval: 200
+training:
+  total_episodes: 160
+  checkpoint_interval: 10
+  fixed_validation_enabled: true
+evaluation:
+  episodes: 20
+  seed: 19

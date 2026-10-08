@@ -1,0 +1,101 @@
+suites:
+  kunshan-spatial:
+  - name: kunshan_w100_mo
+    args:
+    - evaluate
+    - --network
+    - kunshan
+    - --config
+    - configs/kunshan/spatial_scale/kunshan_w100_mo.yaml
+    - --checkpoint
+    - models/kunshan_spatial/kunshan_w100_mo.pt
+    - --run-id
+    - kunshan_w100_mo
+  - name: kunshan_w100_to
+    args:
+    - evaluate
+    - --network
+    - kunshan
+    - --config
+    - configs/kunshan/spatial_scale/kunshan_w100_to.yaml
+    - --checkpoint
+    - models/kunshan_spatial/kunshan_w100_to.pt
+    - --run-id
+    - kunshan_w100_to
+  - name: kunshan_w300_m0
+    args:
+    - evaluate
+    - --network
+    - kunshan
+    - --config
+    - configs/kunshan/evaluation/kunshan_m0_traffic.yaml
+    - --checkpoint
+    - models/kunshan_spatial/kunshan_w300_m0.pt
+    - --run-id
+    - kunshan_w300_m0
+  - name: kunshan_w300_mo
+    args:
+    - evaluate
+    - --network
+    - kunshan
+    - --config
+    - configs/kunshan/base.yaml
+    - --checkpoint
+    - models/kunshan_spatial/kunshan_w300_mo.pt
+    - --run-id
+    - kunshan_w300_mo
+  - name: kunshan_w300_nox_dominant
+    args:
+    - evaluate
+    - --network
+    - kunshan
+    - --config
+    - configs/kunshan/spatial_scale/kunshan_w300_nox_dominant.yaml
+    - --checkpoint
+    - models/kunshan_spatial/kunshan_w300_nox_dominant.pt
+    - --run-id
+    - kunshan_w300_nox_dominant
+  - name: kunshan_w300_nox_only
+    args:
+    - evaluate
+    - --network
+    - kunshan
+    - --config
+    - configs/kunshan/spatial_scale/kunshan_w300_nox_only.yaml
+    - --checkpoint
+    - models/kunshan_spatial/kunshan_w300_nox_only.pt
+    - --run-id
+    - kunshan_w300_nox_only
+  - name: kunshan_w300_to
+    args:
+    - evaluate
+    - --network
+    - kunshan
+    - --config
+    - configs/kunshan/spatial_scale/kunshan_w300_to.yaml
+    - --checkpoint
+    - models/kunshan_spatial/kunshan_w300_to.pt
+    - --run-id
+    - kunshan_w300_to
+  - name: kunshan_w500_mo
+    args:
+    - evaluate
+    - --network
+    - kunshan
+    - --config
+    - configs/kunshan/spatial_scale/kunshan_w500_mo.yaml
+    - --checkpoint
+    - models/kunshan_spatial/kunshan_w500_mo.pt
+    - --run-id
+    - kunshan_w500_mo
+  - name: kunshan_w500_to
+    args:
+    - evaluate
+    - --network
+    - kunshan
+    - --config
+    - configs/kunshan/spatial_scale/kunshan_w500_to.yaml
+    - --checkpoint
+    - models/kunshan_spatial/kunshan_w500_to.pt
+    - --run-id
+    - kunshan_w500_to
