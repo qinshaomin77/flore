@@ -1,11 +1,13 @@
 # FLORE
 
+**中文** | [English](README.en.md)
+
 ## 目录
 
 - `code/`：Grid36 核心算法、训练、逐回合评估和窗口评估。
 - `code/kunshan/`：昆山空间尺度实现。观测范围、阈值 schema、随机种子规则与 Grid36 不同，保留独立实现以兼容原权重。
 - `code/presslight/`：PressLight 基线。
-- `configs/`：完整解析后的实验参数；`thresholds/` 保存标定输出。
+- `configs/`：完整解析后的实验参数，按 `grid36/`、`kunshan/`、`presslight/` 分类；同级的 `thresholds/` 保存各分类阈值。
 - `data/`：Grid36、昆山和排放因子，保持 SUMO 输入的相对引用。
 - `models/`：原始模型权重，未经重写；来源和 SHA256 见 `data/manifest.json`。
 - `scripts/`：标定、场景生成、批量实验、校验和汇总。
@@ -112,10 +114,9 @@ python scripts/plot_results.py --input results/summary.csv --metric avg_delay_s 
 
 `models/presslight/` 内为可信本项目的历史完整权重，评估这些文件需显式加 `--trusted-checkpoint`。新训练同时输出 `eval_checkpoint_ep_XXXX.pt`，可直接用于默认评估。
 
-本目录已初始化独立 Git 仓库（main 分支），添加 GitHub remote 后可同步。不要在原 mgmq_program 根目录执行 git add .。当前目录尚未关联 GitHub，也没有执行外部发布。
-
 本地验证详情见 VERIFICATION.md；机器可读报告位于 results/verification.json。
 
+## 场景生成与配置结构
 
 场景生成工具已统一，默认写入 `results/generated/`，不会覆盖分发数据：
 
@@ -132,3 +133,15 @@ Grid36 支持 `--kind train/evaluation/calibration/all`，涵盖 D20/D40/D50/D60
 配置按 `configs/grid36`、`configs/kunshan`、`configs/presslight` 分类，默认配置为各网络的 `base.yaml`。Grid36 标定配置位于 `grid36/calibration`；阈值统一位于 `configs/thresholds/grid36`、`configs/thresholds/kunshan`、`configs/thresholds/presslight`。实验清单分别位于 grid36/kunshan 的 `experiments.yaml`，批量入口自动查找；自定义清单可用 `--manifest`。重复配置与未使用的详细日志、历史全尺度标定、分位数阈值已移除。
 
 阈值目录 `configs/thresholds` 与 grid36、kunshan、presslight 配置目录同级，11 个阈值文件仅调整位置，内容保持一致。
+
+## 更新 GitHub
+
+项目仓库：[qinshaomin77/flore](https://github.com/qinshaomin77/flore)。在项目根目录执行以下命令发布本地修改：
+
+```powershell
+git add .
+git commit -m "Update FLORE"
+git push
+```
+
+修改分发输入后，提交前运行 `python scripts/check_project.py --update-manifest --hashes` 更新并核对资产清单。
