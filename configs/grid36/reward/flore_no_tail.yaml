@@ -1,3 +1,7 @@
+# Strategy family / 策略系列: FLORE
+# Experimental role / 实验角色: Proposed method / 提出方法；FLORE state + traffic–NOx reward；truck/NOx-risk information retained.
+# Variant / 扩展实验: flore_no_tail; supplemental variant, not an additional Table 3 strategy.
+# Actual settings / 实际设置: truck state=True; NOx-risk state=True; NOx reward enabled=True; objective_mode=multi_objective; lambda_e=1; risk_reward_mode=no_tail.
 ddqn:
   adam_beta1: 0.9
   adam_beta2: 0.999
@@ -98,7 +102,7 @@ log:
   parameter_log_interval: 10
   phase_step_log_interval_after_replay: 0
   q_step_log_interval_after_replay: 0
-  run_id: FLORE_no_tail
+  run_id: flore_no_tail
   save_best: true
   save_emission_step: false
   save_parameter_stats: false

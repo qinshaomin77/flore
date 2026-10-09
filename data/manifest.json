@@ -9167,259 +9167,259 @@
       "sha256": "f1ebdd9866ef26b5b04a5b40e3db26dcd346982f9045854064174d9d2ef89e92"
     },
     {
-      "path": "configs/grid36/base.yaml",
-      "bytes": 4276,
-      "sha256": "e21bcbda124df867c4d5bca75a60a3f79d7bcb08df37e22a0a56094fdcfb474d"
+      "path": "configs/grid36/calibration/gap_actuated_calibration.yaml",
+      "bytes": 4710,
+      "sha256": "d6559c046b01211e2af620fccefdea519c84feaa885d2051869b3231391a1a25"
     },
     {
-      "path": "configs/grid36/calibration/sumo_actuated_eval.yaml",
-      "bytes": 4263,
-      "sha256": "34b93186c01d838b94a82001ef44ac007c59cbd8d430f312df24e31c90640674"
+      "path": "configs/grid36/demand/flore_scenarios.yaml",
+      "bytes": 4616,
+      "sha256": "73552f1911069e9e742c56bcae2029e84412d155e9f4f33bccd0a8ba917d5290"
     },
     {
-      "path": "configs/grid36/demand/multi_objective_scenarios.yaml",
-      "bytes": 4310,
-      "sha256": "ea9a7f4ea2bfa37bc50ed61896439d0fd4146df61ddced06c237b7b6bb5e53c0"
-    },
-    {
-      "path": "configs/grid36/demand/traffic_only_scenarios.yaml",
-      "bytes": 4307,
-      "sha256": "a28f544919cc29af3f7b5703496d279e7c41e76532c5dc22322cc417ee256bb8"
+      "path": "configs/grid36/demand/flore_to_scenarios.yaml",
+      "bytes": 4635,
+      "sha256": "67147b4e058098c3ff002be2d1f071a3e4cb1871e592c80e4219d39b8b978d4a"
     },
     {
       "path": "configs/grid36/experiments.yaml",
-      "bytes": 23739,
-      "sha256": "bf630cc8d9143da29790fb78764ecc036101b73962d8b218c4bc27b4bd4708ff"
+      "bytes": 24314,
+      "sha256": "212b0acde925d00fad004c285a19c0be44d16f25eecf6b7dcc65082757c7e160"
     },
     {
-      "path": "configs/grid36/objective/emission_dominant.yaml",
-      "bytes": 4298,
-      "sha256": "ff09a6f18bc4df37fcbe37da1723716f7f341e6b6151a57f0cf4d862376da353"
+      "path": "configs/grid36/flore.yaml",
+      "bytes": 4607,
+      "sha256": "e2fdd378ca809677cdc9665df8ec732676bc893f6624709008cebe9b73dceaef"
     },
     {
-      "path": "configs/grid36/objective/m0_traffic.yaml",
-      "bytes": 4249,
-      "sha256": "b07232e908577909701053574e0c11fc389962a634b537d9104eed70617b1b74"
+      "path": "configs/grid36/flore_quickstart.yaml",
+      "bytes": 4717,
+      "sha256": "aedb9567cf7cd4b51f74715baf149621d1602661c5135d338c5da2b89d1f0e8c"
     },
     {
-      "path": "configs/grid36/objective/nox_only.yaml",
-      "bytes": 4280,
-      "sha256": "f3810b4f2582c2740eab3987f3d9804c5fb1a6d59d8e0d9be5717e3e65c5b6a0"
+      "path": "configs/grid36/objective/flore_emission_dominant.yaml",
+      "bytes": 4756,
+      "sha256": "a3b4ccea00864ff989becbddb080756dba6b904ad78fab27eb8e44fdc7586160"
     },
     {
-      "path": "configs/grid36/objective/traffic_only.yaml",
-      "bytes": 4289,
-      "sha256": "a11d87692b6bef7c0236afadd7d63ab7b214388bd3db99567b0f386d231d27e5"
+      "path": "configs/grid36/objective/flore_nox_only.yaml",
+      "bytes": 4720,
+      "sha256": "9616a260a22c402189a0a873011d1bdb1a5bed721dab93bf8eb363336a374b3a"
     },
     {
-      "path": "configs/grid36/quickstart.yaml",
-      "bytes": 4265,
-      "sha256": "f4ebc32e0e1867cfa7735e9f28f05804625eb7adc9e0a4024fe67d9b9d941232"
+      "path": "configs/grid36/objective/flore_to.yaml",
+      "bytes": 4626,
+      "sha256": "21851cd8e2d7880a01db0c2b80e143a79c3c10917c341d460307a64f41b2e199"
+    },
+    {
+      "path": "configs/grid36/objective/flore_ts.yaml",
+      "bytes": 4586,
+      "sha256": "cebb05077d3b819811726ad71bfa9983572c9223af882985384b25162d65d56d"
     },
     {
       "path": "configs/grid36/reward/flore_no_tail.yaml",
-      "bytes": 4280,
-      "sha256": "d3ed0378eaa14d0b74aed89367f4e42d19792a9af8a309be70307241cc820889"
+      "bytes": 4734,
+      "sha256": "ec7e1b6929d8098cdaf483fd2a7d58b5b9308d9c98ff12ea97d25633cedc9a3b"
     },
     {
       "path": "configs/grid36/reward/flore_sum_only.yaml",
-      "bytes": 4282,
-      "sha256": "70630fedf197e3087c687a67145616a24eb4c030f28f93bc1753f3dfe20f96f9"
+      "bytes": 4738,
+      "sha256": "9b440efbd60788c8bcfa886da4e8fdaf1ab83b7d0996f4469fac457ba715be26"
     },
     {
-      "path": "configs/grid36/sensitivity/full_multi_lambda_0p2.yaml",
-      "bytes": 4287,
-      "sha256": "ed5e9783143661530b5bcc994bd411e319380cf74a54904d53b90b97251d23e0"
+      "path": "configs/grid36/sensitivity/flore_lambda_0p2.yaml",
+      "bytes": 4738,
+      "sha256": "b391d53ed52a38d2732f099540b3ca4d13888ff3680f6bb6ff1ba6818306e0f2"
     },
     {
-      "path": "configs/grid36/sensitivity/full_multi_lambda_0p5.yaml",
-      "bytes": 4287,
-      "sha256": "a8235b5f1bf3fd8d31fde2863665585bcb26661063d068a825b77e2c74c6322f"
+      "path": "configs/grid36/sensitivity/flore_lambda_0p5.yaml",
+      "bytes": 4738,
+      "sha256": "8e1bdfa084981bff90412331f0d0d5e62bf5eede36ec349b970904e65e3da0d5"
     },
     {
-      "path": "configs/grid36/sensitivity/full_multi_lambda_0p8.yaml",
-      "bytes": 4287,
-      "sha256": "0f263d67efe0d5d33d4db03af180e6dc6fdf036195663bfbb05da25e0b574e5f"
+      "path": "configs/grid36/sensitivity/flore_lambda_0p8.yaml",
+      "bytes": 4738,
+      "sha256": "93f1f8dafb1666dabd16ac20b4056b463e327acde76bcf1f217653afe93ba413"
     },
     {
-      "path": "configs/grid36/sensitivity/full_multi_lambda_100p0.yaml",
-      "bytes": 4291,
-      "sha256": "0447e1565c279045972fc89f9702bea40821c131939aeb76915e0c659e0c2283"
+      "path": "configs/grid36/sensitivity/flore_lambda_100p0.yaml",
+      "bytes": 4746,
+      "sha256": "c9e927b55820547883b4ce557ce3fae9b2cac09d891e1358f8b6ed0d48b58129"
     },
     {
-      "path": "configs/grid36/sensitivity/full_multi_lambda_10p0.yaml",
-      "bytes": 4289,
-      "sha256": "de3b94dd1fb2545cebfd97e115065cc937332b76c81c1af0e779fefdb6ec379b"
+      "path": "configs/grid36/sensitivity/flore_lambda_10p0.yaml",
+      "bytes": 4742,
+      "sha256": "ac28da6f7cb939b4674b9eb310a27dc26e2903c0e45ae76f59dfbd91ba23167c"
     },
     {
-      "path": "configs/grid36/sensitivity/full_multi_lambda_1p0.yaml",
-      "bytes": 4287,
-      "sha256": "4ef0e6eb272901043cb027c23b79782fbb14cc9b5e26780e04acbf92ffa3b79a"
+      "path": "configs/grid36/sensitivity/flore_lambda_1p0.yaml",
+      "bytes": 4738,
+      "sha256": "4483edc1b5c6c6de6c47fc851bb5b9a38df9db9be75f10ab33abdd135a631a79"
     },
     {
-      "path": "configs/grid36/sensitivity/full_multi_lambda_1p2.yaml",
-      "bytes": 4287,
-      "sha256": "bed973a980602abc8ed29282b58084963947bca563c9e03121139c38ab6a3173"
+      "path": "configs/grid36/sensitivity/flore_lambda_1p2.yaml",
+      "bytes": 4738,
+      "sha256": "3b08c0169ce5f065c8385b51c1cb9be838d36c88ae7fce31ee0105b3b92eed0a"
     },
     {
-      "path": "configs/grid36/sensitivity/full_multi_lambda_2p0.yaml",
-      "bytes": 4287,
-      "sha256": "43dc78fe29bae73f2cc93b8ead89e8c898423ccc9e745a6e3fd84d047bb31c1e"
+      "path": "configs/grid36/sensitivity/flore_lambda_2p0.yaml",
+      "bytes": 4738,
+      "sha256": "1ff2876446e228fb01e9f896bdba0d67162b05784ad078097838c1d8fcc5925a"
     },
     {
-      "path": "configs/grid36/sensitivity/full_multi_lambda_50p0.yaml",
-      "bytes": 4289,
-      "sha256": "0cba1b552ec772fed0a53d4e9b9dd39ddd20e29068d3d1d104bcd822a8961017"
+      "path": "configs/grid36/sensitivity/flore_lambda_50p0.yaml",
+      "bytes": 4742,
+      "sha256": "0f8b6a5b61dd5c586771f55ab1c7d4d4dc9bf2b4d329c4b2e796ebfd91406591"
     },
     {
-      "path": "configs/grid36/sensitivity/full_multi_risk_base_0p0.yaml",
-      "bytes": 4273,
-      "sha256": "76b99976a537a557ed702b2aa99ed6e6e6a4c1f633344bf60a32005b9916ffdd"
+      "path": "configs/grid36/sensitivity/flore_reward_alpha_0p0.yaml",
+      "bytes": 4746,
+      "sha256": "13418abeedbfab12aeb0b460538b2e66c02b7a5eaa1312a79bb5806e5b5e06aa"
     },
     {
-      "path": "configs/grid36/sensitivity/full_multi_risk_base_1p0.yaml",
-      "bytes": 4273,
-      "sha256": "2c9dbf5a7ad2d87c5d9a459099af4f4cf6c987a5e2129291b7344db60c6de835"
+      "path": "configs/grid36/sensitivity/flore_reward_alpha_1p0.yaml",
+      "bytes": 4746,
+      "sha256": "db4bc05f966a94b9b602d6e4ed396f954029ce2eeca9cef4973b72eb002d4049"
     },
     {
-      "path": "configs/grid36/sensitivity/reward_alpha_0p0.yaml",
-      "bytes": 4299,
-      "sha256": "aea76856f84750779bbf315ca999907c1bfaa59776505418d08b7ecda9914f31"
+      "path": "configs/grid36/sensitivity/flore_risk_base_0p0.yaml",
+      "bytes": 4740,
+      "sha256": "8803dbe8e3aca383a3f95876f90a5150378a0391f0ef50771da01b3e714201ee"
     },
     {
-      "path": "configs/grid36/sensitivity/reward_alpha_1p0.yaml",
-      "bytes": 4299,
-      "sha256": "a80a937e79859dd4d84955a42d1521ed4919724ce4a2dea2c3330112b7c41dce"
+      "path": "configs/grid36/sensitivity/flore_risk_base_1p0.yaml",
+      "bytes": 4740,
+      "sha256": "22381e17ed14b8c5858d8099453b58dcd10d855eac59445c1b49a4e7c8cd17c8"
     },
     {
-      "path": "configs/kunshan/base.yaml",
-      "bytes": 4032,
-      "sha256": "b4abb387626c39af969facd946cc3dee16debfa8fd127fbebd3f2a1cd4adcae0"
+      "path": "configs/kunshan/baseline/gap_actuated.yaml",
+      "bytes": 4397,
+      "sha256": "6c8c2d3c4c47455c43b3804b87edc1604b243819158d3d21cbd6425de5133dbe"
     },
     {
-      "path": "configs/kunshan/baseline/kunshan_actuated_eval.yaml",
-      "bytes": 4084,
-      "sha256": "c2473ac299e24f185f7b7943a285f7882682dddf5d21185a7c8c613e21ded929"
+      "path": "configs/kunshan/calibration/gap_actuated_w100.yaml",
+      "bytes": 4557,
+      "sha256": "2828e1353a07609b2933b7d40bd376fe4f571f0df0de5100257aedfb88291209"
     },
     {
-      "path": "configs/kunshan/calibration/kunshan_actuated_w100.yaml",
-      "bytes": 4122,
-      "sha256": "837a6890002fbaa94eb45001b726c78ed79116ff592a0b65a4b2e414e3315a7e"
+      "path": "configs/kunshan/calibration/gap_actuated_w300.yaml",
+      "bytes": 4557,
+      "sha256": "71e49820bb92674966c6349be3358f4f086f34276a64a672f52ad229a7074b1b"
     },
     {
-      "path": "configs/kunshan/calibration/kunshan_actuated_w300.yaml",
-      "bytes": 4122,
-      "sha256": "0cfae54d56ea521e994ad359f22ada9de7b701a4937921952757d8e22cffb14e"
+      "path": "configs/kunshan/calibration/gap_actuated_w500.yaml",
+      "bytes": 4557,
+      "sha256": "92ef5d3b6bae6311818f27816dc390fdb5bfcc2ebd82369f0a33734890f4538b"
     },
     {
-      "path": "configs/kunshan/calibration/kunshan_actuated_w500.yaml",
-      "bytes": 4122,
-      "sha256": "2910d542f8391c496af3c0bd988e7162e7a24653b4dd8e0ce6614c8a218a1501"
-    },
-    {
-      "path": "configs/kunshan/evaluation/kunshan_m0_traffic.yaml",
-      "bytes": 4004,
-      "sha256": "30db0e596297973f73b7bee67b5eb3f503a169a347f8ca24a48c1b885244f2a5"
+      "path": "configs/kunshan/evaluation/flore_ts.yaml",
+      "bytes": 4346,
+      "sha256": "38bc2699d3d27161df6fd62e3825b985ba9ba5183a70eb003aedaf0925f11ff8"
     },
     {
       "path": "configs/kunshan/experiments.yaml",
-      "bytes": 2480,
-      "sha256": "87c8d71c45b529534f79dad746b032807a1b5bc08e9f03f16ecd4211dcb941c5"
+      "bytes": 2495,
+      "sha256": "c79fa8f1dd8f4c7ffa9b8402de1335b1e61e8dceb31811821c5e45a7e1eca790"
     },
     {
-      "path": "configs/kunshan/reward/kunshan_w300_no_tail.yaml",
-      "bytes": 4053,
-      "sha256": "eb04a3f343527266464fdca7950526389bb4b2ca457fde4a214428bbaf4e800d"
+      "path": "configs/kunshan/flore.yaml",
+      "bytes": 4354,
+      "sha256": "8d6e984ce25bf27cf286d3e42e67ac4b71aa19fc144f1ebf778e8a5874b640bb"
     },
     {
-      "path": "configs/kunshan/reward/kunshan_w300_sum_only.yaml",
-      "bytes": 4056,
-      "sha256": "f11602c1bd6f1d9155731d0793fcf1ca5fa4359f759ceef1c497405b77482901"
+      "path": "configs/kunshan/reward/flore_no_tail_w300.yaml",
+      "bytes": 4512,
+      "sha256": "92f9d2fd5f7877488a28d7e77b932de8d54cb1407a5d3f36fbb119d5b801ac75"
     },
     {
-      "path": "configs/kunshan/sensitivity/kunshan_lambda_0p2.yaml",
-      "bytes": 4024,
-      "sha256": "f401e75d676237b2d098c07968cdef4e719a1067575f942ac50f5c585c53f6a5"
+      "path": "configs/kunshan/reward/flore_sum_only_w300.yaml",
+      "bytes": 4517,
+      "sha256": "1af36d854fe9346c2a725c978dc671b1cb35d0de4db7c67e5a2cb3f0cac39099"
     },
     {
-      "path": "configs/kunshan/sensitivity/kunshan_lambda_0p5.yaml",
-      "bytes": 4024,
-      "sha256": "96998031fd2ce27246e3b728987a1f16f2ba26cbcfd6cf0a291ff6ce66c5c099"
+      "path": "configs/kunshan/sensitivity/flore_lambda_0p2.yaml",
+      "bytes": 4473,
+      "sha256": "e80b78b9a93e81b9987c0ca8a79a36b27e5d5b6b6c3911eb75611402dad044f9"
     },
     {
-      "path": "configs/kunshan/sensitivity/kunshan_lambda_0p8.yaml",
-      "bytes": 4024,
-      "sha256": "a8da21a2470d038e6c8714ab51daca228d30985b1535fcbc0ec2e62a0fabf947"
+      "path": "configs/kunshan/sensitivity/flore_lambda_0p5.yaml",
+      "bytes": 4473,
+      "sha256": "7bbb7cfca7804d87d2a9e950a5048d7b5c78ac82654023df1d4c8d527dadbfe5"
     },
     {
-      "path": "configs/kunshan/sensitivity/kunshan_lambda_1p0.yaml",
-      "bytes": 4024,
-      "sha256": "9b5d068f2fa7b3501a8a5158077c78ffddeb7ea3b2b78bd3db6d6baacb18fe31"
+      "path": "configs/kunshan/sensitivity/flore_lambda_0p8.yaml",
+      "bytes": 4473,
+      "sha256": "cdc054e1f82667e0db88b4d8a588f0116b5297898ac4f45f23cd29f89f61cf7d"
     },
     {
-      "path": "configs/kunshan/sensitivity/kunshan_lambda_1p2.yaml",
-      "bytes": 4024,
-      "sha256": "4f82e23102605fced76fc409653da2736f325fe6ce3a5f8447abdfad94f37876"
+      "path": "configs/kunshan/sensitivity/flore_lambda_1p0.yaml",
+      "bytes": 4473,
+      "sha256": "044cd7e80870b327ca9cbc8ccecbba86343c12660dcb15b23925bf2b049f5a03"
     },
     {
-      "path": "configs/kunshan/sensitivity/kunshan_lambda_2p0.yaml",
-      "bytes": 4024,
-      "sha256": "a635673db32412731dbc4c6a766f74e5798fe2606a0aa980c4b822f35c4b218d"
+      "path": "configs/kunshan/sensitivity/flore_lambda_1p2.yaml",
+      "bytes": 4473,
+      "sha256": "3e69a736103b40996c262c791b92182f7bebfa935ea879359392fb3cbce0cf11"
     },
     {
-      "path": "configs/kunshan/sensitivity/kunshan_reward_alpha_0p0.yaml",
-      "bytes": 4034,
-      "sha256": "46c146df3f24d61b563c26ebefeb87b26a9460bc79b79d6adf743f2b2f460f76"
+      "path": "configs/kunshan/sensitivity/flore_lambda_2p0.yaml",
+      "bytes": 4473,
+      "sha256": "0adaa7b93e0fd206f62551f0e86dd20662193c7ba4cc9df24aafb0a5bff48cd3"
     },
     {
-      "path": "configs/kunshan/sensitivity/kunshan_reward_alpha_1p0.yaml",
-      "bytes": 4034,
-      "sha256": "8a4692ec25c61494f87d9f8c2d3d73f0c91def38e85121f520ada7cfc55773e9"
+      "path": "configs/kunshan/sensitivity/flore_reward_alpha_0p0.yaml",
+      "bytes": 4485,
+      "sha256": "e4edd94601d0258aa73fb071db9f8af69a520679a268b9c6e183196b93bd3458"
     },
     {
-      "path": "configs/kunshan/spatial_scale/kunshan_w100_mo.yaml",
-      "bytes": 4032,
-      "sha256": "5c9a93c1560d7abf4b9d7a69817057f903c17c26de83e70265c596b6aa84a902"
+      "path": "configs/kunshan/sensitivity/flore_reward_alpha_1p0.yaml",
+      "bytes": 4485,
+      "sha256": "8c2d3ac64e6a74802b69f4401b80080a982360eee1be6fb0b523e23430bfd9db"
     },
     {
-      "path": "configs/kunshan/spatial_scale/kunshan_w100_to.yaml",
-      "bytes": 4031,
-      "sha256": "09f8f4e9cc01e273edf30b9a69d63021da3314c3f954e44553222c8ae1447dff"
+      "path": "configs/kunshan/spatial_scale/flore_nox_dominant_w300.yaml",
+      "bytes": 4495,
+      "sha256": "cfa53644c26a1a2434de1a1c16ea62823570ace8d6596414fabb68c7bfc66e1b"
     },
     {
-      "path": "configs/kunshan/spatial_scale/kunshan_w300_nox_dominant.yaml",
-      "bytes": 4042,
-      "sha256": "b6fbe45b00a3a62e22bc08a7e2e8e104ac1e909872b621319c30c4e7be85fead"
+      "path": "configs/kunshan/spatial_scale/flore_nox_only_w300.yaml",
+      "bytes": 4473,
+      "sha256": "c793af7a237c8c31e127dc48e55b666867881c0bf34401db9bfdea3b62cff518"
     },
     {
-      "path": "configs/kunshan/spatial_scale/kunshan_w300_nox_only.yaml",
-      "bytes": 4031,
-      "sha256": "46c7d018f42e27d5c8d5fd2bec7b7a5913b7b381e5df22ece636ac00a69cf6c5"
+      "path": "configs/kunshan/spatial_scale/flore_to_w100.yaml",
+      "bytes": 4375,
+      "sha256": "41ae1b0f13e70d87b4bc401d265dd1d41135ab41e7bdb89fe3412e7a41cf06ce"
     },
     {
-      "path": "configs/kunshan/spatial_scale/kunshan_w300_to.yaml",
-      "bytes": 4031,
-      "sha256": "873cde1baa4983103b31f727643030ddbbbd0d113994a99ae1cb1612ef26246c"
+      "path": "configs/kunshan/spatial_scale/flore_to_w300.yaml",
+      "bytes": 4375,
+      "sha256": "f7f4c2e78485baa82425ccb541c13c9498b6a58e87dd57169337debc4d8d5378"
     },
     {
-      "path": "configs/kunshan/spatial_scale/kunshan_w500_mo.yaml",
-      "bytes": 4032,
-      "sha256": "b2607963adcdff4ef51aee3af5625ce481e438e837e650dfe06570eac356c47e"
+      "path": "configs/kunshan/spatial_scale/flore_to_w500.yaml",
+      "bytes": 4375,
+      "sha256": "e0226750480d1681674ac862d5e8adc8d16ad149816b0c8213c9dadf0f56409a"
     },
     {
-      "path": "configs/kunshan/spatial_scale/kunshan_w500_to.yaml",
-      "bytes": 4031,
-      "sha256": "6c91fc49c0f063339ef636f40eb68fa443bc86656ce2f34dfa2b8d13f199a1f2"
+      "path": "configs/kunshan/spatial_scale/flore_w100.yaml",
+      "bytes": 4359,
+      "sha256": "f720e812c8e3246d82f114bb8e18ca3e0edd00f4b0f215814c7cb47e7533bf51"
+    },
+    {
+      "path": "configs/kunshan/spatial_scale/flore_w500.yaml",
+      "bytes": 4359,
+      "sha256": "c0b00ebe1c7264189b7a2151cce4fcf781c515f00b5a58efc0e204d9fb5124cc"
     },
     {
       "path": "configs/presslight/presslight_grid36.yaml",
-      "bytes": 866,
-      "sha256": "5afa12c147665ec83849b091763ae4e9ab0e18781eaba6e65ed2d9ea1ae84539"
+      "bytes": 1050,
+      "sha256": "6d67bea2d9f7e23dd2659baf8ea2bc88d378c084d042b4ee7ff47e72c0caaa8c"
     },
     {
-      "path": "configs/presslight/presslight_kunshan_freight_enhanced.yaml",
-      "bytes": 849,
-      "sha256": "171b2c3230f34c90271edfc1d04b9ca95f5f5e77082c1b79dbe2ec0a7195bfa4"
+      "path": "configs/presslight/presslight_kunshan.yaml",
+      "bytes": 1033,
+      "sha256": "1469665d14ec1e531aad35bfd27af25e5a32d96739daf1fd3a44dda10043d48a"
     },
     {
       "path": "configs/thresholds/grid36/baseline.json",

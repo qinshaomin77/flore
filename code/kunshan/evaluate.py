@@ -55,60 +55,63 @@ EVAL_FCD_PERIOD_S = 1.0
 
 EVAL_CASES = [
     {
-        "name": "kunshan_w100_to",
-        "config": "configs/kunshan/spatial_scale/kunshan_w100_to.yaml",
+        "name": "FLORE-TO_w100",
+        "config": "configs/kunshan/spatial_scale/flore_to_w100.yaml",
         "checkpoint": "models/kunshan_spatial/kunshan_w100_to.pt",
-        "run_id": "kunshan_w100_to",
+        "run_id": "FLORE-TO_w100",
     },
     {
-        "name": "kunshan_w100_mo",
-        "config": "configs/kunshan/spatial_scale/kunshan_w100_mo.yaml",
+        "name": "FLORE_w100",
+        "config": "configs/kunshan/spatial_scale/flore_w100.yaml",
         "checkpoint": "models/kunshan_spatial/kunshan_w100_mo.pt",
-        "run_id": "kunshan_w100_mo",
+        "run_id": "FLORE_w100",
     },
     {
-        "name": "kunshan_w300_to",
-        "config": "configs/kunshan/spatial_scale/kunshan_w300_to.yaml",
+        "name": "FLORE-TO_w300",
+        "config": "configs/kunshan/spatial_scale/flore_to_w300.yaml",
         "checkpoint": "models/kunshan_spatial/kunshan_w300_to.pt",
-        "run_id": "kunshan_w300_to",
+        "run_id": "FLORE-TO_w300",
     },
     {
-        "name": "kunshan_w300_mo",
-        "config": "configs/kunshan/base.yaml",
+        "name": "FLORE_w300",
+        "config": "configs/kunshan/flore.yaml",
         "checkpoint": "models/kunshan_spatial/kunshan_w300_mo.pt",
-        "run_id": "kunshan_w300_mo",
+        "run_id": "FLORE_w300",
     },
     {
-        "name": "kunshan_w300_m0",
-        "config": "configs/kunshan/evaluation/kunshan_m0_traffic.yaml",
+        "name": "FLORE-TS_w300",
+        "config": "configs/kunshan/evaluation/flore_ts.yaml",
         "checkpoint": "models/kunshan_spatial/kunshan_w300_m0.pt",
-        "run_id": "kunshan_w300_m0",
+        "run_id": "FLORE-TS_w300",
     },
     {
-        "name": "kunshan_w300_nox_only",
-        "config": "configs/kunshan/spatial_scale/kunshan_w300_nox_only.yaml",
+        "name": "FLORE_NOx-only_w300",
+        "config": "configs/kunshan/spatial_scale/flore_nox_only_w300.yaml",
         "checkpoint": "models/kunshan_spatial/kunshan_w300_nox_only.pt",
-        "run_id": "kunshan_w300_nox_only",
+        "run_id": "FLORE_NOx-only_w300",
     },
     {
-        "name": "kunshan_w300_nox_dominant",
-        "config": "configs/kunshan/spatial_scale/kunshan_w300_nox_dominant.yaml",
+        "name": "FLORE_NOx-dominant_w300",
+        "config": "configs/kunshan/spatial_scale/flore_nox_dominant_w300.yaml",
         "checkpoint": "models/kunshan_spatial/kunshan_w300_nox_dominant.pt",
-        "run_id": "kunshan_w300_nox_dominant",
+        "run_id": "FLORE_NOx-dominant_w300",
     },
     {
-        "name": "kunshan_w500_to",
-        "config": "configs/kunshan/spatial_scale/kunshan_w500_to.yaml",
+        "name": "FLORE-TO_w500",
+        "config": "configs/kunshan/spatial_scale/flore_to_w500.yaml",
         "checkpoint": "models/kunshan_spatial/kunshan_w500_to.pt",
-        "run_id": "kunshan_w500_to",
+        "run_id": "FLORE-TO_w500",
     },
     {
-        "name": "kunshan_w500_mo",
-        "config": "configs/kunshan/spatial_scale/kunshan_w500_mo.yaml",
+        "name": "FLORE_w500",
+        "config": "configs/kunshan/spatial_scale/flore_w500.yaml",
         "checkpoint": "models/kunshan_spatial/kunshan_w500_mo.pt",
-        "run_id": "kunshan_w500_mo",
+        "run_id": "FLORE_w500",
     },
 ]
+
+# Canonical display names; legacy case tokens remain accepted for existing commands.
+EVAL_CASE_ALIASES = {'kunshan_w100_to': 'FLORE-TO_w100', 'kunshan_w100_mo': 'FLORE_w100', 'kunshan_w300_to': 'FLORE-TO_w300', 'kunshan_w300_mo': 'FLORE_w300', 'kunshan_w300_m0': 'FLORE-TS_w300', 'kunshan_w500_to': 'FLORE-TO_w500', 'kunshan_w500_mo': 'FLORE_w500', 'kunshan_w300_nox_only': 'FLORE_NOx-only_w300', 'kunshan_w300_nox_dominant': 'FLORE_NOx-dominant_w300'}
 
 EVAL_PARAMETER_SOURCES_JSON = "data/kunshan/intersection_parameter_sources.json"
 STRUCTURE_PARAMETER_SOURCES = {
@@ -279,7 +282,7 @@ def load_mixed_control_sets(net_info: Any) -> tuple[list[str], list[str]]:
     if counts != {"standard": 22, "hetero_ew_shared_ls": 3, "other": 2}:
         raise ValueError(f"Unexpected Kunshan control split: {counts}")
     if set(actuated) != {"nt21", "nt40"}:
-        raise ValueError(f"Only nt21 and nt40 may remain SUMO-actuated, got {actuated}")
+        raise ValueError(f"Only nt21 and nt40 may remain Gap-actuated, got {actuated}")
     return controlled, actuated
 
 def load_checkpoint_for_kunshan(agent: MGMQAgentManager, checkpoint: str) -> Dict[str, Any]:
@@ -296,11 +299,12 @@ def load_checkpoint_for_kunshan(agent: MGMQAgentManager, checkpoint: str) -> Dic
 def parse_args() -> argparse.Namespace:
     case_names = [str(case["name"]) for case in EVAL_CASES]
     parser = argparse.ArgumentParser(
-        description="Evaluate Kunshan spatial-scale MGMQ-DDQN checkpoints."
+        description="Evaluate Kunshan spatial-scale FLORE checkpoints."
     )
     parser.add_argument(
         "--cases",
         nargs="+",
+        type=lambda value: EVAL_CASE_ALIASES.get(value, value),
         choices=case_names,
         default=case_names,
         help="Evaluation cases to run; defaults to all configured cases.",

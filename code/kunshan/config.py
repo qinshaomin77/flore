@@ -129,6 +129,7 @@ class RewardConfig:
     gamma: float = 0.99
     wait_time_scale_k: float = 10.0
 
+    # Internal reward tokens are retained: traffic_only = FLORE-TS/FLORE-TO; multi_objective = FLORE.
     objective_mode: str = "traffic_only"
 
 @dataclass
@@ -214,7 +215,7 @@ class DualHeadConfig:
 @dataclass
 class LogConfig:
     log_root: str = "results/training"
-    run_id: str = "mgmq_ddqn"
+    run_id: str = "flore"
     console_event_log: bool = True
     console_mode: str = "compact"  # full / compact / silent
     console_event_whitelist: tuple[str, ...] = (
@@ -477,6 +478,6 @@ def get_config(config_path: Optional[str] = None) -> MasterConfig:
     return cfg
 
 def make_run_id(base: str) -> str:
-    base = str(base or "mgmq_ddqn").strip()
+    base = str(base or "flore").strip()
     ts = time.strftime("%Y%m%d_%H%M%S")
     return f"{base}_{ts}"

@@ -40,9 +40,9 @@ Each run creates a unique result directory, trains for two 300-second episodes, 
 ## Training and evaluation
 
 ```powershell
-python run.py train --config configs/grid36/base.yaml --seed 42 --run-id grid36_flore_seed42
+python run.py train --config configs/grid36/flore.yaml --seed 42 --run-id grid36_flore_seed42
 python run.py evaluate --checkpoint models/grid36/multi_objective.pt --eval-episodes 20 --workers 3 --run-id flore
-python run.py train --network kunshan --config configs/kunshan/base.yaml --seed 42 --run-id kunshan_flore_seed42
+python run.py train --network kunshan --config configs/kunshan/flore.yaml --seed 42 --run-id kunshan_flore_seed42
 python run.py evaluate --network kunshan --checkpoint models/kunshan_spatial/kunshan_w300_mo.pt --eval-episodes 20 --parallel --max-workers 3 --run-id kunshan_flore
 ```
 
@@ -70,7 +70,7 @@ Each demand has 160 training scenarios with 4,200-second simulations. Default fi
 Grid36 calibration runs all-sedan scenarios under actuated control, saves `lane_step.csv`, and calculates P80 from positive NOx samples after warm-up separately for each demand, rounding upward. This preserves the original calibration rules.
 
 ```powershell
-python code/evaluate_actuated.py --config configs/grid36/calibration/sumo_actuated_eval.yaml --calibration-all --calibration-root data/grid36/calibration_sumocfg --calibration-output-root results/calibration/grid36 --eval-episodes 12 --parallel --max-workers 3
+python code/evaluate_actuated.py --config configs/grid36/calibration/gap_actuated_calibration.yaml --calibration-all --calibration-root data/grid36/calibration_sumocfg --calibration-output-root results/calibration/grid36 --eval-episodes 12 --parallel --max-workers 3
 python scripts/calibrate_nox_max.py --run-dir results/calibration/grid36 --output-dir results/calibration/grid36/thresholds --quantile 0.8 --warmup-seconds 300
 ```
 
@@ -79,9 +79,9 @@ Write calibration outputs to `results` for inspection before replacing distribut
 For Kunshan, collect w100, w300 and w500 separately:
 
 ```powershell
-python code/kunshan/evaluate_actuated.py --config configs/kunshan/calibration/kunshan_actuated_w100.yaml --calibration --eval-episodes 20 --parallel --log-root results/calibration/kunshan --run-id kunshan_actuated_w100
-python code/kunshan/evaluate_actuated.py --config configs/kunshan/calibration/kunshan_actuated_w300.yaml --calibration --eval-episodes 20 --parallel --log-root results/calibration/kunshan --run-id kunshan_actuated_w300
-python code/kunshan/evaluate_actuated.py --config configs/kunshan/calibration/kunshan_actuated_w500.yaml --calibration --eval-episodes 20 --parallel --log-root results/calibration/kunshan --run-id kunshan_actuated_w500
+python code/kunshan/evaluate_actuated.py --config configs/kunshan/calibration/gap_actuated_w100.yaml --calibration --eval-episodes 20 --parallel --log-root results/calibration/kunshan --run-id kunshan_actuated_w100
+python code/kunshan/evaluate_actuated.py --config configs/kunshan/calibration/gap_actuated_w300.yaml --calibration --eval-episodes 20 --parallel --log-root results/calibration/kunshan --run-id kunshan_actuated_w300
+python code/kunshan/evaluate_actuated.py --config configs/kunshan/calibration/gap_actuated_w500.yaml --calibration --eval-episodes 20 --parallel --log-root results/calibration/kunshan --run-id kunshan_actuated_w500
 python scripts/calibrate_spatial_nox_max.py --batch-dir results/calibration/kunshan --output-dir results/calibration/kunshan/thresholds
 ```
 
@@ -132,7 +132,7 @@ python scripts/check_project.py --update-manifest --hashes
 
 Grid36 supports `--kind train/evaluation/calibration/all` for D20/D40/D50/D60/D70/D80, with automatic training-route deduplication. Both generators support `--output-dir`. Kunshan supports `--check` for static validation without writing outputs.
 
-Configuration categories are `configs/grid36`, `configs/kunshan` and `configs/presslight`. Each network's main configuration is `base.yaml`. Grid36 calibration configurations are in `configs/grid36/calibration`. Thresholds are in the sibling directory `configs/thresholds`, organized under `grid36/`, `kunshan/` and `presslight/`. The 11 threshold files were relocated without changing their contents.
+Configuration categories are `configs/grid36`, `configs/kunshan` and `configs/presslight`. Each network's main configuration is `flore.yaml`. Grid36 calibration configurations are in `configs/grid36/calibration`. Thresholds are in the sibling directory `configs/thresholds`, organized under `grid36/`, `kunshan/` and `presslight/`. The 11 threshold files were relocated without changing their contents.
 
 The batch runner automatically discovers the Grid36 and Kunshan `experiments.yaml` files; use `--manifest` for a custom manifest. Duplicate configurations, unused detailed-log configurations, historical full-scale calibration configurations and unused quantile thresholds have been removed.
 
@@ -147,3 +147,7 @@ git push
 ```
 
 After intentionally changing distributed inputs, refresh and verify the asset manifest with `python scripts/check_project.py --update-manifest --hashes` before committing.
+
+## Strategy names
+
+Configuration names, comments and task labels follow the seven strategies in Table 3. See [strategy configuration guide](configs/README.md). FLORE-TS is the state ablation and FLORE-TO is the objective ablation. Additional NOx, reward and parameter variants are explicitly labeled as supplemental experiments.

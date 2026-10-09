@@ -2,7 +2,7 @@
 """
 evaluate.py
 ===========
-Independent batch evaluation entry point for MGMQ-DDQN.
+Independent batch evaluation entry point for FLORE.
 
 The evaluation logic stays deterministic: epsilon=0, masked argmax actions,
 no replay writes, and no network updates.

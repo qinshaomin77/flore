@@ -270,7 +270,7 @@ class SumoEnv:
         self.emission_recorder = emission_recorder
         # Optional read-only evaluator.  Keeping this as an explicit hook avoids
         # replacing methods at runtime and guarantees identical collection for
-        # RL, Max-Pressure and SUMO-actuated stepping paths.
+        # RL, Max-Pressure and Gap-actuated stepping paths.
         self.evaluation_logger = evaluation_logger
         if self.emission_recorder is None:
             if self.emission_lookup is None and env_cfg.emission_factor_csv:

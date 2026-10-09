@@ -3,7 +3,7 @@
 evaluation_window_logger.py
 ===========================
 
-Windowed evaluation collector for the MGMQ-DDQN SUMO project.
+Windowed evaluation collector for the FLORE SUMO project.
 
 The collector records:
 
@@ -16,7 +16,7 @@ The collector records:
 
 The class intentionally does not change state, reward, actions, or model
 parameters.  ``SumoEnv`` calls it through an explicit post-simulation-step
-hook shared by RL, Max-Pressure, and SUMO-actuated control.
+hook shared by RL, Max-Pressure, and Gap-actuated control.
 """
 
 from __future__ import annotations

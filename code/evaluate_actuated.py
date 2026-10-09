@@ -6,7 +6,7 @@ Evaluate a SUMO native actuated baseline without any RL agent or checkpoint.
 
 Example (does not write FCD unless --save-fcd is supplied):
 python code/evaluate_actuated.py ^
-  --config configs/grid36/calibration/sumo_actuated_eval.yaml ^
+  --config configs/grid36/calibration/gap_actuated_calibration.yaml ^
   --eval-episodes 20 ^
   --seed 19 ^
   --log-root results/evaluation/grid36/grid36 ^
@@ -122,7 +122,7 @@ def parse_args() -> argparse.Namespace:
     )
     parser.add_argument(
         "--config",
-        default="configs/grid36/calibration/sumo_actuated_eval.yaml",
+        default="configs/grid36/calibration/gap_actuated_calibration.yaml",
     )
     parser.add_argument("--sumocfg", default="")
     parser.add_argument("--net-xml", default="")
@@ -1124,7 +1124,7 @@ def main() -> None:
     args = parse_args()
     separator = "=" * 78
     _console(separator)
-    _console("Start evaluation: SUMO actuated")
+    _console("Start evaluation: Gap-actuated")
     _console(
         f"episodes     : {args.eval_episodes}, seed={args.seed}, "
         f"parallel={args.parallel_episodes}"
@@ -1138,7 +1138,7 @@ def main() -> None:
     total_wall_time_s = time.perf_counter() - run_started
     _console(separator)
     _console(
-        f"Evaluation completed: SUMO actuated, "
+        f"Evaluation completed: Gap-actuated, "
         f"total_time={total_wall_time_s:.1f}s "
         f"({_format_elapsed(total_wall_time_s)})"
     )

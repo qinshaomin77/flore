@@ -51,7 +51,7 @@ def resolve_path(path: Optional[str], *, must_exist: bool = False) -> Optional[s
     return str(p)
 
 def parse_args() -> argparse.Namespace:
-    p = argparse.ArgumentParser(description="Train strict-reproduction MGMQ-DDQN traffic signal control model.")
+    p = argparse.ArgumentParser(description="Train strict-reproduction FLORE traffic signal control model.")
     p.add_argument("--config", type=str, default=None)
     p.add_argument("--sumocfg", type=str, default=None)
     p.add_argument("--net-xml", type=str, default=None)

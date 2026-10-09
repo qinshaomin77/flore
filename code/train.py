@@ -2,7 +2,7 @@
 """
 train.py
 ========
-MGMQ-DDQN 复现版训练入口。
+FLORE 复现版训练入口。
 
 流程
 ----
@@ -52,7 +52,7 @@ def resolve_path(path: Optional[str], *, must_exist: bool = False) -> Optional[s
 
 
 def parse_args() -> argparse.Namespace:
-    p = argparse.ArgumentParser(description="Train strict-reproduction MGMQ-DDQN traffic signal control model.")
+    p = argparse.ArgumentParser(description="Train strict-reproduction FLORE traffic signal control model.")
     p.add_argument("--config", type=str, default=None)
     p.add_argument("--sumocfg", type=str, default=None)
     p.add_argument("--scenario-sumocfg-dir", type=str, default=None)

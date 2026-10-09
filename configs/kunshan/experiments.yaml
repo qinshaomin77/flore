@@ -1,101 +1,102 @@
+# Strategy names follow Table 3; controller CLI tokens and model filenames retain compatibility.
 suites:
   kunshan-spatial:
-  - name: kunshan_w100_mo
+  - name: FLORE_w100
     args:
     - evaluate
     - --network
     - kunshan
     - --config
-    - configs/kunshan/spatial_scale/kunshan_w100_mo.yaml
+    - configs/kunshan/spatial_scale/flore_w100.yaml
     - --checkpoint
     - models/kunshan_spatial/kunshan_w100_mo.pt
     - --run-id
-    - kunshan_w100_mo
-  - name: kunshan_w100_to
+    - FLORE_w100
+  - name: FLORE-TO_w100
     args:
     - evaluate
     - --network
     - kunshan
     - --config
-    - configs/kunshan/spatial_scale/kunshan_w100_to.yaml
+    - configs/kunshan/spatial_scale/flore_to_w100.yaml
     - --checkpoint
     - models/kunshan_spatial/kunshan_w100_to.pt
     - --run-id
-    - kunshan_w100_to
-  - name: kunshan_w300_m0
+    - FLORE-TO_w100
+  - name: FLORE-TS_w300
     args:
     - evaluate
     - --network
     - kunshan
     - --config
-    - configs/kunshan/evaluation/kunshan_m0_traffic.yaml
+    - configs/kunshan/evaluation/flore_ts.yaml
     - --checkpoint
     - models/kunshan_spatial/kunshan_w300_m0.pt
     - --run-id
-    - kunshan_w300_m0
-  - name: kunshan_w300_mo
+    - FLORE-TS_w300
+  - name: FLORE_w300
     args:
     - evaluate
     - --network
     - kunshan
     - --config
-    - configs/kunshan/base.yaml
+    - configs/kunshan/flore.yaml
     - --checkpoint
     - models/kunshan_spatial/kunshan_w300_mo.pt
     - --run-id
-    - kunshan_w300_mo
-  - name: kunshan_w300_nox_dominant
+    - FLORE_w300
+  - name: FLORE_w300_nox_dominant
     args:
     - evaluate
     - --network
     - kunshan
     - --config
-    - configs/kunshan/spatial_scale/kunshan_w300_nox_dominant.yaml
+    - configs/kunshan/spatial_scale/flore_nox_dominant_w300.yaml
     - --checkpoint
     - models/kunshan_spatial/kunshan_w300_nox_dominant.pt
     - --run-id
-    - kunshan_w300_nox_dominant
-  - name: kunshan_w300_nox_only
+    - FLORE_w300_nox_dominant
+  - name: FLORE_w300_nox_only
     args:
     - evaluate
     - --network
     - kunshan
     - --config
-    - configs/kunshan/spatial_scale/kunshan_w300_nox_only.yaml
+    - configs/kunshan/spatial_scale/flore_nox_only_w300.yaml
     - --checkpoint
     - models/kunshan_spatial/kunshan_w300_nox_only.pt
     - --run-id
-    - kunshan_w300_nox_only
-  - name: kunshan_w300_to
+    - FLORE_w300_nox_only
+  - name: FLORE-TO_w300
     args:
     - evaluate
     - --network
     - kunshan
     - --config
-    - configs/kunshan/spatial_scale/kunshan_w300_to.yaml
+    - configs/kunshan/spatial_scale/flore_to_w300.yaml
     - --checkpoint
     - models/kunshan_spatial/kunshan_w300_to.pt
     - --run-id
-    - kunshan_w300_to
-  - name: kunshan_w500_mo
+    - FLORE-TO_w300
+  - name: FLORE_w500
     args:
     - evaluate
     - --network
     - kunshan
     - --config
-    - configs/kunshan/spatial_scale/kunshan_w500_mo.yaml
+    - configs/kunshan/spatial_scale/flore_w500.yaml
     - --checkpoint
     - models/kunshan_spatial/kunshan_w500_mo.pt
     - --run-id
-    - kunshan_w500_mo
-  - name: kunshan_w500_to
+    - FLORE_w500
+  - name: FLORE-TO_w500
     args:
     - evaluate
     - --network
     - kunshan
     - --config
-    - configs/kunshan/spatial_scale/kunshan_w500_to.yaml
+    - configs/kunshan/spatial_scale/flore_to_w500.yaml
     - --checkpoint
     - models/kunshan_spatial/kunshan_w500_to.pt
     - --run-id
-    - kunshan_w500_to
+    - FLORE-TO_w500

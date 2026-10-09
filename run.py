@@ -23,7 +23,7 @@ def main():
             flags.extend([name, value])
     flags = list(extra)
     engine = 'code' if args.network == 'grid36' else 'code/kunshan'
-    config = f'configs/{args.network}/base.yaml'
+    config = f'configs/{args.network}/flore.yaml'
     if args.command == 'doctor':
         call('scripts/check_project.py', flags)
     elif args.command == 'quickstart':
@@ -45,11 +45,11 @@ def main():
         call('code/evaluate_windowed.py', flags)
     elif args.command == 'baseline':
         b = argparse.ArgumentParser()
-        b.add_argument('--controller', choices=['actuated','max_pressure','truck_weighted_max_pressure'], required=True)
+        b.add_argument('--controller', choices=['actuated','max_pressure','truck_weighted_max_pressure'], required=True, help='Gap-actuated=actuated; Max-Pressure=max_pressure; MaxPressure-TW=truck_weighted_max_pressure')
         ctrl, flags = b.parse_known_args(flags)
         if args.network == 'kunshan':
             if ctrl.controller == 'actuated':
-                default(flags, '--config', 'configs/kunshan/baseline/kunshan_actuated_eval.yaml')
+                default(flags, '--config', 'configs/kunshan/baseline/gap_actuated.yaml')
                 call('code/kunshan/evaluate_actuated.py', flags)
             else:
                 default(flags, '--config', config)
@@ -58,7 +58,7 @@ def main():
         else:
             default(flags, '--controller', ctrl.controller)
             default(flags, '--config', config)
-            default(flags, '--case-name', ctrl.controller)
+            default(flags, '--case-name', {'actuated':'Gap-actuated','max_pressure':'Max-Pressure','truck_weighted_max_pressure':'MaxPressure-TW'}[ctrl.controller])
             if ctrl.controller != 'actuated':
                 default(flags, '--detector-map', 'data/grid36/maxpressure_detector_map.json')
                 default(flags, '--sumocfg', 'data/grid36/truck_sensitive_grid36_maxpressure.sumocfg')
@@ -69,7 +69,7 @@ def main():
     else:
         default(flags, '--base-config', config)
         default(flags, '--presslight-config', 'configs/presslight/presslight_' +
-                ('grid36' if args.network == 'grid36' else 'kunshan_freight_enhanced') + '.yaml')
+                args.network + '.yaml')
         script = 'train_presslight.py' if args.command == 'presslight-train' else 'evaluate_presslight.py'
         call('code/presslight/' + script, flags)
 

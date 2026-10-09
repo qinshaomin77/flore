@@ -23,3 +23,5 @@
 配置分类精简：configs 顶层仅含 grid36、kunshan、presslight；72 个文件整理为 62 个（49 个运行 YAML、2 个实验清单 YAML、11 个阈值 JSON）。49 个运行配置加载、8 个套件的 83 项任务引用与 dry-run、32 个模型兼容性、批量与标定回归均通过。Grid36 原自适应标定配置迁入 grid36/calibration，并保留调用能力。
 
 配置迁移后，Grid36 与 Kunshan 均再次完成 2 个短训练回合、106 次优化器更新及 1 个新权重评估回合；最终输入引用与资产哈希检查通过。
+
+2026-10-09 策略名称统一：46 个配置重命名，注释与实验任务采用表 3 的 Gap-actuated、Max-Pressure、MaxPressure-TW、PressLight、FLORE-TS、FLORE-TO、FLORE。除输出标签外，学习与仿真参数保持一致；32 个权重兼容性、8 个套件的 83 项任务及依赖关系、默认入口和批量/标定测试通过。

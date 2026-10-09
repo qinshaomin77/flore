@@ -2,7 +2,7 @@
 """
 buffer.py
 =========
-Replay memory for MGMQ-DDQN.
+Replay memory for FLORE.
 
 The memory stores full-network transitions because the MGMQ network needs
 neighbor embeddings from the same simulation decision step.

@@ -2,7 +2,7 @@
 """
 obs_reward.py
 =============
-MGMQ-DDQN 状态构建 + action mask + reward。
+FLORE 状态构建 + action mask + reward。
 
 默认保持 MGMQ 复现版 4 维 lane 输入：
     [demand, queue, wait_vwt, lane_phase]

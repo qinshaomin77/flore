@@ -1,4 +1,4 @@
-"""Run named, explicit experiment suites. Never silently replace existing results."""
+"""Run Table 3 strategy suites. Task names use Gap-actuated, Max-Pressure, MaxPressure-TW, PressLight, FLORE-TS, FLORE-TO and FLORE; controller tokens remain backward compatible. Never silently replace existing results."""
 import argparse
 import datetime
 import hashlib

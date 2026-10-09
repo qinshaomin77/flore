@@ -2,7 +2,7 @@
 """
 logger.py
 =========
-MGMQ-DDQN 复现版日志模块。
+FLORE 复现版日志模块。
 
 边界
 ----
@@ -87,7 +87,7 @@ def _safe_mean(values: Sequence[float], default: float = 0.0) -> float:
 
 
 class TrainingLogger:
-    """MGMQ-DDQN 训练日志器。"""
+    """FLORE 训练日志器。"""
 
     REWARD_STEP_FIELDS = [
         "episode",

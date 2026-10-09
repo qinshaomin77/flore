@@ -5,48 +5,48 @@ evaluate_windowed.py
 
 Unified windowed evaluation entry point for:
 
-* deterministic MGMQ-DDQN (``--controller rl``);
+* deterministic FLORE (``--controller rl``);
 * SUMO native actuated control (``--controller actuated``);
 * E2 movement Max-Pressure (``--controller max_pressure``);
-* fixed truck-weighted Max-Pressure
+* MaxPressure-TW (fixed truck-weighted pressure)
   (``--controller truck_weighted_max_pressure``).
 
 Examples
 --------
 
-RL traffic-only::
+FLORE-TS (traffic state + traffic reward)::
 
     python code/evaluate_windowed.py \
       --controller rl \
-      --case-name m0_traffic \
+      --case-name FLORE-TS \
       --reward-mode traffic_only \
-      --config configs/grid36/objective/m0_traffic.yaml \
+      --config configs/grid36/objective/flore_ts.yaml \
       --checkpoint models/grid36/m0_traffic.pt \
       --eval-episodes 20 --seed 19 --workers 3
 
-RL multi-objective::
+FLORE (FLORE state + traffic–NOx reward)::
 
     python code/evaluate_windowed.py \
       --controller rl \
-      --case-name multi_objective \
+      --case-name FLORE \
       --reward-mode multi_objective \
-      --config configs/grid36/base.yaml \
+      --config configs/grid36/flore.yaml \
       --checkpoint models/grid36/multi_objective.pt \
       --eval-episodes 20 --seed 19 --workers 3
 
-SUMO actuated::
+Gap-actuated::
 
     python code/evaluate_windowed.py \
       --controller actuated \
-      --case-name actuated \
-      --config configs/grid36/calibration/sumo_actuated_eval.yaml \
+      --case-name Gap-actuated \
+      --config configs/grid36/calibration/gap_actuated_calibration.yaml \
       --eval-episodes 20 --seed 19 --workers 3
 
 Max-Pressure::
 
     python code/evaluate_windowed.py \
       --controller max_pressure \
-      --case-name max_pressure \
+      --case-name Max-Pressure \
       --detector-map data/grid36/maxpressure_detector_map.json \
       --eval-episodes 20 --seed 19 --workers 3
 
@@ -385,7 +385,7 @@ def resolve_path(
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
         description=(
-            "Run RL, SUMO actuated, or Max-Pressure evaluation with "
+            "Run RL, Gap-actuated, or Max-Pressure evaluation with "
             "10-second and 300-second outputs."
         )
     )
@@ -403,7 +403,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--reward-mode",
         default="",
-        help="Metadata label, e.g. traffic_only or multi_objective.",
+        help="Compatibility reward label: traffic_only for FLORE-TS/FLORE-TO; multi_objective for FLORE.",
     )
     parser.add_argument("--config", default="")
     parser.add_argument(
@@ -418,7 +418,7 @@ def parse_args() -> argparse.Namespace:
         default=str(DEFAULT_RL_CHECKPOINT),
         help=(
             "RL checkpoint path. Defaults to "
-            "models/grid36/ddqn_multi_objective.pt."
+            "models/grid36/multi_objective.pt."
         ),
     )
     parser.add_argument("--sumocfg", default="")
@@ -2400,7 +2400,7 @@ def main() -> None:
     metadata = {
         "controller": args.controller,
         "short_name": (
-            "TW-MP"
+            "MaxPressure-TW"
             if args.controller == "truck_weighted_max_pressure"
             else ""
         ),

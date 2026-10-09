@@ -1,33 +1,34 @@
+# Strategy names follow Table 3; controller CLI tokens and model filenames retain compatibility.
 suites:
   grid36-main:
-  - name: flore
+  - name: FLORE
     args:
     - evaluate
     - --config
-    - configs/grid36/base.yaml
+    - configs/grid36/flore.yaml
     - --checkpoint
     - models/grid36/multi_objective.pt
     - --run-id
-    - flore
-  - name: traffic_only
+    - FLORE
+  - name: FLORE-TO
     args:
     - evaluate
     - --config
-    - configs/grid36/objective/traffic_only.yaml
+    - configs/grid36/objective/flore_to.yaml
     - --checkpoint
     - models/grid36/traffic_only.pt
     - --run-id
-    - traffic_only
-  - name: m0
+    - FLORE-TO
+  - name: FLORE-TS
     args:
     - evaluate
     - --config
-    - configs/grid36/objective/m0_traffic.yaml
+    - configs/grid36/objective/flore_ts.yaml
     - --checkpoint
     - models/grid36/m0_traffic.pt
     - --run-id
-    - m0
-  - name: actuated
+    - FLORE-TS
+  - name: Gap-actuated
     args:
     - baseline
     - --controller
@@ -38,7 +39,7 @@ suites:
     - '3'
     - --output-root
     - results/evaluation/baselines
-  - name: max_pressure
+  - name: Max-Pressure
     args:
     - baseline
     - --controller
@@ -49,7 +50,7 @@ suites:
     - '3'
     - --output-root
     - results/evaluation/baselines
-  - name: truck_weighted_max_pressure
+  - name: MaxPressure-TW
     args:
     - baseline
     - --controller
@@ -61,7 +62,7 @@ suites:
     - --output-root
     - results/evaluation/baselines
   grid36-ablation:
-  - name: no_tail
+  - name: FLORE_no_tail
     args:
     - evaluate
     - --config
@@ -69,8 +70,8 @@ suites:
     - --checkpoint
     - models/grid36/no_tail.pt
     - --run-id
-    - no_tail
-  - name: sum_only
+    - FLORE_no_tail
+  - name: FLORE_sum_only
     args:
     - evaluate
     - --config
@@ -78,170 +79,170 @@ suites:
     - --checkpoint
     - models/grid36/sum_only.pt
     - --run-id
-    - sum_only
+    - FLORE_sum_only
   train-grid36-demand:
-  - name: multi_objective_d20
+  - name: FLORE_d20
     args:
     - train
     - --config
-    - configs/grid36/base.yaml
+    - configs/grid36/flore.yaml
     - --scenario-sumocfg-dir
     - data/grid36/train_sumocfg/D20
     - --thresholds-json
     - configs/thresholds/grid36/D20.json
     - --run-id
-    - multi_objective_d20
+    - FLORE_d20
     - --seed
     - '42'
-  - name: traffic_only_d20
+  - name: FLORE-TO_d20
     args:
     - train
     - --config
-    - configs/grid36/objective/traffic_only.yaml
+    - configs/grid36/objective/flore_to.yaml
     - --scenario-sumocfg-dir
     - data/grid36/train_sumocfg/D20
     - --thresholds-json
     - configs/thresholds/grid36/D20.json
     - --run-id
-    - traffic_only_d20
+    - FLORE-TO_d20
     - --seed
     - '42'
-  - name: multi_objective_d40
+  - name: FLORE_d40
     args:
     - train
     - --config
-    - configs/grid36/base.yaml
+    - configs/grid36/flore.yaml
     - --scenario-sumocfg-dir
     - data/grid36/train_sumocfg/D40
     - --thresholds-json
     - configs/thresholds/grid36/D40.json
     - --run-id
-    - multi_objective_d40
+    - FLORE_d40
     - --seed
     - '42'
-  - name: traffic_only_d40
+  - name: FLORE-TO_d40
     args:
     - train
     - --config
-    - configs/grid36/objective/traffic_only.yaml
+    - configs/grid36/objective/flore_to.yaml
     - --scenario-sumocfg-dir
     - data/grid36/train_sumocfg/D40
     - --thresholds-json
     - configs/thresholds/grid36/D40.json
     - --run-id
-    - traffic_only_d40
+    - FLORE-TO_d40
     - --seed
     - '42'
-  - name: multi_objective_d50
+  - name: FLORE_d50
     args:
     - train
     - --config
-    - configs/grid36/base.yaml
+    - configs/grid36/flore.yaml
     - --scenario-sumocfg-dir
     - data/grid36/train_sumocfg/D50
     - --thresholds-json
     - configs/thresholds/grid36/D50.json
     - --run-id
-    - multi_objective_d50
+    - FLORE_d50
     - --seed
     - '42'
-  - name: traffic_only_d50
+  - name: FLORE-TO_d50
     args:
     - train
     - --config
-    - configs/grid36/objective/traffic_only.yaml
+    - configs/grid36/objective/flore_to.yaml
     - --scenario-sumocfg-dir
     - data/grid36/train_sumocfg/D50
     - --thresholds-json
     - configs/thresholds/grid36/D50.json
     - --run-id
-    - traffic_only_d50
+    - FLORE-TO_d50
     - --seed
     - '42'
-  - name: multi_objective_d60
+  - name: FLORE_d60
     args:
     - train
     - --config
-    - configs/grid36/base.yaml
+    - configs/grid36/flore.yaml
     - --scenario-sumocfg-dir
     - data/grid36/train_sumocfg/D60
     - --thresholds-json
     - configs/thresholds/grid36/D60.json
     - --run-id
-    - multi_objective_d60
+    - FLORE_d60
     - --seed
     - '42'
-  - name: traffic_only_d60
+  - name: FLORE-TO_d60
     args:
     - train
     - --config
-    - configs/grid36/objective/traffic_only.yaml
+    - configs/grid36/objective/flore_to.yaml
     - --scenario-sumocfg-dir
     - data/grid36/train_sumocfg/D60
     - --thresholds-json
     - configs/thresholds/grid36/D60.json
     - --run-id
-    - traffic_only_d60
+    - FLORE-TO_d60
     - --seed
     - '42'
-  - name: multi_objective_d70
+  - name: FLORE_d70
     args:
     - train
     - --config
-    - configs/grid36/base.yaml
+    - configs/grid36/flore.yaml
     - --scenario-sumocfg-dir
     - data/grid36/train_sumocfg/D70
     - --thresholds-json
     - configs/thresholds/grid36/D70.json
     - --run-id
-    - multi_objective_d70
+    - FLORE_d70
     - --seed
     - '42'
-  - name: traffic_only_d70
+  - name: FLORE-TO_d70
     args:
     - train
     - --config
-    - configs/grid36/objective/traffic_only.yaml
+    - configs/grid36/objective/flore_to.yaml
     - --scenario-sumocfg-dir
     - data/grid36/train_sumocfg/D70
     - --thresholds-json
     - configs/thresholds/grid36/D70.json
     - --run-id
-    - traffic_only_d70
+    - FLORE-TO_d70
     - --seed
     - '42'
-  - name: multi_objective_d80
+  - name: FLORE_d80
     args:
     - train
     - --config
-    - configs/grid36/base.yaml
+    - configs/grid36/flore.yaml
     - --scenario-sumocfg-dir
     - data/grid36/train_sumocfg/D80
     - --thresholds-json
     - configs/thresholds/grid36/D80.json
     - --run-id
-    - multi_objective_d80
+    - FLORE_d80
     - --seed
     - '42'
-  - name: traffic_only_d80
+  - name: FLORE-TO_d80
     args:
     - train
     - --config
-    - configs/grid36/objective/traffic_only.yaml
+    - configs/grid36/objective/flore_to.yaml
     - --scenario-sumocfg-dir
     - data/grid36/train_sumocfg/D80
     - --thresholds-json
     - configs/thresholds/grid36/D80.json
     - --run-id
-    - traffic_only_d80
+    - FLORE-TO_d80
     - --seed
     - '42'
   grid36-demand:
-  - name: multi_objective_d20
+  - name: FLORE_d20
     args:
     - window
     - --config
-    - configs/grid36/demand/multi_objective_scenarios.yaml
+    - configs/grid36/demand/flore_scenarios.yaml
     - --checkpoint
     - models/grid36_demand/multi_objective_d20.pt
     - --sumocfg-dir
@@ -264,11 +265,11 @@ suites:
     - results/evaluation/demand
     - --output-name
     - multi_objective_d20
-  - name: traffic_only_d20
+  - name: FLORE-TO_d20
     args:
     - window
     - --config
-    - configs/grid36/demand/traffic_only_scenarios.yaml
+    - configs/grid36/demand/flore_to_scenarios.yaml
     - --checkpoint
     - models/grid36_demand/traffic_only_d20.pt
     - --sumocfg-dir
@@ -291,11 +292,11 @@ suites:
     - results/evaluation/demand
     - --output-name
     - traffic_only_d20
-  - name: multi_objective_d40
+  - name: FLORE_d40
     args:
     - window
     - --config
-    - configs/grid36/demand/multi_objective_scenarios.yaml
+    - configs/grid36/demand/flore_scenarios.yaml
     - --checkpoint
     - models/grid36_demand/multi_objective_d40.pt
     - --sumocfg-dir
@@ -318,11 +319,11 @@ suites:
     - results/evaluation/demand
     - --output-name
     - multi_objective_d40
-  - name: traffic_only_d40
+  - name: FLORE-TO_d40
     args:
     - window
     - --config
-    - configs/grid36/demand/traffic_only_scenarios.yaml
+    - configs/grid36/demand/flore_to_scenarios.yaml
     - --checkpoint
     - models/grid36_demand/traffic_only_d40.pt
     - --sumocfg-dir
@@ -345,11 +346,11 @@ suites:
     - results/evaluation/demand
     - --output-name
     - traffic_only_d40
-  - name: multi_objective_d50
+  - name: FLORE_d50
     args:
     - window
     - --config
-    - configs/grid36/demand/multi_objective_scenarios.yaml
+    - configs/grid36/demand/flore_scenarios.yaml
     - --checkpoint
     - models/grid36_demand/multi_objective_d50.pt
     - --sumocfg-dir
@@ -372,11 +373,11 @@ suites:
     - results/evaluation/demand
     - --output-name
     - multi_objective_d50
-  - name: traffic_only_d50
+  - name: FLORE-TO_d50
     args:
     - window
     - --config
-    - configs/grid36/demand/traffic_only_scenarios.yaml
+    - configs/grid36/demand/flore_to_scenarios.yaml
     - --checkpoint
     - models/grid36_demand/traffic_only_d50.pt
     - --sumocfg-dir
@@ -399,11 +400,11 @@ suites:
     - results/evaluation/demand
     - --output-name
     - traffic_only_d50
-  - name: multi_objective_d60
+  - name: FLORE_d60
     args:
     - window
     - --config
-    - configs/grid36/demand/multi_objective_scenarios.yaml
+    - configs/grid36/demand/flore_scenarios.yaml
     - --checkpoint
     - models/grid36_demand/multi_objective_d60.pt
     - --sumocfg-dir
@@ -426,11 +427,11 @@ suites:
     - results/evaluation/demand
     - --output-name
     - multi_objective_d60
-  - name: traffic_only_d60
+  - name: FLORE-TO_d60
     args:
     - window
     - --config
-    - configs/grid36/demand/traffic_only_scenarios.yaml
+    - configs/grid36/demand/flore_to_scenarios.yaml
     - --checkpoint
     - models/grid36_demand/traffic_only_d60.pt
     - --sumocfg-dir
@@ -453,11 +454,11 @@ suites:
     - results/evaluation/demand
     - --output-name
     - traffic_only_d60
-  - name: multi_objective_d70
+  - name: FLORE_d70
     args:
     - window
     - --config
-    - configs/grid36/demand/multi_objective_scenarios.yaml
+    - configs/grid36/demand/flore_scenarios.yaml
     - --checkpoint
     - models/grid36_demand/multi_objective_d70.pt
     - --sumocfg-dir
@@ -480,11 +481,11 @@ suites:
     - results/evaluation/demand
     - --output-name
     - multi_objective_d70
-  - name: traffic_only_d70
+  - name: FLORE-TO_d70
     args:
     - window
     - --config
-    - configs/grid36/demand/traffic_only_scenarios.yaml
+    - configs/grid36/demand/flore_to_scenarios.yaml
     - --checkpoint
     - models/grid36_demand/traffic_only_d70.pt
     - --sumocfg-dir
@@ -507,11 +508,11 @@ suites:
     - results/evaluation/demand
     - --output-name
     - traffic_only_d70
-  - name: multi_objective_d80
+  - name: FLORE_d80
     args:
     - window
     - --config
-    - configs/grid36/demand/multi_objective_scenarios.yaml
+    - configs/grid36/demand/flore_scenarios.yaml
     - --checkpoint
     - models/grid36_demand/multi_objective_d80.pt
     - --sumocfg-dir
@@ -534,11 +535,11 @@ suites:
     - results/evaluation/demand
     - --output-name
     - multi_objective_d80
-  - name: traffic_only_d80
+  - name: FLORE-TO_d80
     args:
     - window
     - --config
-    - configs/grid36/demand/traffic_only_scenarios.yaml
+    - configs/grid36/demand/flore_to_scenarios.yaml
     - --checkpoint
     - models/grid36_demand/traffic_only_d80.pt
     - --sumocfg-dir
@@ -562,211 +563,211 @@ suites:
     - --output-name
     - traffic_only_d80
   grid36-sensitivity:
-  - name: train_multi_objective_alpha_0p0
+  - name: FLORE_train_multi_objective_alpha_0p0
     args:
     - train
     - --config
-    - configs/grid36/sensitivity/reward_alpha_0p0.yaml
+    - configs/grid36/sensitivity/flore_reward_alpha_0p0.yaml
     - --seed
     - '42'
     - --run-id
-    - multi_objective_alpha_0p0
-  - name: eval_multi_objective_alpha_0p0
-    checkpoint_from: train_multi_objective_alpha_0p0
+    - FLORE_train_multi_objective_alpha_0p0
+  - name: FLORE_eval_multi_objective_alpha_0p0
+    checkpoint_from: FLORE_train_multi_objective_alpha_0p0
     args:
     - evaluate
     - --config
-    - configs/grid36/sensitivity/reward_alpha_0p0.yaml
+    - configs/grid36/sensitivity/flore_reward_alpha_0p0.yaml
     - --eval-episodes
     - '20'
     - --workers
     - '3'
     - --run-id
-    - multi_objective_alpha_0p0
-  - name: train_multi_objective_alpha_1p0
+    - FLORE_eval_multi_objective_alpha_0p0
+  - name: FLORE_train_multi_objective_alpha_1p0
     args:
     - train
     - --config
-    - configs/grid36/sensitivity/reward_alpha_1p0.yaml
+    - configs/grid36/sensitivity/flore_reward_alpha_1p0.yaml
     - --seed
     - '42'
     - --run-id
-    - multi_objective_alpha_1p0
-  - name: eval_multi_objective_alpha_1p0
-    checkpoint_from: train_multi_objective_alpha_1p0
+    - FLORE_train_multi_objective_alpha_1p0
+  - name: FLORE_eval_multi_objective_alpha_1p0
+    checkpoint_from: FLORE_train_multi_objective_alpha_1p0
     args:
     - evaluate
     - --config
-    - configs/grid36/sensitivity/reward_alpha_1p0.yaml
+    - configs/grid36/sensitivity/flore_reward_alpha_1p0.yaml
     - --eval-episodes
     - '20'
     - --workers
     - '3'
     - --run-id
-    - multi_objective_alpha_1p0
-  - name: train_full_labmda_0p8
+    - FLORE_eval_multi_objective_alpha_1p0
+  - name: FLORE_train_full_labmda_0p8
     args:
     - train
     - --config
-    - configs/grid36/sensitivity/full_multi_lambda_0p8.yaml
+    - configs/grid36/sensitivity/flore_lambda_0p8.yaml
     - --seed
     - '42'
     - --run-id
-    - full_labmda_0p8
-  - name: eval_full_labmda_0p8
-    checkpoint_from: train_full_labmda_0p8
+    - FLORE_train_full_labmda_0p8
+  - name: FLORE_eval_full_labmda_0p8
+    checkpoint_from: FLORE_train_full_labmda_0p8
     args:
     - evaluate
     - --config
-    - configs/grid36/sensitivity/full_multi_lambda_0p8.yaml
+    - configs/grid36/sensitivity/flore_lambda_0p8.yaml
     - --eval-episodes
     - '20'
     - --workers
     - '3'
     - --run-id
-    - full_labmda_0p8
-  - name: train_full_lambda_0p2
+    - FLORE_eval_full_labmda_0p8
+  - name: FLORE_train_full_lambda_0p2
     args:
     - train
     - --config
-    - configs/grid36/sensitivity/full_multi_lambda_0p2.yaml
+    - configs/grid36/sensitivity/flore_lambda_0p2.yaml
     - --seed
     - '42'
     - --run-id
-    - full_lambda_0p2
-  - name: eval_full_lambda_0p2
-    checkpoint_from: train_full_lambda_0p2
+    - FLORE_train_full_lambda_0p2
+  - name: FLORE_eval_full_lambda_0p2
+    checkpoint_from: FLORE_train_full_lambda_0p2
     args:
     - evaluate
     - --config
-    - configs/grid36/sensitivity/full_multi_lambda_0p2.yaml
+    - configs/grid36/sensitivity/flore_lambda_0p2.yaml
     - --eval-episodes
     - '20'
     - --workers
     - '3'
     - --run-id
-    - full_lambda_0p2
-  - name: train_full_lambda_0p5
+    - FLORE_eval_full_lambda_0p2
+  - name: FLORE_train_full_lambda_0p5
     args:
     - train
     - --config
-    - configs/grid36/sensitivity/full_multi_lambda_0p5.yaml
+    - configs/grid36/sensitivity/flore_lambda_0p5.yaml
     - --seed
     - '42'
     - --run-id
-    - full_lambda_0p5
-  - name: eval_full_lambda_0p5
-    checkpoint_from: train_full_lambda_0p5
+    - FLORE_train_full_lambda_0p5
+  - name: FLORE_eval_full_lambda_0p5
+    checkpoint_from: FLORE_train_full_lambda_0p5
     args:
     - evaluate
     - --config
-    - configs/grid36/sensitivity/full_multi_lambda_0p5.yaml
+    - configs/grid36/sensitivity/flore_lambda_0p5.yaml
     - --eval-episodes
     - '20'
     - --workers
     - '3'
     - --run-id
-    - full_lambda_0p5
-  - name: train_full_lambda_1p2
+    - FLORE_eval_full_lambda_0p5
+  - name: FLORE_train_full_lambda_1p2
     args:
     - train
     - --config
-    - configs/grid36/sensitivity/full_multi_lambda_1p2.yaml
+    - configs/grid36/sensitivity/flore_lambda_1p2.yaml
     - --seed
     - '42'
     - --run-id
-    - full_lambda_1p2
-  - name: eval_full_lambda_1p2
-    checkpoint_from: train_full_lambda_1p2
+    - FLORE_train_full_lambda_1p2
+  - name: FLORE_eval_full_lambda_1p2
+    checkpoint_from: FLORE_train_full_lambda_1p2
     args:
     - evaluate
     - --config
-    - configs/grid36/sensitivity/full_multi_lambda_1p2.yaml
+    - configs/grid36/sensitivity/flore_lambda_1p2.yaml
     - --eval-episodes
     - '20'
     - --workers
     - '3'
     - --run-id
-    - full_lambda_1p2
-  - name: train_full_lambda_2p0
+    - FLORE_eval_full_lambda_1p2
+  - name: FLORE_train_full_lambda_2p0
     args:
     - train
     - --config
-    - configs/grid36/sensitivity/full_multi_lambda_2p0.yaml
+    - configs/grid36/sensitivity/flore_lambda_2p0.yaml
     - --seed
     - '42'
     - --run-id
-    - full_lambda_2p0
-  - name: eval_full_lambda_2p0
-    checkpoint_from: train_full_lambda_2p0
+    - FLORE_train_full_lambda_2p0
+  - name: FLORE_eval_full_lambda_2p0
+    checkpoint_from: FLORE_train_full_lambda_2p0
     args:
     - evaluate
     - --config
-    - configs/grid36/sensitivity/full_multi_lambda_2p0.yaml
+    - configs/grid36/sensitivity/flore_lambda_2p0.yaml
     - --eval-episodes
     - '20'
     - --workers
     - '3'
     - --run-id
-    - full_lambda_2p0
-  - name: train_full_risk_base_0p0
+    - FLORE_eval_full_lambda_2p0
+  - name: FLORE_train_full_risk_base_0p0
     args:
     - train
     - --config
-    - configs/grid36/sensitivity/full_multi_risk_base_0p0.yaml
+    - configs/grid36/sensitivity/flore_risk_base_0p0.yaml
     - --seed
     - '42'
     - --run-id
-    - full_risk_base_0p0
-  - name: eval_full_risk_base_0p0
-    checkpoint_from: train_full_risk_base_0p0
+    - FLORE_train_full_risk_base_0p0
+  - name: FLORE_eval_full_risk_base_0p0
+    checkpoint_from: FLORE_train_full_risk_base_0p0
     args:
     - evaluate
     - --config
-    - configs/grid36/sensitivity/full_multi_risk_base_0p0.yaml
+    - configs/grid36/sensitivity/flore_risk_base_0p0.yaml
     - --eval-episodes
     - '20'
     - --workers
     - '3'
     - --run-id
-    - full_risk_base_0p0
-  - name: train_full_risk_base_1p0
+    - FLORE_eval_full_risk_base_0p0
+  - name: FLORE_train_full_risk_base_1p0
     args:
     - train
     - --config
-    - configs/grid36/sensitivity/full_multi_risk_base_1p0.yaml
+    - configs/grid36/sensitivity/flore_risk_base_1p0.yaml
     - --seed
     - '42'
     - --run-id
-    - full_risk_base_1p0
-  - name: eval_full_risk_base_1p0
-    checkpoint_from: train_full_risk_base_1p0
+    - FLORE_train_full_risk_base_1p0
+  - name: FLORE_eval_full_risk_base_1p0
+    checkpoint_from: FLORE_train_full_risk_base_1p0
     args:
     - evaluate
     - --config
-    - configs/grid36/sensitivity/full_multi_risk_base_1p0.yaml
+    - configs/grid36/sensitivity/flore_risk_base_1p0.yaml
     - --eval-episodes
     - '20'
     - --workers
     - '3'
     - --run-id
-    - full_risk_base_1p0
+    - FLORE_eval_full_risk_base_1p0
   grid36-multiseed:
-  - name: train_traffic_only_seed42
+  - name: FLORE-TO_train_traffic_only_seed42
     args:
     - train
     - --config
-    - configs/grid36/objective/traffic_only.yaml
+    - configs/grid36/objective/flore_to.yaml
     - --seed
     - '42'
     - --run-id
-    - traffic_only_seed42
-  - name: eval_traffic_only_seed42
-    checkpoint_from: train_traffic_only_seed42
+    - FLORE-TO_train_traffic_only_seed42
+  - name: FLORE-TO_eval_traffic_only_seed42
+    checkpoint_from: FLORE-TO_train_traffic_only_seed42
     args:
     - evaluate
     - --config
-    - configs/grid36/objective/traffic_only.yaml
+    - configs/grid36/objective/flore_to.yaml
     - --eval-episodes
     - '20'
     - --seed
@@ -774,22 +775,22 @@ suites:
     - --workers
     - '3'
     - --run-id
-    - traffic_only_seed42
-  - name: train_traffic_only_seed142
+    - FLORE-TO_eval_traffic_only_seed42
+  - name: FLORE-TO_train_traffic_only_seed142
     args:
     - train
     - --config
-    - configs/grid36/objective/traffic_only.yaml
+    - configs/grid36/objective/flore_to.yaml
     - --seed
     - '142'
     - --run-id
-    - traffic_only_seed142
-  - name: eval_traffic_only_seed142
-    checkpoint_from: train_traffic_only_seed142
+    - FLORE-TO_train_traffic_only_seed142
+  - name: FLORE-TO_eval_traffic_only_seed142
+    checkpoint_from: FLORE-TO_train_traffic_only_seed142
     args:
     - evaluate
     - --config
-    - configs/grid36/objective/traffic_only.yaml
+    - configs/grid36/objective/flore_to.yaml
     - --eval-episodes
     - '20'
     - --seed
@@ -797,22 +798,22 @@ suites:
     - --workers
     - '3'
     - --run-id
-    - traffic_only_seed142
-  - name: train_traffic_only_seed242
+    - FLORE-TO_eval_traffic_only_seed142
+  - name: FLORE-TO_train_traffic_only_seed242
     args:
     - train
     - --config
-    - configs/grid36/objective/traffic_only.yaml
+    - configs/grid36/objective/flore_to.yaml
     - --seed
     - '242'
     - --run-id
-    - traffic_only_seed242
-  - name: eval_traffic_only_seed242
-    checkpoint_from: train_traffic_only_seed242
+    - FLORE-TO_train_traffic_only_seed242
+  - name: FLORE-TO_eval_traffic_only_seed242
+    checkpoint_from: FLORE-TO_train_traffic_only_seed242
     args:
     - evaluate
     - --config
-    - configs/grid36/objective/traffic_only.yaml
+    - configs/grid36/objective/flore_to.yaml
     - --eval-episodes
     - '20'
     - --seed
@@ -820,22 +821,22 @@ suites:
     - --workers
     - '3'
     - --run-id
-    - traffic_only_seed242
-  - name: train_traffic_only_seed342
+    - FLORE-TO_eval_traffic_only_seed242
+  - name: FLORE-TO_train_traffic_only_seed342
     args:
     - train
     - --config
-    - configs/grid36/objective/traffic_only.yaml
+    - configs/grid36/objective/flore_to.yaml
     - --seed
     - '342'
     - --run-id
-    - traffic_only_seed342
-  - name: eval_traffic_only_seed342
-    checkpoint_from: train_traffic_only_seed342
+    - FLORE-TO_train_traffic_only_seed342
+  - name: FLORE-TO_eval_traffic_only_seed342
+    checkpoint_from: FLORE-TO_train_traffic_only_seed342
     args:
     - evaluate
     - --config
-    - configs/grid36/objective/traffic_only.yaml
+    - configs/grid36/objective/flore_to.yaml
     - --eval-episodes
     - '20'
     - --seed
@@ -843,22 +844,22 @@ suites:
     - --workers
     - '3'
     - --run-id
-    - traffic_only_seed342
-  - name: train_traffic_only_seed442
+    - FLORE-TO_eval_traffic_only_seed342
+  - name: FLORE-TO_train_traffic_only_seed442
     args:
     - train
     - --config
-    - configs/grid36/objective/traffic_only.yaml
+    - configs/grid36/objective/flore_to.yaml
     - --seed
     - '442'
     - --run-id
-    - traffic_only_seed442
-  - name: eval_traffic_only_seed442
-    checkpoint_from: train_traffic_only_seed442
+    - FLORE-TO_train_traffic_only_seed442
+  - name: FLORE-TO_eval_traffic_only_seed442
+    checkpoint_from: FLORE-TO_train_traffic_only_seed442
     args:
     - evaluate
     - --config
-    - configs/grid36/objective/traffic_only.yaml
+    - configs/grid36/objective/flore_to.yaml
     - --eval-episodes
     - '20'
     - --seed
@@ -866,22 +867,22 @@ suites:
     - --workers
     - '3'
     - --run-id
-    - traffic_only_seed442
-  - name: train_multi_objective_seed42
+    - FLORE-TO_eval_traffic_only_seed442
+  - name: FLORE_train_multi_objective_seed42
     args:
     - train
     - --config
-    - configs/grid36/base.yaml
+    - configs/grid36/flore.yaml
     - --seed
     - '42'
     - --run-id
-    - multi_objective_seed42
-  - name: eval_multi_objective_seed42
-    checkpoint_from: train_multi_objective_seed42
+    - FLORE_train_multi_objective_seed42
+  - name: FLORE_eval_multi_objective_seed42
+    checkpoint_from: FLORE_train_multi_objective_seed42
     args:
     - evaluate
     - --config
-    - configs/grid36/base.yaml
+    - configs/grid36/flore.yaml
     - --eval-episodes
     - '20'
     - --seed
@@ -889,22 +890,22 @@ suites:
     - --workers
     - '3'
     - --run-id
-    - multi_objective_seed42
-  - name: train_multi_objective_seed142
+    - FLORE_eval_multi_objective_seed42
+  - name: FLORE_train_multi_objective_seed142
     args:
     - train
     - --config
-    - configs/grid36/base.yaml
+    - configs/grid36/flore.yaml
     - --seed
     - '142'
     - --run-id
-    - multi_objective_seed142
-  - name: eval_multi_objective_seed142
-    checkpoint_from: train_multi_objective_seed142
+    - FLORE_train_multi_objective_seed142
+  - name: FLORE_eval_multi_objective_seed142
+    checkpoint_from: FLORE_train_multi_objective_seed142
     args:
     - evaluate
     - --config
-    - configs/grid36/base.yaml
+    - configs/grid36/flore.yaml
     - --eval-episodes
     - '20'
     - --seed
@@ -912,22 +913,22 @@ suites:
     - --workers
     - '3'
     - --run-id
-    - multi_objective_seed142
-  - name: train_multi_objective_seed242
+    - FLORE_eval_multi_objective_seed142
+  - name: FLORE_train_multi_objective_seed242
     args:
     - train
     - --config
-    - configs/grid36/base.yaml
+    - configs/grid36/flore.yaml
     - --seed
     - '242'
     - --run-id
-    - multi_objective_seed242
-  - name: eval_multi_objective_seed242
-    checkpoint_from: train_multi_objective_seed242
+    - FLORE_train_multi_objective_seed242
+  - name: FLORE_eval_multi_objective_seed242
+    checkpoint_from: FLORE_train_multi_objective_seed242
     args:
     - evaluate
     - --config
-    - configs/grid36/base.yaml
+    - configs/grid36/flore.yaml
     - --eval-episodes
     - '20'
     - --seed
@@ -935,22 +936,22 @@ suites:
     - --workers
     - '3'
     - --run-id
-    - multi_objective_seed242
-  - name: train_multi_objective_seed342
+    - FLORE_eval_multi_objective_seed242
+  - name: FLORE_train_multi_objective_seed342
     args:
     - train
     - --config
-    - configs/grid36/base.yaml
+    - configs/grid36/flore.yaml
     - --seed
     - '342'
     - --run-id
-    - multi_objective_seed342
-  - name: eval_multi_objective_seed342
-    checkpoint_from: train_multi_objective_seed342
+    - FLORE_train_multi_objective_seed342
+  - name: FLORE_eval_multi_objective_seed342
+    checkpoint_from: FLORE_train_multi_objective_seed342
     args:
     - evaluate
     - --config
-    - configs/grid36/base.yaml
+    - configs/grid36/flore.yaml
     - --eval-episodes
     - '20'
     - --seed
@@ -958,22 +959,22 @@ suites:
     - --workers
     - '3'
     - --run-id
-    - multi_objective_seed342
-  - name: train_multi_objective_seed442
+    - FLORE_eval_multi_objective_seed342
+  - name: FLORE_train_multi_objective_seed442
     args:
     - train
     - --config
-    - configs/grid36/base.yaml
+    - configs/grid36/flore.yaml
     - --seed
     - '442'
     - --run-id
-    - multi_objective_seed442
-  - name: eval_multi_objective_seed442
-    checkpoint_from: train_multi_objective_seed442
+    - FLORE_train_multi_objective_seed442
+  - name: FLORE_eval_multi_objective_seed442
+    checkpoint_from: FLORE_train_multi_objective_seed442
     args:
     - evaluate
     - --config
-    - configs/grid36/base.yaml
+    - configs/grid36/flore.yaml
     - --eval-episodes
     - '20'
     - --seed
@@ -981,41 +982,41 @@ suites:
     - --workers
     - '3'
     - --run-id
-    - multi_objective_seed442
+    - FLORE_eval_multi_objective_seed442
   grid36-extreme-lambda:
-  - name: lambda_10
+  - name: FLORE_lambda_10
     args:
     - evaluate
     - --config
-    - configs/grid36/sensitivity/full_multi_lambda_10p0.yaml
+    - configs/grid36/sensitivity/flore_lambda_10p0.yaml
     - --checkpoint
     - models/grid36_lambda_sensitive/full_lambda_10p0.pt
     - --run-id
-    - lambda_10
-  - name: lambda_50
+    - FLORE_lambda_10
+  - name: FLORE_lambda_50
     args:
     - evaluate
     - --config
-    - configs/grid36/sensitivity/full_multi_lambda_50p0.yaml
+    - configs/grid36/sensitivity/flore_lambda_50p0.yaml
     - --checkpoint
     - models/grid36_lambda_sensitive/full_lambda_50p0.pt
     - --run-id
-    - lambda_50
-  - name: lambda_100
+    - FLORE_lambda_50
+  - name: FLORE_lambda_100
     args:
     - evaluate
     - --config
-    - configs/grid36/sensitivity/full_multi_lambda_100p0.yaml
+    - configs/grid36/sensitivity/flore_lambda_100p0.yaml
     - --checkpoint
     - models/grid36_lambda_sensitive/full_lambda_100p0.pt
     - --run-id
-    - lambda_100
-  - name: lambda_200
+    - FLORE_lambda_100
+  - name: FLORE_lambda_200
     args:
     - evaluate
     - --config
-    - configs/grid36/objective/emission_dominant.yaml
+    - configs/grid36/objective/flore_emission_dominant.yaml
     - --checkpoint
     - models/grid36_lambda_sensitive/full_lambda_200p0.pt
     - --run-id
-    - lambda_200
+    - FLORE_lambda_200

@@ -655,7 +655,7 @@ def main() -> None:
     base_cfg.env.save_sumo_aux_outputs = False
     if args.save_vehicle_state and consolidate_vehicle_state_outputs is None:
         raise RuntimeError(
-            "vehicle_state output was requested, but the selected MGMQ_PROJECT_ROOT "
+            "vehicle_state output was requested, but the selected FLORE project root "
             f"does not provide vehicle_state.py: {PROJECT_ROOT}"
         )
     if args.save_vehicle_state and not hasattr(base_cfg.env, "save_vehicle_state_output"):

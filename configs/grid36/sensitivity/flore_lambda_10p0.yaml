@@ -1,0 +1,164 @@
+# Strategy family / 策略系列: FLORE
+# Experimental role / 实验角色: Proposed method / 提出方法；FLORE state + traffic–NOx reward；truck/NOx-risk information retained.
+# Variant / 扩展实验: flore_lambda_10p0; supplemental variant, not an additional Table 3 strategy.
+# Actual settings / 实际设置: truck state=True; NOx-risk state=True; NOx reward enabled=True; objective_mode=multi_objective; lambda_e=10.0; risk_reward_mode=full.
+ddqn:
+  adam_beta1: 0.9
+  adam_beta2: 0.999
+  adam_eps: 1.0e-08
+  batch_size: 32
+  epsilon_decay_steps: 50400
+  epsilon_end: 0.05
+  epsilon_start: 1.0
+  gamma: 0.99
+  learning_rate: 0.0003
+  loss_type: huber
+  max_grad_norm: 5.0
+  min_replay_size: 1000
+  online_update_interval: 1
+  replay_memory_size: 20000
+  replay_sampling_mode: usage_aware
+  target_update_interval: 200
+  total_episodes: 160
+  usage_penalty_alpha: 0.5
+  usage_weight_min: 0.05
+device: auto
+dual_head:
+  enabled: false
+  nox_loss_beta: 1.0
+  nox_q_softplus: false
+emission_risk:
+  base_weight: 0.3
+  enabled_reward: true
+  kappa: 2.0
+  lambda_e: 10.0
+  log_lane_risk: true
+  penalty_aggregate: sum_max
+  penalty_time_normalize: true
+  pressure_beta: 1.0
+  reward_alpha: 0.3
+  reward_risk_mode: full
+  rho: 0.8
+  risk_clip: 10.0
+  risk_mode: hybrid_pressure_tail
+  tail_weight: 0.7
+  thresholds_json: configs/thresholds/grid36/baseline.json
+  use_nox_risk_state: true
+  use_truck_count_state: true
+env:
+  add_xml: data/grid36/truck_sensitive_grid36.add.xml
+  baseline_control_mode: sumo_actuated
+  baseline_net_xml: data/grid36/truck_sensitive_grid36.net.xml
+  baseline_seed_offset: 100000
+  baseline_sumo_cfg: data/grid36/truck_sensitive_grid36_actuated.sumocfg
+  decision_interval: 10
+  emission_factor_csv: data/emission/emission_factor_table.csv
+  emission_pollutants:
+  - NOx
+  episode_duration: 3600
+  fcd_output_acceleration: true
+  fcd_output_period: 1.0
+  intersection_groups_json: data/grid36/intersection_groups.json
+  max_green: 90
+  min_green: 5
+  min_red: 15
+  net_xml: data/grid36/truck_sensitive_grid36.net.xml
+  observation_length: 300.0
+  observation_scope: upstream_300m
+  save_detector_outputs: false
+  save_fcd_output: false
+  save_sumo_aux_outputs: true
+  save_tls_phase_outputs: false
+  save_vehicle_second_output: false
+  save_vehicle_state_output: false
+  sumo_cfg: data/grid36/truck_sensitive_grid36.sumocfg
+  sumo_seed_mode: per_episode
+  tripinfo_dir: results/training/grid36/tripinfo
+  use_state_based_tls_control: true
+  vehicle_state_compression: zstd
+  vehicle_state_compression_level: 3
+  vehicle_state_row_group_rows: 100000
+  vehicle_type_policy: sedan_truck_only
+  verbose_runtime_output: true
+  yellow_duration: 3
+log:
+  best_metric: reward_mean
+  best_mode: max
+  console_event_log: true
+  console_event_whitelist:
+  - run_start
+  - episode_start
+  - episode_summary_saved
+  - training_time_progress
+  - run_end
+  - exception
+  console_mode: compact
+  console_step_interval: 10
+  detail_log_until_replay_ready: false
+  emission_link_scope: controlled_internal
+  emission_step_log_interval_train: 0
+  lane_step_log_interval_after_replay: 0
+  log_root: results/training/grid36
+  parameter_log_interval: 10
+  phase_step_log_interval_after_replay: 0
+  q_step_log_interval_after_replay: 0
+  run_id: flore_lambda_10p0
+  save_best: true
+  save_emission_step: false
+  save_parameter_stats: false
+  save_q_step: false
+  save_reward_step: true
+  save_step_physical: false
+  step_progress_event_interval: 180
+  tripinfo_keep_interval_after_replay: 0
+  update_event_interval: 500
+max_pressure:
+  detector_length_m: 300.0
+  downstream_lane_weight_mode: equal
+  enable_spillback_constraint: false
+  halting_speed_threshold_mps: 0.1
+  log_movement_step: true
+  log_pressure_step: true
+  log_shared_lane_classification: true
+  permissive_green_weight: 0.0
+  protected_green_weight: 1.0
+  tie_break_mode: keep_current
+  use_e2_subscription: false
+  use_protected_green_only: true
+network:
+  bigru_hidden_dim: 64
+  directions:
+  - N
+  - E
+  - S
+  - W
+  - Self
+  gat_heads: 4
+  lane_input_dim: 6
+  leaky_relu_slope: 0.05
+  net_node_dim: 64
+  node_hidden_dim: 64
+  node_update_dim: 64
+  q_hidden_dim: 128
+  use_group_parameter_sharing: true
+reward:
+  gamma: 0.99
+  objective_mode: multi_objective
+  wait_time_scale_k: 10.0
+seed: 42
+state:
+  lane_feature_names:
+  - demand
+  - queue
+  - wait_vwt
+  - lane_phase
+  - truck_count
+  - nox_risk
+  lane_input_dim: 6
+  observation_length: 300.0
+  observation_scope: upstream_300m
+threshold:
+  exclude_zero_for_calibration: true
+  nox_max_quantile: 0.8
+  warmup_seconds: 300
+  zero_eps: 1.0e-09

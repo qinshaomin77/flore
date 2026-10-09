@@ -44,7 +44,7 @@ CONTROLLER_SPECS = {
     },
     "truck_weighted_max_pressure": {
         "name": "e2_movement_truck_weighted_max_pressure",
-        "label": "Truck-Weighted Max-Pressure",
+        "label": "MaxPressure-TW",
         "diagnostics_dir": "truck_weighted_maxpressure_diagnostics",
         "sedan_priority_weight": 1.0,
         "truck_priority_weight": 2.0,

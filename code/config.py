@@ -2,7 +2,7 @@
 """
 config.py
 =========
-MGMQ-DDQN 复现版全局配置。
+FLORE 复现版全局配置。
 
 设计目标
 --------
@@ -182,6 +182,7 @@ class RewardConfig:
     # auto preserves compatibility with existing YAML files:
     # - emission_risk.enabled_reward=False -> traffic_only
     # - emission_risk.enabled_reward=True  -> multi_objective
+    # Internal reward tokens are retained: traffic_only = FLORE-TS/FLORE-TO; multi_objective = FLORE.
     objective_mode: str = "auto"
 
 
@@ -297,7 +298,7 @@ class DualHeadConfig:
 @dataclass
 class LogConfig:
     log_root: str = "results/training"
-    run_id: str = "mgmq_ddqn"
+    run_id: str = "flore"
     console_event_log: bool = True
     console_mode: str = "compact"  # full / compact / silent
     console_event_whitelist: tuple[str, ...] = (
@@ -570,7 +571,7 @@ def get_config(config_path: Optional[str] = None) -> MasterConfig:
 
 
 def make_run_id(base: str) -> str:
-    base = str(base or "mgmq_ddqn").strip()
+    base = str(base or "flore").strip()
     ts = time.strftime("%Y%m%d_%H%M%S")
     return f"{base}_{ts}"
 

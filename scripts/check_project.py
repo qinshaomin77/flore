@@ -118,12 +118,12 @@ def check_models(network):
             threshold=flags[flags.index('--thresholds-json')+1] if '--thresholds-json' in flags else None
             cases[checkpoint]=(config,threshold)
     if args.network=='grid36':
-        cases['models/grid36/nox_only.pt']=('configs/grid36/objective/nox_only.yaml',None)
-        cases['models/grid36/nox_dominant.pt']=('configs/grid36/objective/emission_dominant.yaml',None)
+        cases['models/grid36/nox_only.pt']=('configs/grid36/objective/flore_nox_only.yaml',None)
+        cases['models/grid36/nox_dominant.pt']=('configs/grid36/objective/flore_emission_dominant.yaml',None)
         for number in ('10','50','100','200'):
             checkpoint=f'models/grid36_lambda_sensitive/full_lambda_{number}p0.pt'
             if (ROOT/checkpoint).is_file():
-                cases[checkpoint]=('configs/grid36/objective/emission_dominant.yaml' if number=='200' else f'configs/grid36/sensitivity/full_multi_lambda_{number}p0.yaml',None)
+                cases[checkpoint]=('configs/grid36/objective/flore_emission_dominant.yaml' if number=='200' else f'configs/grid36/sensitivity/flore_lambda_{number}p0.yaml',None)
     errors=[]
     reports=[]
     for checkpoint,(config,threshold) in cases.items():

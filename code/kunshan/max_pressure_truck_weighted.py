@@ -1,6 +1,6 @@
-"""Truck-weighted E2 movement Max-Pressure controller.
+"""MaxPressure-TW (truck-weighted E2 movement pressure) controller.
 
-TW-MP is a fixed, rule-based baseline. Its only difference from ordinary
+MaxPressure-TW is a fixed, rule-based baseline. Its only difference from ordinary
 Max-Pressure is that a halted truck contributes twice the queue pressure of a
 halted sedan. Reward, emissions, NOx pressure, and RL state are never read for
 action selection.
@@ -311,7 +311,7 @@ class TruckWeightedMaxPressureController(MaxPressureController):
             "truck_priority_weight": self.truck_priority_weight,
             "sedan_priority_weight": self.sedan_priority_weight,
             "metadata_note": (
-                "Truck-Weighted Max-Pressure uses only weighted traffic queue "
+                "MaxPressure-TW uses only weighted traffic queue "
                 "pressure for action selection. NOx, NOx pressure, risk states, "
                 "and reward components are diagnostics/evaluation only."
             ),

@@ -88,7 +88,7 @@ def parse_args() -> argparse.Namespace:
     )
     parser.add_argument(
         "--config",
-        default="configs/kunshan/baseline/kunshan_actuated_eval.yaml",
+        default="configs/kunshan/baseline/gap_actuated.yaml",
     )
     parser.add_argument("--sumocfg", default="")
     parser.add_argument("--net-xml", default="")

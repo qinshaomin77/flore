@@ -40,9 +40,9 @@ python run.py quickstart --network kunshan
 ## 训练与评估
 
 ```powershell
-python run.py train --config configs/grid36/base.yaml --seed 42 --run-id grid36_flore_seed42
+python run.py train --config configs/grid36/flore.yaml --seed 42 --run-id grid36_flore_seed42
 python run.py evaluate --checkpoint models/grid36/multi_objective.pt --eval-episodes 20 --workers 3 --run-id flore
-python run.py train --network kunshan --config configs/kunshan/base.yaml --seed 42 --run-id kunshan_flore_seed42
+python run.py train --network kunshan --config configs/kunshan/flore.yaml --seed 42 --run-id kunshan_flore_seed42
 python run.py evaluate --network kunshan --checkpoint models/kunshan_spatial/kunshan_w300_mo.pt --eval-episodes 20 --parallel --max-workers 3 --run-id kunshan_flore
 ```
 
@@ -68,7 +68,7 @@ python scripts/run_experiments.py --suite kunshan-spatial --dry-run
 Grid36 标定流程：运行全轿车自适应信号场景，保存 lane_step.csv，然后按需求独立计算暖机后的正 NOx 样本 P80，向上取整。保留原标定规则。
 
 ```powershell
-python code/evaluate_actuated.py --config configs/grid36/calibration/sumo_actuated_eval.yaml --calibration-all --calibration-root data/grid36/calibration_sumocfg --calibration-output-root results/calibration/grid36 --eval-episodes 12 --parallel --max-workers 3
+python code/evaluate_actuated.py --config configs/grid36/calibration/gap_actuated_calibration.yaml --calibration-all --calibration-root data/grid36/calibration_sumocfg --calibration-output-root results/calibration/grid36 --eval-episodes 12 --parallel --max-workers 3
 python scripts/calibrate_nox_max.py --run-dir results/calibration/grid36 --output-dir results/calibration/grid36/thresholds --quantile 0.8 --warmup-seconds 300
 ```
 
@@ -77,9 +77,9 @@ python scripts/calibrate_nox_max.py --run-dir results/calibration/grid36 --outpu
 昆山分别采集 w100、w300、w500：
 
 ```powershell
-python code/kunshan/evaluate_actuated.py --config configs/kunshan/calibration/kunshan_actuated_w100.yaml --calibration --eval-episodes 20 --parallel --log-root results/calibration/kunshan --run-id kunshan_actuated_w100
-python code/kunshan/evaluate_actuated.py --config configs/kunshan/calibration/kunshan_actuated_w300.yaml --calibration --eval-episodes 20 --parallel --log-root results/calibration/kunshan --run-id kunshan_actuated_w300
-python code/kunshan/evaluate_actuated.py --config configs/kunshan/calibration/kunshan_actuated_w500.yaml --calibration --eval-episodes 20 --parallel --log-root results/calibration/kunshan --run-id kunshan_actuated_w500
+python code/kunshan/evaluate_actuated.py --config configs/kunshan/calibration/gap_actuated_w100.yaml --calibration --eval-episodes 20 --parallel --log-root results/calibration/kunshan --run-id kunshan_actuated_w100
+python code/kunshan/evaluate_actuated.py --config configs/kunshan/calibration/gap_actuated_w300.yaml --calibration --eval-episodes 20 --parallel --log-root results/calibration/kunshan --run-id kunshan_actuated_w300
+python code/kunshan/evaluate_actuated.py --config configs/kunshan/calibration/gap_actuated_w500.yaml --calibration --eval-episodes 20 --parallel --log-root results/calibration/kunshan --run-id kunshan_actuated_w500
 python scripts/calibrate_spatial_nox_max.py --batch-dir results/calibration/kunshan --output-dir results/calibration/kunshan/thresholds
 ```
 
@@ -130,7 +130,7 @@ python scripts/check_project.py --update-manifest --hashes
 
 Grid36 支持 `--kind train/evaluation/calibration/all`，涵盖 D20/D40/D50/D60/D70/D80；训练路由自动去重。两个生成器均支持 `--output-dir`。Kunshan 可用 `--check` 仅执行静态验证。标定入口与批量实验入口保持原命令。
 
-配置按 `configs/grid36`、`configs/kunshan`、`configs/presslight` 分类，默认配置为各网络的 `base.yaml`。Grid36 标定配置位于 `grid36/calibration`；阈值统一位于 `configs/thresholds/grid36`、`configs/thresholds/kunshan`、`configs/thresholds/presslight`。实验清单分别位于 grid36/kunshan 的 `experiments.yaml`，批量入口自动查找；自定义清单可用 `--manifest`。重复配置与未使用的详细日志、历史全尺度标定、分位数阈值已移除。
+配置按 `configs/grid36`、`configs/kunshan`、`configs/presslight` 分类，默认配置为各网络的 `flore.yaml`。Grid36 标定配置位于 `grid36/calibration`；阈值统一位于 `configs/thresholds/grid36`、`configs/thresholds/kunshan`、`configs/thresholds/presslight`。实验清单分别位于 grid36/kunshan 的 `experiments.yaml`，批量入口自动查找；自定义清单可用 `--manifest`。重复配置与未使用的详细日志、历史全尺度标定、分位数阈值已移除。
 
 阈值目录 `configs/thresholds` 与 grid36、kunshan、presslight 配置目录同级，11 个阈值文件仅调整位置，内容保持一致。
 
@@ -145,3 +145,7 @@ git push
 ```
 
 修改分发输入后，提交前运行 `python scripts/check_project.py --update-manifest --hashes` 更新并核对资产清单。
+
+## 策略名称
+
+配置、注释与实验任务统一采用表 3 的七种策略名称，详见 [策略配置说明](configs/README.md)。FLORE-TS 为状态消融，FLORE-TO 为目标消融；其他 NOx、奖励和参数变体单独标注为扩展实验。

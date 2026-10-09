@@ -16,7 +16,7 @@ def main():
     run_id=f'{args.network}_{stamp}'
     output=ROOT/'results/quickstart'/run_id
     output.mkdir(parents=True)
-    cfg=yaml.safe_load((ROOT/('configs/grid36/quickstart.yaml' if args.network=='grid36' else 'configs/kunshan/base.yaml')).read_text(encoding='utf-8'))
+    cfg=yaml.safe_load((ROOT/('configs/grid36/flore_quickstart.yaml' if args.network=='grid36' else 'configs/kunshan/flore.yaml')).read_text(encoding='utf-8'))
     cfg['device']='cpu'
     cfg['env'].update(episode_duration=300,save_sumo_aux_outputs=False,save_vehicle_state_output=False)
     cfg['ddqn'].update(total_episodes=2,batch_size=4,min_replay_size=8,replay_memory_size=256,epsilon_decay_steps=60,target_update_interval=10)

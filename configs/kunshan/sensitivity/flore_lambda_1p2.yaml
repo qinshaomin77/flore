@@ -1,0 +1,154 @@
+# Strategy family / 策略系列: FLORE
+# Experimental role / 实验角色: Proposed method / 提出方法；FLORE state + traffic–NOx reward；truck/NOx-risk information retained.
+# Variant / 扩展实验: flore_lambda_1p2; supplemental variant, not an additional Table 3 strategy.
+# Actual settings / 实际设置: truck state=True; NOx-risk state=True; NOx reward enabled=True; objective_mode=multi_objective; lambda_e=1.2; risk_reward_mode=full.
+seed: 42
+device: auto
+env:
+  sumo_cfg: data/kunshan/kunshan_freight_enhanced_eval.sumocfg
+  net_xml: data/kunshan/kunshan.net.xml
+  add_xml: data/kunshan/kunshan_eval.add.xml
+  intersection_groups_json: data/kunshan/intersection_groups.json
+  replace_sumocfg_additional_files: true
+  episode_duration: 3600
+  decision_interval: 10
+  yellow_duration: 3
+  min_green: 5
+  max_green: 90
+  min_red: 15
+  tripinfo_dir: results/training/tripinfo
+  use_state_based_tls_control: true
+  sumo_seed_mode: per_episode
+  save_sumo_aux_outputs: true
+  keep_sumo_runtime_files: true
+  save_fcd_output: false
+  fcd_output_acceleration: true
+  fcd_output_period: 1.0
+  save_vehicle_state_output: false
+  vehicle_state_row_group_rows: 100000
+  vehicle_state_compression: zstd
+  vehicle_state_compression_level: 3
+  emission_factor_csv: data/emission/emission_factor_table.csv
+  emission_pollutants:
+  - NOx
+  vehicle_type_policy: sedan_truck_only
+  record_vehicle_emission_steps: true
+  enable_lane_mechanism_metrics: false
+  queue_halting_speed_threshold_mps: 1.3888888888888888
+  signal_sensitive_halting_speed_mps: 0.1
+  signal_sensitive_low_speed_mps: 5.0
+  signal_sensitive_restart_accel_ms2: 0.5
+state:
+  lane_input_dim: 4
+  observation_scope: E2_last_300m
+  lane_feature_names:
+  - demand
+  - queue
+  - wait_vwt
+  - lane_phase
+reward:
+  gamma: 0.99
+  wait_time_scale_k: 10.0
+  objective_mode: multi_objective
+emission_risk:
+  use_truck_count_state: true
+  use_nox_risk_state: true
+  enabled_reward: true
+  log_lane_risk: true
+  thresholds_json: configs/thresholds/kunshan/kunshan_w300.json
+  threshold_policy: global
+  risk_mode: hybrid_pressure_tail
+  pressure_beta: 1.0
+  base_weight: 0.3
+  tail_weight: 0.7
+  reward_risk_mode: full
+  penalty_aggregate: sum_max
+  penalty_time_normalize: true
+  rho: 0.8
+  kappa: 2.0
+  risk_clip: 10.0
+  reward_alpha: 0.3
+  lambda_e: 1.2
+network:
+  lane_input_dim: 4
+  node_hidden_dim: 64
+  gat_heads: 4
+  node_update_dim: 64
+  net_node_dim: 64
+  bigru_hidden_dim: 64
+  q_hidden_dim: 128
+  leaky_relu_slope: 0.05
+  directions:
+  - N
+  - E
+  - S
+  - W
+  - Self
+  use_group_parameter_sharing: true
+ddqn:
+  total_episodes: 160
+  learning_rate: 0.0003
+  gamma: 0.99
+  batch_size: 32
+  replay_memory_size: 20000
+  min_replay_size: 1000
+  replay_sampling_mode: usage_aware
+  usage_penalty_alpha: 0.5
+  usage_weight_min: 0.05
+  online_update_interval: 1
+  target_update_interval: 200
+  max_grad_norm: 5.0
+  loss_type: huber
+  epsilon_start: 1.0
+  epsilon_end: 0.05
+  epsilon_decay_steps: 50000
+  adam_beta1: 0.9
+  adam_beta2: 0.999
+  adam_eps: 1.0e-08
+dual_head:
+  enabled: false
+  nox_loss_beta: 1.0
+  nox_q_softplus: false
+log:
+  log_root: results/training/kunshan
+  run_id: flore_lambda_1p2
+  console_event_log: true
+  console_mode: compact
+  console_event_whitelist:
+  - run_start
+  - episode_start
+  - episode_summary_saved
+  - training_time_progress
+  - run_end
+  - exception
+  console_step_interval: 10
+  parameter_log_interval: 10
+  detail_log_until_replay_ready: false
+  phase_step_log_interval_after_replay: 0
+  lane_step_log_interval_after_replay: 0
+  q_step_log_interval_after_replay: 0
+  tripinfo_keep_interval_after_replay: 10
+  step_progress_event_interval: 180
+  update_event_interval: 500
+  save_step_physical: false
+  save_emission_step: false
+  emission_step_log_interval_train: 0
+  emission_link_scope: controlled_internal
+  save_q_step: false
+  save_parameter_stats: false
+  save_best: true
+  best_metric: reward_mean
+  best_mode: max
+max_pressure:
+  detector_length_m: 300.0
+  halting_speed_threshold_mps: 0.1
+  use_protected_green_only: true
+  protected_green_weight: 1.0
+  permissive_green_weight: 0.0
+  downstream_lane_weight_mode: equal
+  tie_break_mode: keep_current
+  use_e2_subscription: false
+  log_pressure_step: true
+  log_movement_step: true
+  log_shared_lane_classification: true
+  enable_spillback_constraint: false
