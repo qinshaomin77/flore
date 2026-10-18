@@ -149,3 +149,20 @@ git push
 ## 策略名称
 
 配置、注释与实验任务统一采用表 3 的七种策略名称，详见 [策略配置说明](configs/README.md)。FLORE-TS 为状态消融，FLORE-TO 为目标消融；其他 NOx、奖励和参数变体单独标注为扩展实验。
+
+## FLORE-TS 需求级补充实验
+
+`configs/grid36/demand/flore_ts_scenarios.yaml` 对应原项目的 `m0_traffic`：仅使用四维交通状态和交通奖励，关闭双头网络及用于控制的货车/NOx 风险信息。D20、D40、D60、D80 分别训练一个模型，每个需求级包含 160 个训练场景，每回合 4200 秒（420 次决策）；epsilon 在前 120 回合的 50400 步降至 0.05，后 40 回合保持该值。
+
+```bash
+# 单个需求级预检，不启动 SUMO；去掉 --dry-run 开始训练
+python run.py train --config configs/grid36/demand/flore_ts_scenarios.yaml --scenario-sumocfg-dir data/grid36/train_sumocfg/D20 --dry-run
+# 四个需求级训练计划
+python scripts/run_experiments.py --suite train-grid36-flore-ts --dry-run
+# 四个需求级训练及依赖新权重的评估计划
+python scripts/run_experiments.py --suite grid36-flore-ts --dry-run
+```
+
+批量命令去掉 `--dry-run` 执行。默认训练种子为 42；每个新模型在同需求级五种货车比例场景上，以种子 19 派生的 20 个配对 SUMO 种子评估，指标窗口为 0–4200 秒。评估可记录 NOx/风险诊断，但不改变四维策略输入或交通奖励。最佳权重按训练奖励选择。已有公开权重未替换为本次补充训练结果，需运行以上训练生成新权重。
+
+训练默认按场景编号排序；单次训练可加 `--shuffle-scenarios` 获得按种子可复现的顺序打乱。续训不恢复经验池和全部随机状态，不等同于不中断训练。专项回归检查：`python scripts/test_flore_ts.py`。

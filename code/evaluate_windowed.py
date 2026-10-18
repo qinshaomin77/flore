@@ -97,7 +97,7 @@ PROJECT_ROOT = SCRIPT_DIR.parent
 EPS = 1.0e-9
 DEFAULT_RL_CHECKPOINT = (
     PROJECT_ROOT
-    / "best_checkpoints"
+    / "models"
     / "grid36"
     / "multi_objective.pt"
 )
@@ -848,6 +848,11 @@ def prepare_config(
     cfg = get_config(config_path)
     cfg.seed = int(args.seed)
     cfg.device = str(args.device)
+    # Diagnostic logging never changes the FLORE-TS state or traffic reward.
+    if args.save_risk_service_log:
+        cfg.emission_risk.log_lane_risk = True
+    if args.repair_manifest:
+        cfg.log.save_emission_step = True
 
     if args.controller == "actuated":
         cfg.env.baseline_control_mode = "sumo_actuated"
@@ -1742,15 +1747,14 @@ def read_csv_rows(path: Path) -> list[dict[str, Any]]:
 
 
 def _manifest_policy(value: str) -> str:
-    text = str(value).strip().lower()
-    if text.startswith("multi"):
-        return "multi_objective"
-    if text.startswith("traffic"):
-        return "traffic_only"
-    raise ValueError(
-        "--repair-manifest requires reward-mode starting with "
-        "'traffic' or 'multi'"
-    )
+    text = str(value).strip().lower().replace('-', '_')
+    if text.startswith(('m0_traffic', 'flore_ts')):
+        return 'm0_traffic'
+    if text.startswith(('traffic', 'flore_to')):
+        return 'traffic_only'
+    if text.startswith(('multi', 'flore')):
+        return 'multi_objective'
+    raise ValueError('--repair-manifest requires FLORE-TS, FLORE-TO or FLORE (legacy policy aliases are also accepted)')
 
 
 def _load_manifest_episodes(
@@ -2417,7 +2421,9 @@ def main() -> None:
         "uses_rl_agent": args.controller == "rl",
         "uses_checkpoint": args.controller == "rl",
         "uses_reward_for_control": args.controller == "rl",
-        "uses_nox_for_control": args.controller == "rl",
+        "uses_nox_for_control": args.controller == "rl" and bool(
+            parent_cfg.emission_risk.use_nox_risk_state or parent_cfg.emission_risk.enabled_reward
+        ),
         "case_name": args.case_name,
         "reward_mode": args.reward_mode,
         "config": resolve_path(args.config) if args.config else "",

@@ -14,6 +14,7 @@ from __future__ import annotations
 
 import argparse
 import copy
+import json
 import os
 import random
 import re
@@ -81,6 +82,8 @@ def parse_args() -> argparse.Namespace:
     p.add_argument("--deterministic", action="store_true", help="rollout 使用 masked argmax，仅调试用")
     p.add_argument("--profile", action="store_true", help="enable lightweight stage profiling")
     p.add_argument("--profile-sync-cuda", action="store_true", help="synchronize CUDA before/after timed stages")
+    p.add_argument("--dry-run", action="store_true", help="Validate config and scenario plan without starting SUMO")
+    p.add_argument("--shuffle-scenarios", action="store_true", help="Shuffle each round reproducibly")
     return p.parse_args()
 
 
@@ -91,11 +94,12 @@ def build_scenario_training_plan(
     low_exploration_rounds: int,
     global_seed: int,
     steps_per_episode: int,
+    shuffle: bool = False,
 ) -> tuple[list[Dict[str, Any]], int]:
     directory = Path(scenario_dir).resolve()
     scenario_configs = sorted(
         directory.glob("*.sumocfg"),
-        key=lambda path: int((re.search(r"episode_(\d+)", path.stem) or [0, 0])[1]),
+        key=lambda path: (int((re.search(r"episode_(\d+)", path.stem) or [0, 0])[1]), path.name),
     )
     if not scenario_configs:
         raise ValueError(f"No scenario sumocfg files found in {directory}")
@@ -123,7 +127,7 @@ def build_scenario_training_plan(
         route_path = route_path.resolve()
         if not route_path.is_file():
             raise FileNotFoundError(str(route_path))
-        # Scenario identity comes from sumocfg; identical routes may be shared.
+        # Distributed scenarios may share identical deduplicated route files.
         scenarios.append({
             "scenario": config_path.stem,
             "sumocfg": str(config_path.resolve()),
@@ -132,8 +136,12 @@ def build_scenario_training_plan(
 
     plan: list[Dict[str, Any]] = []
     episode = 0
+    rng = random.Random(int(global_seed) + 100_003)
     for round_index in range(1, rounds + 1):
-        for scenario in scenarios:
+        round_scenarios = list(scenarios)
+        if shuffle:
+            rng.shuffle(round_scenarios)
+        for scenario in round_scenarios:
             episode += 1
             plan.append({
                 "episode": episode,
@@ -184,7 +192,9 @@ def apply_overrides(cfg: MasterConfig, args: argparse.Namespace) -> MasterConfig
     cfg.env.add_xml = resolve_path(cfg.env.add_xml, must_exist=True) or cfg.env.add_xml
     cfg.env.intersection_groups_json = resolve_path(cfg.env.intersection_groups_json, must_exist=False) or cfg.env.intersection_groups_json
     cfg.env.emission_factor_csv = resolve_path(cfg.env.emission_factor_csv, must_exist=False) or cfg.env.emission_factor_csv
-    cfg.emission_risk.thresholds_json = resolve_path(cfg.emission_risk.thresholds_json, must_exist=True) or cfg.emission_risk.thresholds_json
+    er = cfg.emission_risk
+    needs_risk = bool(er.use_nox_risk_state or er.enabled_reward or er.log_lane_risk)
+    cfg.emission_risk.thresholds_json = resolve_path(cfg.emission_risk.thresholds_json, must_exist=needs_risk) or cfg.emission_risk.thresholds_json
     cfg.log.log_root = resolve_path(cfg.log.log_root, must_exist=False) or cfg.log.log_root
     cfg.env.tripinfo_dir = os.path.join(cfg.log.log_root, cfg.log.run_id, "tripinfo")
     cfg.validate()
@@ -349,6 +359,7 @@ def main() -> None:
             low_exploration_rounds=int(args.low_exploration_rounds),
             global_seed=int(cfg.seed),
             steps_per_episode=int(cfg.env.steps_per_episode),
+            shuffle=bool(args.shuffle_scenarios),
         )
         requested_episodes = int(cfg.ddqn.total_episodes)
         if requested_episodes <= 0:
@@ -358,16 +369,33 @@ def main() -> None:
                 f"Requested {requested_episodes} episodes, but only "
                 f"{len(scenario_plan)} ordered scenario configs are available"
             )
+        planned_episodes = len(scenario_plan)
+        if args.low_exploration_rounds and requested_episodes != planned_episodes:
+            raise ValueError("Low exploration rounds require a complete scenario plan")
         scenario_plan = scenario_plan[:requested_episodes]
         cfg.ddqn.total_episodes = len(scenario_plan)
-        # Keep epsilon decay tied to the requested 120 episodes, independent
-        # of the number of pre-generated scenario files.
-        cfg.ddqn.epsilon_decay_steps = 120 * int(cfg.env.steps_per_episode)
-        if not args.log_root:
-            cfg.log.log_root = str((PROJECT_ROOT / "results/training" / "demand_gen").resolve())
-        if not args.run_id:
-            cfg.log.run_id = Path(args.config).stem if args.config else "scenario_training"
+        if args.low_exploration_rounds:
+            cfg.ddqn.epsilon_decay_steps = epsilon_decay_steps
+        for item in scenario_plan:
+            root = ET.parse(item['sumocfg']).getroot()
+            end = root.find('./time/end')
+            begin = root.find('./time/begin')
+            invalid_begin = begin is not None and float(begin.get('value', '0')) != 0
+            invalid_end = end is not None and float(end.get('value', '0')) != cfg.env.episode_duration
+            if invalid_begin or invalid_end:
+                raise ValueError(f"Scenario time differs from configured 0--{cfg.env.episode_duration}s: {item['sumocfg']}")
         cfg.env.tripinfo_dir = os.path.join(cfg.log.run_dir, "tripinfo")
+
+    if args.dry_run:
+        preview = {
+            'config': cfg.to_dict(),
+            'scenario_count': len({item['sumocfg'] for item in scenario_plan}),
+            'episodes': cfg.ddqn.total_episodes,
+            'steps_per_episode': cfg.env.steps_per_episode,
+            'scenario_plan': scenario_plan,
+        }
+        print(json.dumps(preview, ensure_ascii=False, indent=2))
+        return
 
     net_info = parse_network(cfg.env.net_xml, cfg.env.add_xml, cfg.env.intersection_groups_json)
     builder = ObsRewardBuilder(cfg, net_info)

@@ -9182,9 +9182,14 @@
       "sha256": "67147b4e058098c3ff002be2d1f071a3e4cb1871e592c80e4219d39b8b978d4a"
     },
     {
+      "path": "configs/grid36/demand/flore_ts_scenarios.yaml",
+      "bytes": 4479,
+      "sha256": "d84f44ca7defbbeedd2dd5f49881219429ec981e0eb311c369cf580274d0864c"
+    },
+    {
       "path": "configs/grid36/experiments.yaml",
-      "bytes": 24314,
-      "sha256": "212b0acde925d00fad004c285a19c0be44d16f25eecf6b7dcc65082757c7e160"
+      "bytes": 29096,
+      "sha256": "d89464465a39b9522848537471028a926282e819f002e03fd4466fab3797dee8"
     },
     {
       "path": "configs/grid36/flore.yaml",

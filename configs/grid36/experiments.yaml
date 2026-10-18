@@ -1,4 +1,4 @@
-# Strategy names follow Table 3; controller CLI tokens and model filenames retain compatibility.
+# Canonical Table 3 strategy labels; FLORE-TS supplement uses 0--4200 s.
 suites:
   grid36-main:
   - name: FLORE
@@ -1020,3 +1020,217 @@ suites:
     - models/grid36_lambda_sensitive/full_lambda_200p0.pt
     - --run-id
     - FLORE_lambda_200
+  train-grid36-flore-ts:
+  - name: FLORE-TS_D20_train
+    args:
+    - train
+    - --config
+    - configs/grid36/demand/flore_ts_scenarios.yaml
+    - --scenario-sumocfg-dir
+    - data/grid36/train_sumocfg/D20
+    - --seed
+    - '42'
+    - --run-id
+    - FLORE-TS_D20_seed42
+  - name: FLORE-TS_D40_train
+    args:
+    - train
+    - --config
+    - configs/grid36/demand/flore_ts_scenarios.yaml
+    - --scenario-sumocfg-dir
+    - data/grid36/train_sumocfg/D40
+    - --seed
+    - '42'
+    - --run-id
+    - FLORE-TS_D40_seed42
+  - name: FLORE-TS_D60_train
+    args:
+    - train
+    - --config
+    - configs/grid36/demand/flore_ts_scenarios.yaml
+    - --scenario-sumocfg-dir
+    - data/grid36/train_sumocfg/D60
+    - --seed
+    - '42'
+    - --run-id
+    - FLORE-TS_D60_seed42
+  - name: FLORE-TS_D80_train
+    args:
+    - train
+    - --config
+    - configs/grid36/demand/flore_ts_scenarios.yaml
+    - --scenario-sumocfg-dir
+    - data/grid36/train_sumocfg/D80
+    - --seed
+    - '42'
+    - --run-id
+    - FLORE-TS_D80_seed42
+  grid36-flore-ts:
+  - name: FLORE-TS_D20_train
+    args:
+    - train
+    - --config
+    - configs/grid36/demand/flore_ts_scenarios.yaml
+    - --scenario-sumocfg-dir
+    - data/grid36/train_sumocfg/D20
+    - --seed
+    - '42'
+    - --run-id
+    - FLORE-TS_D20_seed42
+  - name: FLORE-TS_D20_evaluate
+    checkpoint_from: FLORE-TS_D20_train
+    args:
+    - window
+    - --config
+    - configs/grid36/demand/flore_ts_scenarios.yaml
+    - --controller
+    - rl
+    - --case-name
+    - FLORE-TS_D20
+    - --reward-mode
+    - FLORE-TS_D20
+    - --sumocfg-dir
+    - data/grid36/evaluation_sumocfg/D20
+    - --thresholds-json
+    - configs/thresholds/grid36/D20.json
+    - --analysis-start
+    - '0'
+    - --analysis-end
+    - '4200'
+    - --eval-episodes
+    - '20'
+    - --seed
+    - '19'
+    - --workers
+    - '3'
+    - --save-risk-service-log
+    - --risk-log-start
+    - '590'
+    - --risk-log-end
+    - '4200'
+  - name: FLORE-TS_D40_train
+    args:
+    - train
+    - --config
+    - configs/grid36/demand/flore_ts_scenarios.yaml
+    - --scenario-sumocfg-dir
+    - data/grid36/train_sumocfg/D40
+    - --seed
+    - '42'
+    - --run-id
+    - FLORE-TS_D40_seed42
+  - name: FLORE-TS_D40_evaluate
+    checkpoint_from: FLORE-TS_D40_train
+    args:
+    - window
+    - --config
+    - configs/grid36/demand/flore_ts_scenarios.yaml
+    - --controller
+    - rl
+    - --case-name
+    - FLORE-TS_D40
+    - --reward-mode
+    - FLORE-TS_D40
+    - --sumocfg-dir
+    - data/grid36/evaluation_sumocfg/D40
+    - --thresholds-json
+    - configs/thresholds/grid36/D40.json
+    - --analysis-start
+    - '0'
+    - --analysis-end
+    - '4200'
+    - --eval-episodes
+    - '20'
+    - --seed
+    - '19'
+    - --workers
+    - '3'
+    - --save-risk-service-log
+    - --risk-log-start
+    - '590'
+    - --risk-log-end
+    - '4200'
+  - name: FLORE-TS_D60_train
+    args:
+    - train
+    - --config
+    - configs/grid36/demand/flore_ts_scenarios.yaml
+    - --scenario-sumocfg-dir
+    - data/grid36/train_sumocfg/D60
+    - --seed
+    - '42'
+    - --run-id
+    - FLORE-TS_D60_seed42
+  - name: FLORE-TS_D60_evaluate
+    checkpoint_from: FLORE-TS_D60_train
+    args:
+    - window
+    - --config
+    - configs/grid36/demand/flore_ts_scenarios.yaml
+    - --controller
+    - rl
+    - --case-name
+    - FLORE-TS_D60
+    - --reward-mode
+    - FLORE-TS_D60
+    - --sumocfg-dir
+    - data/grid36/evaluation_sumocfg/D60
+    - --thresholds-json
+    - configs/thresholds/grid36/D60.json
+    - --analysis-start
+    - '0'
+    - --analysis-end
+    - '4200'
+    - --eval-episodes
+    - '20'
+    - --seed
+    - '19'
+    - --workers
+    - '3'
+    - --save-risk-service-log
+    - --risk-log-start
+    - '590'
+    - --risk-log-end
+    - '4200'
+  - name: FLORE-TS_D80_train
+    args:
+    - train
+    - --config
+    - configs/grid36/demand/flore_ts_scenarios.yaml
+    - --scenario-sumocfg-dir
+    - data/grid36/train_sumocfg/D80
+    - --seed
+    - '42'
+    - --run-id
+    - FLORE-TS_D80_seed42
+  - name: FLORE-TS_D80_evaluate
+    checkpoint_from: FLORE-TS_D80_train
+    args:
+    - window
+    - --config
+    - configs/grid36/demand/flore_ts_scenarios.yaml
+    - --controller
+    - rl
+    - --case-name
+    - FLORE-TS_D80
+    - --reward-mode
+    - FLORE-TS_D80
+    - --sumocfg-dir
+    - data/grid36/evaluation_sumocfg/D80
+    - --thresholds-json
+    - configs/thresholds/grid36/D80.json
+    - --analysis-start
+    - '0'
+    - --analysis-end
+    - '4200'
+    - --eval-episodes
+    - '20'
+    - --seed
+    - '19'
+    - --workers
+    - '3'
+    - --save-risk-service-log
+    - --risk-log-start
+    - '590'
+    - --risk-log-end
+    - '4200'

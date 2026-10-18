@@ -151,3 +151,20 @@ After intentionally changing distributed inputs, refresh and verify the asset ma
 ## Strategy names
 
 Configuration names, comments and task labels follow the seven strategies in Table 3. See [strategy configuration guide](configs/README.md). FLORE-TS is the state ablation and FLORE-TO is the objective ablation. Additional NOx, reward and parameter variants are explicitly labeled as supplemental experiments.
+
+## FLORE-TS demand-specific supplementary experiments
+
+`configs/grid36/demand/flore_ts_scenarios.yaml` corresponds to the original `m0_traffic`: four traffic-state features, traffic-only reward, no dual head, and no truck/NOx-risk inputs for control. Train separate models for D20, D40, D60 and D80, each with 160 scenarios and 4200 seconds (420 decisions) per episode. Epsilon decays to 0.05 over the first 120 episodes (50400 steps), then stays at 0.05 for 40 episodes.
+
+```bash
+# Validate one demand without starting SUMO; remove --dry-run to train
+python run.py train --config configs/grid36/demand/flore_ts_scenarios.yaml --scenario-sumocfg-dir data/grid36/train_sumocfg/D20 --dry-run
+# Preview training for all four demands
+python scripts/run_experiments.py --suite train-grid36-flore-ts --dry-run
+# Preview training and dependent evaluation using the new checkpoints
+python scripts/run_experiments.py --suite grid36-flore-ts --dry-run
+```
+
+Remove `--dry-run` from batch commands to execute. The training seed is 42. Each new model is evaluated on five truck-share scenarios at its matching demand, using 20 paired SUMO seeds derived from seed 19 and a 0–4200-second analysis window. Evaluation risk/NOx diagnostics do not change policy inputs or traffic rewards. Best checkpoints are selected by training reward. Existing released weights have not been replaced with supplementary training results; run training to produce these checkpoints.
+
+Training uses scenario-number order by default; add `--shuffle-scenarios` to an individual training command for reproducible seeded shuffling. Resume does not restore the replay buffer or all random states and is not equivalent to uninterrupted training. Run the regression checks with `python scripts/test_flore_ts.py`.
